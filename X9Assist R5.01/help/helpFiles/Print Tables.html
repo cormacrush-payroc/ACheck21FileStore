@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Print Tables</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Print Tables</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Print Tables provides facilities to print the same reporting
+information that is created by X9Assist. Output reports are created in
+HTML format that will then be viewed using your default Internet
+browser. Reports are created and stored in your
+Documents/x9_assist/reports folder for viewing. </p>
+<p>Print Tables presents a menu where you can indicate the tables you
+would like to select from those are available within the application.
+These are the same tables that can be viewed via the dash board. The
+X9Assist tables are shown in several columns for your selection:</p>
+<ul>
+<li>All reports that are associated with the currently loaded file.
+</li>
+</ul>
+<ul>
+<li>All reports that are associated with the record group that is
+currently positioned and being displayed within the record viewer.
+Including these tables are appropriate when there are issues with a
+specific record and you want to include that information in the
+reporting package that is created. </li>
+</ul>
+<p>Printing From A Filter</p>
+<p>Print Tables also allows you to select from one or more filters that
+you may have created for the current file. The contents of each filter
+will be printed just as they are displayed within the filter tab. This
+is an easy way to create a report containing specific items within the
+current file. One or more filters can be selected. If you want to select
+more than one filter table, hold down the control (CTRL) key and use you
+mouse to select the desired tables. </p>
+<p>Creating the Output Report</p>
+<p>Once you have selected your tables, press the format button which
+initiates the creation of the HTML based reporting file. When this is
+complete, X9Assist will launch your Internet browser to allow you to
+view the report file, which you can then browse, print, or take other
+actions such as email, save (etc). Reports can be printed to your
+desired printer as part of the viewing process. </p>
+<p>Report Retention</p>
+<p>X9Assist has options that define how long generated reports will be
+maintained within the temp/reports folder. You can change this based on
+your requirements, with the default being three (3) days. </p>
+<p>Printing to a PDF</p>
+<p>You can optionally print to an output PDF (and not to an actual
+printer) by installing one of many PDF virtual printer products that are
+available. One such example is “Microsoft Print to PDF” which has been a
+Windows component since Windows XP; there are others. These PDF printers
+act as a logical printer and will intercept your generated image stream
+as your output is generated. By using such a tool, you can easily write
+your print stream to a PDF file. You can then take the PDF file into
+other applications and tools of your choice. </p>
+<p>Summary</p>
+<p>Print Tables is a powerful function that allows X9Assist created
+reports to be easily converted to HTML format which can then be browsed,
+printed, or emailed to others. The HTML output is generic in nature and
+can be used for many other purposes. </p>
+</body>
+</html>

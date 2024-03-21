@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Print Images</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Print Images</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Print Images is available with our X9Validator and X9Assist products
+and includes facilities to print check images in various page layouts
+which can be either system or user defined. A common use is to format
+and then print item images to a MICR printer in a three images per page
+layout. However, you can define and then print more complex scenarios of
+up to twelve checks per page in a user defined grid format. Print Images
+allows you to define and control the actual coordinates of printed
+images on the physical page, which can be either letter or legal and
+then either portrait or landscape. </p>
+<p>Print Images requires that you first select the specific images to be
+printed:</p>
+<ul>
+<li>All all images that exist in this x9 file;</li>
+<li>Items defined within a filter which is created using tools such as
+find or search</li>
+<li>The current item displayed within the browser tree</li>
+</ul>
+<p>Print Images then requires that you select an image print format from
+a drop down box which is populated with system defined format. Each
+format defines how many images will be printed per page and the spacing
+the images within each page. Several print formats are configured and
+included on a standard basis with X9Assist. You can also use the Print
+Images dialog to create and save your own print formats for subsequent
+future use. This is an important function since it gives you fully
+control your image print layouts. </p>
+<p>Print formats define the attributes and page coordinates of your
+check images when they are transferred to the printed page. The print
+format contains various attributes that are used during the printing
+process (paper size, orientation, title, margins, and most importantly
+the actual x/y coordinates where checks will formatted and printed. </p>
+<p>You can create new print formats by displaying an existing format,
+making changes to it, and then saving it under an alternate name. Print
+formats are stored in folder / Documents / x9_assist / xml/ printFormats
+/. </p>
+<p>Predefined Print Formats</p>
+<p>The following print formats are included in our distribution. These
+can be used as the basis to create new formats subject to your
+requirements. The base formats are as follows:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Landscape 3 x 2</td>
+<td>Print item images six per page. </td>
+<td>600</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Letter 2 x 1</td>
+<td>Print item images two per page. </td>
+<td>600</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Letter 3 x 1</td>
+<td>Print item images three per page. </td>
+<td>600</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Letter 3 x 1 IRD</td>
+<td>Print IRD images three per page where the MICR line will be redrawn
+from the x9 data; this format will print at 1200 DPI with options to
+maximize quality when printed items will be subsequently re-scanned.
+</td>
+<td>1200</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Letter 3 x 1 MICR</td>
+<td>Print item images three per page where the MICR line will be redrawn
+from the x9 data; this format will print at 1200 DPI with options to
+maximize quality when printed items will be subsequently re-scanned.
+</td>
+<td>1200</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Letter 4 x 2 </td>
+<td>Print item images eight per page. </td>
+<td>600</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>Troy 3 checks 8.5 x 11 DLA834 (7000)</td>
+<td>Print IRD Images three page page using 8.5 x 11 form DLA834 (7000).
+</td>
+<td>600</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Troy 3 checks 8.5 x 13 45-20462</td>
+<td>Print IRD Images three page page using 8.5 x 13 form 45-20462. </td>
+<td>600</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Troy 3 x 1 on generic 8.5 x 13 paper. </td>
+<td>Print IRD Images three page page on generic Troy 8.5 x 13.</td>
+<td>600</td>
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Print Functions </p>
+<p>Once you have selected your items and print format, you can then
+initiate one of several available actions: </p>
+<ul>
+<li><em><strong>Print</strong></em>: open a print dialog and initiate
+printing to a selected printer. </li>
+</ul>
+<ul>
+<li><em><strong>Zip</strong></em>: write the formatted image pages to a
+user selected zip file.</li>
+</ul>
+<ul>
+<li><em><strong>V</strong><strong>iew</strong></em>: launch an external
+viewer of the formatted image pages. </li>
+</ul>
+<ul>
+<li><em><strong>Preview</strong></em>: take a quick look at the
+formatted pages that are formatted for print. </li>
+</ul>
+<p>View</p>
+<p>View provides an interface to the system installed PDF or XPS printer
+and viewer. This is a two step process where the image pages are written
+to an intermediate file and then an external viewer is launched. In a
+Windows environment, the Microsoft Print to PDF write will be used to
+create an output file which will be launched in the default viewer on
+this system. This facility provides better viewing than our preview
+facility, but does take longer given the extra time that will be needed
+to create the intermediate file. The functionality is excellent once the
+viewer is launched. </p>
+<p>Preview</p>
+<p>Preview allows you to take a quick look at the generated print pages.
+The next and previous buttons can be used to browse through the output.
+The page number box can be used to jump to specific pages. The zoom
+slider can be used to increase and decrease the zoom level of the
+current image, along with the reset button which moves back to a
+standard zoom setting. </p>
+<p>MICR Line Redraw </p>
+<p>Print Images includes enhanced functionality to redraw MICR lines
+(within each image) from the associated x9 item data (for example, the
+type 25 and 31 record types). This function should always be used for
+IRD print. It may also be applicable to items that are created by our
+Make/Generate functions, where the image MICR lines are known to match
+the individual x9 data records. MICR line redraw can be selected only
+when printing full scale images (when printed output has a single image
+column). </p>
+<p>The purpose of MICR line redraw is to optimize the quality of the
+MICR lines when test documents are being printed for image enabled
+capture environments (Branch Capture, ATM Capture, Image Lockbox
+Capture, Remote Deposit Capture, etc). In those situations, it is
+critical that the MICR line be printed at the highest possible DPI
+supported by your printer, and not the 200 or 240 DPI that is present in
+an attached image per x9 image exchange standards. To meet this quality
+requirement, Print Images has the ability to directly redraw MICR lines
+from the x9 data. When doing so, the MICR line data from your images
+will not be used. This redraw function allows all MICR lines to be drawn
+at the current printer resolution (not from the image DPI) which can
+dramatically increase the quality of the scan line. </p>
+<p>This functionality is appropriate only when performing IRD Print
+functions or when the printed images were created by the X9Assist Make
+or Generate functions. </p>
+<p>MICR Line Redraw Usage Exceptions </p>
+<p>There are certain conditions when MICR line redraw very explicitly
+cannot be used:</p>
+<ul>
+<li>The purpose of MICR line redraw is to improve the pixel quality of
+the E13B characters within the MICR line and to thus improve the MICR
+and OCR readability of those characters, with the intent to reduce digit
+misreads. There is no reason to use this functionality if the paper
+documents you are printing will not be subsequently recaptured.</li>
+<li>You can only use MICR line redraw when you are 100% certain that the
+x9 data matches the image data. This is typically NEVER TRUE for typical
+x937 files, since although the image data is typically very close to the
+x9 data, it is normally not an exact match. Hence this MICR line redraw
+does not apply to typical x937 files and should never be used in those
+situations. It can be used for files created by our Make/Generate
+functions, since that is a much more controlled environment where the x9
+data and the image data should match.</li>
+<li>You similarly cannot use MICR line redraw when you are providing
+your own MICR lines into Make, which is typically done for negative use
+case testing of specific MICR line data content. In that situation, the
+x9 data will not match your MICR line data, hence the redraw function is
+not applicable. </li>
+</ul>
+<p>MICR Routing Redraw in xxxx-xxxx Format </p>
+<p>The option to redraw MICR routings in xxxx-xxxx format (from eight
+character routings) would normally always be enabled when MICR line
+redraw is active. This function will redraw a routing of “12345678” as
+“1234-5678”, essentially inserting the dash that was removed during
+capture. </p>
+<p>Some background may help here. This situation applies specifically to
+US routings, which would typically consist of nine digits which include
+a suffixed check digit and would never include an embedded dash.
+However, prior to the implementation of the MICR routing check digit,
+these numbers were instead formatted as “xxxx-xxxx” with an embedded
+dash, thus making up the same nine character string that exists today.
+Although most US routings now utilize the newer nine digit format, there
+are various situations where the older 4x4 format is used. This
+certainly includes old paper where customer accounts have not been
+updated to the nine digit format that includes the check digit. </p>
+<p>The x937 file specification has the routing divided into two separate
+fields, which are the eight character routing followed by the check
+digit. When the routing was actually in 4x4 format (with the dash and
+without the check digit), then the x9 data is populated with the dash
+removed. In that situation, the eight character routing is present and
+the check digit is a blank to indicate that it was not present. </p>
+<p>The bottom line is that these older routing numbers represent a
+special condition for MICR line redraw, since the x9 data does not
+actually contain the embedded dash. This option thus allows the dash to
+be reinserted into the MICR routing when it was removed during capture
+and is not present in the x9 data per the x937 specifications. </p>
+<p>Printer Resolution</p>
+<p>Print Image will automatically assign an appropriate DPI that is
+optimized based on the work being performed. Specifically, Print Image
+will enable 1200 DPI when printing items that are printed as MICR or
+IRD, to be subsequently scanned. subsequently processed electronically.
+The following print formats should be used: </p>
+<p>Subject to the capabilities of your specific printer, all output is
+typically printed at 600 DPI. However, this should be increased to 1200
+DPI when printing IRDs or items that were created by our Make function.
+This higher DPI setting is needed to minimize the potential for digit
+misreads of these printed documents. In these situations:</p>
+<ul>
+<li>The “Redraw MICR from x9 data” box should always be checked which
+will use the MICR line data from the appropriate record types (25, 31,
+61, 62, etc) to reformat an improved E13B scan line. </li>
+<li>The “1200 DPI print is enabled as needed” box should also be
+checked, which will enable 1200 DPI printing.</li>
+</ul>
+<p>Printer Drivers</p>
+<p>In order to utilize our higher DPI print capabilities, it is
+important that you use a printer with an associated print driver that
+supports 1200 DPI printing. As an example, using an HP MICR Printer with
+the generic HP printer driver may well result in a configuration that
+does not support 1200 DPI printing. Although the printer is 1200 DPI
+capable, it may be that the printer driver is not. </p>
+<p>If you use a printer driver that only supports 600 DPI, then the
+resulting check images will not be drawn at their expected size. This
+problem is a result of attempting to print at 1200 DPI with scaling that
+is ultimately not recognized by the printer. There are two ways to
+resolve this problem:</p>
+<ul>
+<li>On a short term basis, make sure you do not check the “Enable 1200
+DPI” box, which will ensure that printing is at 600 DPI. Although this
+will resolve the problem, it is not optimal, since printed images will
+not be at the highest quality possible. This could possibly result in a
+higher digit misreads during subsequent scanning. However, note that it
+is commonplace for images to be printed at 600 DPI, so this should not
+create scanning issues. </li>
+<li>On a longer term basis, we recommend that you consider installation
+of a 1200 capable printer driver when you have a 1200 DPI printer. You
+can either use a specific driver provided by your printer manufacturer,
+or possibly use a generic driver (such as PCL or Postscript) that will
+work with your specific printer. You should review the technical
+documentation that from your printer vendor to determine your best
+options.</li>
+</ul>
+<p>Additional important information:</p>
+<ul>
+<li>The Hewlett Packard “HP Universal Print PCL6” driver does not
+support 1200 DPI. Although this driver works well in a general office
+environment, it does not provide the higher resolution that is needed
+for MICR printing. </li>
+<li>The Richo “PCL6 Driver for Universal Print” driver includes support
+for 1200 DPI.</li>
+<li>The Xerox “Global Print Driver PCL6” driver includes support for
+1200 DPI.</li>
+</ul>
+<p>Print Formats</p>
+<p>Image pages can be defined and saved for future reuse using various
+options and capabilities:</p>
+<ol type="1">
+<li>Identify which images should be inserted for each item (front or
+front/back) </li>
+<li>Specify if you want descriptive captions printed below each item
+image </li>
+<li>Select collated print format</li>
+<li>Select two sided print format </li>
+<li>Load a predefined format (these are saved in the
+/x9_assist/xml/printFormats folder) </li>
+<li>Format in either a one column or two column grid </li>
+<li>Format with up to six checks vertically </li>
+<li>Define your image layout based on the number of rows and
+columns</li>
+<li>Select paper size (letter or legal) and orientation (portrait or
+landscape) </li>
+<li>Position the title, date/time, and page number based on your
+template </li>
+<li>Modify the title for each print request </li>
+<li>Save new or modified layouts to the /x9_assist / xml / printFormats
+folder so you can easily use them in future print sessions</li>
+</ol>
+<p>Collating</p>
+<p>You can optionally collate your images when they are printed. This is
+done to simplify the process of hand sorting the items after they are
+cut and printed. If you select collation, the image print sequence is
+modified so that you can cut the items by row and then easily restack
+them. This option will eliminate the more difficult process of handing
+sorting the items after they are printed. </p>
+<p>Two Sided Printing</p>
+<p>Checks can be optionally formatted for two sided printing. This
+option is typically not needed, since printers also support this
+functionality and will rearrange printed pages as needed based on their
+specific requirements. Our two side page sorting is provided only has a
+secondary function when absolutely needed. When two sided print is
+active, front images will be printed on odd pages and back images will
+be printed on even pages. The purpose of this page rearrangement is to
+allow checks to be printed and trimmed such that their front and back
+images are on the same piece of physical paper. </p>
+<p>Cover Pages</p>
+<p>Optional cover pages can be included in the printed output. These
+will be leading pages that include basic attributes of the input file
+(file name, folder name, file size, number of records, etc), along with
+key fields from the file header and trailer records. There will be one
+or more cover pages printed. The number of output pages is largely
+dependent on the number of batches that are included within the file.
+</p>
+<p><strong>Item Descriptors</strong> </p>
+<p>Optional item descriptors can be included in the printed output. A
+descriptor box is formatted and inserted for each item, which includes
+information about the item itself (from the item record) and then from
+the attached addenda records. When item descriptors are enabled, other
+options such as two sided printing, collated, and image boxes should be
+turned off. </p>
+<p>Creating Custom Formats</p>
+<p>If you are creating a custom print format, you should follow these
+general steps:</p>
+<ul>
+<li>Select your paper size and orientation </li>
+<li>Use auto-layout to define the row / column configuration for the
+check images</li>
+<li>Indicate if you want front images only, or if you want to include
+back side images</li>
+<li>If needed, then modify your border sizes based on the PDF template
+</li>
+<li>Specify the location for your title, date/time, and page number
+</li>
+<li>Finally, adjust the locations of your check images based on your
+layout requirements </li>
+</ul>
+<p>Image Size</p>
+<p>Print Images will attempt to maintain the exact image size of your
+selected checks. Image size can be preserved based on the combination of
+image size, paper size, and orientation. For example, typical retail
+checks can be printed three per page using letter (8.5 x 11) with
+portrait orientation. Print Images will progressively reduce the
+resulting image size based on the parameters that you have selected.
+</p>
+<p>Printing to a PDF</p>
+<p>You can optionally print to an output PDF (and not to an actual
+printer) by installing one of many PDF virtual printer products that are
+available. One such example is “Microsoft Print to PDF” which has been a
+Windows component since Windows XP; there are others. These PDF printers
+act as a logical printer and will intercept your generated image stream
+as your output is generated. By using such a tool, you can easily write
+your print stream to a PDF file. You can then take the PDF file into
+other applications and tools of your choice. </p>
+</body>
+</html>

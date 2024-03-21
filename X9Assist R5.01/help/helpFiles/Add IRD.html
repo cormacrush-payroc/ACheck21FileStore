@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Add IRD</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Add IRD</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Add IRD is a detailed function that allows individual IRDs to be
+decisioned with a user supplied return reason. Add IRD allows items
+(either individually or in bulk) to be added to a user constructed pick
+list which can then be subsequently reviewed and printed. The Add IRD
+function is typically used as a mechanism to print a selected number of
+items from an ICL. These printed IRDs can represent forward presentment
+or returned items. For returns, the dialog allows separate return
+reasons to be specified on an item by item basis. User selected items
+are added to a filter list which is our general purpose facility which
+describe a subset of items within the current x9 file. </p>
+<p>IRD Types</p>
+<p>IRD items are entered as one of two types:</p>
+<ul>
+<li>An IRD Substitute is a negotiable instrument used to represent the
+digital reproduction of an original paper check. Substitute checks are
+recognized as legal checks as long as the instruments meet specific
+requirements. These requirements include the faithful reproduction of
+the paper check and warranty of the instrument by the "reconverting
+bank"—the financial institution that created the substitute check or the
+first financial institution that transferred or presented it during the
+check clearing process. Substitute checks are also subject to the UCC,
+existing federal and state check laws, and regulations specific to
+consumer rights that affect the acceptance of these instruments.
+Although a substitute check is subject to the UCC and existing state and
+federal check laws, the Check 21 Act takes precedence over these other
+laws and regulations for this instrument. </li>
+<li>An IRD Return represents an item that was not paid by the issuing
+bank for some defined return reason (eg, insufficient funds). In this
+situation, the paying bank stamps the item as NSF (non-sufficient funds)
+which identifies the reason for the return. When an item is being
+returned, a “5" will be placed in the MICR line EPC field to identify
+the substitute check according to ANS X9.90, along with the routing
+number of the depository financial institution and the dollar amount of
+the substitute check. The paying bank returns the unpaid returned item
+through the routing process to the BOFD for exception handling, which
+would typically include debiting the customer for the returned item,
+sending a charge back notice to its customer (either electronically or
+through the mail), and most probably assessing a fee which is associated
+with the returned item process. </li>
+</ul>
+<p>Adding Items to the IRD List</p>
+<p>Items within the IRD List filter are constructed using a series of
+interactions. The ICL viewer tree (on the left) is used to identify the
+items to be added to the list. This can be done in multiple ways:</p>
+<ul>
+<li>Items can be added one at a time. This is done by selecting the item
+in the viewer tree and then invoking Add IRD from the tool bar. </li>
+<li>Multiple items can be added in a single interaction. This is done by
+holding done the CTRL key, selecting the items to be added using the
+mouse, and then invoking Add IRD from the tool bar. </li>
+<li>A block of items can be added in a single interaction. This is done
+by selecting the first item within the block, holding done the
+CTRL/SHIFT keys and selecting the last item within the block, and then
+invoking Add IRD from the tool bar. </li>
+<li>An entire bundle of items can be selected in a single interaction.
+This is done by selecting the bundle and then invoking Add IRD from the
+tool bar. </li>
+<li>An entire cash letter of items can be selected in a single
+interaction. This is done by selecting the bundle and then invoking Add
+IRD from the tool bar. </li>
+<li>An entire file of items can be selected in a single interaction.
+This is done by selecting the bundle and then invoking Add IRD from the
+tool bar. </li>
+</ul>
+<p>The selection process can be used repeatedly to build the IRD List
+with the desired items, which will be displayed in a system filter.
+Items can continue to be both added or removed from the list as
+necessary. Items can also be reviewed and launched using the filter
+list. Once the content of an IRD List has been confirmed, the list can
+then be used as input to Print Image. </p>
+<p>Entering IRD Information for Individual Items</p>
+<p>The Add IRD panel allows you to enter information that is associated
+with each IRD within the overall list. The following fields must be
+entered for each IRD:</p>
+<ul>
+<li>Creator routing number – which identifies the financial institution
+that is creating this image return document. </li>
+<li>Business date – the date that the IRD is printed. </li>
+<li>Item sequence number – the item sequence number that is associated
+with the IRD. </li>
+<li>Return reason – the return reason (for returned items). </li>
+</ul>
+<p>Items are typically decisioned one at a time, which allows the
+appropriate return reason to be assigned to each item. As an
+alternative, items can be processed in a grouped (repetitive) manner,
+which is appropriate when the same return reason applies to all items,
+and the default action of an incremented item sequence number is
+acceptable. </p>
+<p>The number of remaining items to be decisioned will always displayed
+on the action line in the lower left corner. Buttons on the action panel
+are used to either apply (add) or apply all items to the accumulated IRD
+print list. The process continues for all remaining items within the
+list. </p>
+<p>Once all selected items have been decision, the entry process will be
+terminated and the resulting IRD List will be displayed. You can use the
+filter tab to launch to any given item or alternatively remove items
+that were added in error. Also note that the return reason is displayed
+for each item within the filter list, which allow you to review the
+assigned returned reasons for all items. </p>
+<p>Using the IRD List to Print Item Images </p>
+<p>Once the IRD List has been finalized and confirmed, it is then used
+as a filter for other application functions including Print Images. </p>
+<p>Print Image supports various page layouts, and very specifically
+supports 3x1 IRD format which is used to print IRD documents. In
+addition to standard layouts, Print Image allows custom formats to be
+defined when your page (paper) layout varies from our standard format.
+</p>
+<p>When printing images, our “<strong>Letter 3 x 1 IRD Print</strong>”
+format should be applicable for most user environments. This print
+format can be adjusted based on your check template and specific printer
+environment. Contact us if you need assistance to implement your
+specific check layout. The important attributes of this image print
+format are: </p>
+<ul>
+<li>Letter. </li>
+<li>3x1 format.</li>
+<li>Front and back images.</li>
+<li>Two sided printing (front images on even pages and back images on
+odd pages).</li>
+<li>Collated which retains the item order after printing and bursting.
+</li>
+<li>1200 DPI to improve document quality – should be set which will
+trigger the print image function to use 1200 dpi whenever possible.
+</li>
+<li>Redraw MICR from x9 data – should be specified since it allows the
+MICR line to be drawn on the IRD using the E13B font. </li>
+<li>Return MICR 8 digit routings in xxxx-xxxx format – should be
+specified to insert the dash into the routing field when an eight digit
+routing is present. </li>
+</ul>
+</body>
+</html>

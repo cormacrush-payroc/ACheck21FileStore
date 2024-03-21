@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Find</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span><span id="anchor-3"></span>Find</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Find allows you to easily locate items (debits or credits) based on
+your criteria. This can be done across the entire file, or can be
+limited to one or more selected bundles. Find is designed to locate
+items. If you want to look for data in specific record types that are
+not associated with checks (or in any other record types), then you
+should instead consider use of the Search tool. </p>
+<p>Find will allow you to select items based on any combination of the
+following fields: </p>
+<ul>
+<li>Amount or amount range</li>
+<li>Routing, account number and/or check serial number </li>
+<li>Sequence number or sequence number range</li>
+</ul>
+<p>The routing number should be entered on a full nine (9) character
+basis. This includes the check digit field and should also include any
+embedded dashes. The search will be done using the routing number
+exactly as provided. </p>
+<p>The check serial number will be used to search both the OnUs and the
+AuxOnUs fields. Items will be considered a match when your provided
+check serial number is located in either of those fields. </p>
+<p>In addition to these very specific criteria, you can also select
+items at a higher level. For example,</p>
+<ul>
+<li>Debits only </li>
+<li>Credits only </li>
+<li>Only those items which contain errors </li>
+</ul>
+<p>Using Find</p>
+<p>Find remembers the last selection criteria that you entered within
+the current session and will retain that for your next find. You can
+reset back to defaults using the “refresh” button on the tool bar. </p>
+<p>By default, Find will search across all bundles within the currently
+loaded file. You can use the bundles panel to instead limit your search
+to one more more specific bundles. After entering your selection
+criteria, you must then press the “Find” button to initiate your search.
+</p>
+<p>The file viewer will position you on the first check that meets your
+specified criteria. You can then use the Find Next button (from the tool
+bar) to easily advance through the additional items. Note that the Find
+Next button will always indicate your relative position within the
+selected records. You are always informed of your current position and
+the total number of records that meet your defined criteria. </p>
+<p>Creating Filters</p>
+<p>You can build a filtered view using the “Filter” button. Filter uses
+the selected items to build and add a separate tab to the DashBoard. You
+can manually set the name that is assigned to the new tab, or
+alternatively allow Find to automatically assign the next logical tab
+number. </p>
+<p>Creating filters provides several advantages and useful functions.
+Filter allows you to position on several records at the same time so you
+can bounce back and forth. An example would be having the primary tab
+focused on a bundle record while having the filter tab positioned on a
+specific check. Or you can position on different items within the two
+windows, which is helpful when you are looking for differences or
+duplicated items. </p>
+<p><br />
+There are other advantages to using filters. For example, filters can be
+used by reporting and as the basis to print or save a list of the
+selected items based on your criteria. </p>
+</body>
+</html>

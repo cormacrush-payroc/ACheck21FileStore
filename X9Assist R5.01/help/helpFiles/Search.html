@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Search</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Search</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Search is a powerful tool that can be used to search and optionally
+replace fields within the currently loaded file on a record by record
+and field by field basis. Search differs from Find in several ways:</p>
+<ul>
+<li>Search works at the record and field level, while Find is targeted
+for logical items.</li>
+<li>Search allows values to be replaced while Find does not. </li>
+</ul>
+<p>Search String Entry</p>
+<p>Search strings can be entered using one of several available options:
+</p>
+<ol type="1">
+<li>Actual value comparison (against each individual field value within
+each data record) using your entered search string. In this mode, there
+are two options that can be applied to assist in your search efforts:
+</li>
+</ol>
+<ul>
+<li>Compare numeric fields on a logical value basis; enabling this
+option will remove leading zeros from numeric fields as part of the
+evaluation process (eg, a search string of “1” will match a data field
+that contains “00001”). </li>
+<li>Compare alpha fields on an upper case basis; enabling this option
+will evaluate alpha fields using their upper case values, which would
+normally always be applied for data searches since the case of the data
+value is typically unknown. </li>
+</ul>
+<ol type="1">
+<li>Select all fields which contain blanks; these are typically
+conditional fields that are not populated with a value. </li>
+<li>Select all fields regardless of value; this option must be used in
+conjunction the Field Selection panel. For example, this would allow you
+to select all Bundle Business Dates which you could then replace with an
+alternate value. </li>
+<li>Compare on a contains value basis; a match is signaled when your
+entered string value appears anywhere within the string of characters
+for a given data field. </li>
+<li>Compare on a leading value basis; a match is signaled when your
+entered string value appears as the leading string of characters for a
+given data field. </li>
+<li>Compare on a trailing value basis; a match is signaled when your
+entered string value appears as the trailing string of characters for a
+given data field. </li>
+<li>Compare on a RegEx basis (read on for a further explanation) where
+your search string is used as a RegEx expression against each data
+field; a match is signaled when evaluation of the RegEx expression
+results in a true value. </li>
+</ol>
+<p>Replace String Entry</p>
+<p>Replacement strings are entered using one of several methods:</p>
+<ol type="1">
+<li>On an actual value basis where you enter the actual replacement
+string to be assigned to each field. The new value can be purposefully
+blank, in which case you will be queried to confirm that you in fact do
+want to replace the current value with spaces. </li>
+<li>On an actual value basis, where you enter the replacement string and
+an increment to be assigned to each field. For numeric or numeric blank
+fields, the increment is repetitively added to the values allowing them
+to be sequentially assigned. For string based fields, the increment is
+instead treated as a suffix which is appended to the end of the value
+string. In this situation, you can also control the minimum length of
+the suffix by entering leading zeros. For example, a value of “ID” with
+an increment of “0001” will assign string values of “ID0001”, “ID0002”,
+“ID0003”, etc. </li>
+<li>On a substring basis, where the replacement string is used to
+replace the first located occurrence of the search string within the
+current field value. </li>
+<li>On a substring basis, where the replacement string is used to
+replace every located occurrence of the search string within the current
+field value. </li>
+</ol>
+<p>Field Selection</p>
+<p>Search allows you to identify the specific fields that are to be
+searched within the currently loaded file. The default is to search
+against all fields across all record types. You can use the field
+selection panel to limit the search to specific record types or specific
+fields using the provided check boxes.</p>
+<p>To select all fields within a given record type, you must select the
+“xx.1” check box for that specific record type. For example, to select
+all fields within the type 1 record, you would select the “1.1” check
+box which will then automatically check all fields that exist for the
+check detail record type.</p>
+<p>You can alternatively select on a field by field basis. This is a
+powerful option since it allows you to perform a very targeted search
+against one or more fields of your selection, by scrolling through the
+provided list and using the provided field level check boxes. </p>
+<p>Search Actions</p>
+<p>Available actions are as follows:</p>
+<ul>
+<li><em><strong>Search</strong></em>: initiate a new search using the
+current search string and options</li>
+<li><em><strong>Next</strong></em>: advance to the next hit with the
+current search list</li>
+<li><em><strong>Replace</strong></em>: replace the current hit with the
+replacement string and advance to next </li>
+<li><em><strong>Replace All:</strong></em> replace all remaining hits
+with the replacement string </li>
+<li><em><strong>Filter</strong><strong>:</strong></em> creates a new
+filter that contains the selected items based on the current search
+criteria </li>
+</ul>
+<p>Filtering</p>
+<p>Search allows an item filter to be created from the search results.
+Note that filters can contain items only, so any field level hits in
+header or trailer records will not be included in the created filter.
+Items are included in the filter when any field within the item group
+has been hit by the entered search criteria. </p>
+<p>Use of the Modify Log</p>
+<p>Search/Replace is integrated with the Modify Log, with each field
+replacement being logged there as a modified field just as though you
+used Modify to actually make the change. This design allows use of
+Modify (from the tool bar) to review all changes that are made using
+Search/Replace. Modify can then also be used to launch or even revert
+individual changes. The Modify Log can be printed to PDF or exported to
+Excel, providing a full audit trail of your changes. </p>
+<p>Remember that files are actually stored within available memory and
+are not actually created (written) until you save to an external file.
+Hence you can always decide to NOT save your changes and hence any
+replacement actions will be lost. When saving files, you should always
+write to a new file name and not overwrite your original input file.
+</p>
+<p>RegEx Search</p>
+<p>What is RegEx? Per Wikipedia: “In computing, a regular expression is
+a specific pattern that provides concise and flexible means to "match"
+(specify and recognize) <a
+href="http://en.wikipedia.org/wiki/String_(computer_science)"><em><em>strings</em></em></a> of
+text, such as particular characters, words, or patterns of characters”.
+</p>
+<p>A full RegEx tutorial is beyond the scope of this document. However,
+you can use the Internet to search on “Java RegEx Tutorial” and you will
+find a lot of material that can assist you in the use of this powerful
+search tool. That said, the following is a list of commonly used search
+patterns:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Meta Characters</td>
+<td>\d</td>
+<td>Any digit, short for [0-9]</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>\D</td>
+<td>A non-digit, short for [^0-9]</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>\s</td>
+<td>Any whitespace character </td>
+</tr>
+<tr class="even">
+<td></td>
+<td>\S</td>
+<td>Any non-whitespace character</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>\w</td>
+<td>A word character, short for [a-zA-Z_0-9]</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>\W</td>
+<td>A non-word character [^\w]</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>\S+</td>
+<td>Several non-whitespace characters</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>\b</td>
+<td>Matches a word boundary</td>
+</tr>
+<tr class="odd">
+<td>Quantifiers </td>
+<td>*</td>
+<td>Occurs zero or more times, is short for {0,}</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>+</td>
+<td>Occurs one or more times, is short for {1,}</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>?</td>
+<td>Occurs no or one times, is short for {0,1}</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>{X}</td>
+<td>Occurs X number of times, {} describes the order of the preceding
+liberal</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>{X,Y}</td>
+<td>Occurs between X and Y times,</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*?</td>
+<td>? after a qualifier makes it a "reluctant quantifier", it tries to
+find the smallest match.</td>
+</tr>
+<tr class="odd">
+<td>Matching Symbols</td>
+<td>XZ</td>
+<td>Finds X directly followed by Z</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>X|Z</td>
+<td>Finds X or Z</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>.</td>
+<td>Matches any character</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>[abc]</td>
+<td>Set definition, can match the letter a or b or c</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>[abc][vz]</td>
+<td>Set definition, can match a or b or c followed by either v or z</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>[^abc]</td>
+<td>When a "^" appears as the first character inside [] when it negates
+the pattern. This can match any character except a or b or c</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>[a-d1-7]</td>
+<td>Ranges, letter between a and d and figures from 1 to 7, will not
+match d1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>^regex</td>
+<td>regex must match at the beginning of the line</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>regex$</td>
+<td>regex must match at the end of the line</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

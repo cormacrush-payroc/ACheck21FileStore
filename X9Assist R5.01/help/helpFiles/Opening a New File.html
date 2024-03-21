@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Opening a New File</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Opening a New File</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>New files can be opened in one of several manners:</p>
+<ul>
+<li>Using the open button on the tool bar;</li>
+<li>Using the open recent button on the tool bar; </li>
+<li>Selecting FILE and then OPEN from the menu bar. </li>
+</ul>
+<p>Files are automatically identified (x9, ach, cpa005, etc) based on
+their file name and contents based on the following strategy:</p>
+<ul>
+<li>File extension matching is applied first, where Program Options
+contains a list of the file extensions for each of these categories.
+This assignment (using the file extension) takes precedence over
+subsequent methods. </li>
+<li>Data inspection is applied second, where record content and data
+lengths are used to explicitly identify x9 versus ach data files. This
+logic leverages optional binary record lengths and then specifically
+inspects for valid record types subject to format. </li>
+<li>Invalid files (those that fail all inspection techniques) are
+assumed to be in the x9 format and will ultimately be displayed as
+structurally flawed. </li>
+</ul>
+<p>You can use Program Options to simplify the process of opening new
+files:</p>
+<ol type="1">
+<li>The default input file folder location. </li>
+<li>Wildcard strings which are used to explicitly identify the format of
+user file names. These wildcard strings can be as simple as simple as
+*.x9 or *.ach, and thus identify files based on file name extensions, or
+can be more complex using file name patterns and the wildcard characters
+* and ?. Within the wildcard patten strings, the special character (?)
+Is used to represent a single wildcard character while (*) is used to
+represent one or more characters. For example, a more complex wildcard
+string might be *icl*.x9 which would accept file names with the string
+“icl” embedded within their name and with a specific file extension.
+</li>
+</ol>
+<p>By default, the list of files is restricted to those files that have
+file names that match the wildcard strings which are assigned in program
+options. </p>
+<p><strong>Please remember that a list of file extensions (or more
+complex wildcard strings) are defined in program options and can be
+customized to simplify your file selection process. </strong>You can
+review and update this list of file extensions by invoking the options
+maintenance facility. These file extensions are maintained on the
+primary “x9” tab. </p>
+<p>The “<strong>Look in</strong>” box at the top of the file open dialog
+can be used to easily move to any folder location that you need across
+the entire file system. Using this box, you can navigate to the drive
+and folder that you want to select from You can then select and open the
+image cash letter you would like to open.</p>
+<p>If you need to open a file with some other extension, you can use the
+“<strong>Files of Type</strong>” drop down at the bottom of the panel to
+change to All Files. This will display all files in the current folder
+regardless of extension, which will allow you to select any file with
+any extension. You can also use “<strong>Files of Type</strong>” to
+individually select your custom wildcard selection strings. </p>
+<p>As a reminder, HELP is provided on the right side of the file open
+panel. This help information serves as a reminder of how to use the file
+chooser panel. You can HIDE this information once you are familiar with
+the process. </p>
+<p>Panel Dimensions</p>
+<p>The file chooser panel can be resized (both horizontially and
+vertically) to increase the number of files that can be viewed based on
+your monitor size. If you resize this panel, your new dimensions will be
+saved in preferences and applied to future sessions.</p>
+<p>List versus Details Mode</p>
+<p>You can use the View Menu drop down box in the upper right hand
+corner to select either list or details mode. Details mode provides
+access to both file dates and file sizes which can be very helpful when
+searching and selecting files. File chooser columns can be dynamically
+sorted on these columns. View mode can be defined in program options and
+your most recent setting will be saved in preferences and applied to
+future sessions. </p>
+<p>Supported x9 File Formats</p>
+<p>X9Assist supports all file formats that are currently exchanged
+between financial institutions, and will automatically detect the
+attributes of the file being opened. Once these attributes are
+determined, they will then be checked against your rules to determine if
+attributes (as present) are valid or should be considered as an error.
+These file attributes are as follows: </p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Character set</td>
+<td>The character set can be Ebcdic or Ascii. This is determined by
+inspecting the first record on the file (which will be the file header)
+and assessing the character set based on the how the record type is
+encoded within that record. The UCD standard is Ebcdic character set
+encoding.</td>
+</tr>
+<tr class="even">
+<td>Field Zero </td>
+<td>The term “Field Zero” is often used to describe the four byte record
+lengths that may exist as a prefix to each x9 record. X9Assist can run
+either with or without these record lengths. If the field zero lengths
+are present, X9Assist can process then in either big endian or little
+endian byte order. The UCD standard is for field zero to be present and
+as big endian.</td>
+</tr>
+<tr class="odd">
+<td>Tiff Images</td>
+<td>Tiff images include an Image File Directory (IFD) which can be
+defined in either big endian (Motorola) or little endian (Intel) byte
+order. The UCD standard is for Tiff images to be in little endian byte
+order. </td>
+</tr>
+</tbody>
+</table>
+<p><span id="anchor-3"></span><span id="anchor-4"></span>File Chooser
+Dialogs</p>
+<p>File dialog boxes are used through the application to open and save
+files. This functionality is used extensively within X9Assist so it is
+important to leverage the capabilities that are available to you.</p>
+<p>X9Assist will always suggest the initial folder that is used by a
+file dialog box to select a file. This will be helpful in some
+situations, depending on the location of the last file that you opened
+and what you intend to do next. This functions as follows:</p>
+<ul>
+<li>The last input path is remembered and used as the starting folder
+for open input requests.</li>
+<li>The last output path is remembered and used as the starting folder
+for open output requests.</li>
+<li>There is an override in program options that indicates open output
+operations should be alternatively routed to the last input path. By
+default, this option is enabled, which allows you to easily save output
+files in the same folder where they were opened from. </li>
+</ul>
+<p>Program Options allows you to select one of two file dialog
+interfaces:</p>
+<ul>
+<li>A Java based file chooser, which is unique to Java and is
+independent of the current operating system. This is the default
+option.</li>
+<li>A native OS file dialog, which uses standard operating system
+facilities in support of file selection interactions. For example, in a
+Windows environment this will be the standard Windows file dialog that
+is typically used by most applications. </li>
+</ul>
+<p>There are pros and cons associated with both of these file dialog
+interfaces. We support both since one or the other may be more desirable
+depending on your usage and your specific environment. </p>
+<ul>
+<li>Extensive testing has shown that the native OS file dialog tends to
+be more robust and performs well when your directories contain a very
+large number of files. However, with the introduction of Java SE7, the
+Java file chooser is performing better, so this appears to be less of an
+issue. The Java file chooser had performance issues when folders
+contained large ZIP files, but that issue was also resolved with SE7.
+</li>
+<li>Unfortunately, the native OS file dialog does not support file
+filtering and does not provide any easy mechanism to filter based on
+file extension. We have an implementation for that, but is less than
+desirable. The Java file chooser does a much better job in this area.
+</li>
+<li>The native OS file dialog includes some additional file functions
+that are not available with the Java file chooser. These options are
+available by right clicking on the file name within the dialog box. For
+example, you can easily rename a file within the dialog. </li>
+<li>Our implementations allow you to resize either dialog box and we
+will persist those custom dimensions in the preferences file. The
+resized dialog box will be used in future sessions. </li>
+</ul>
+</body>
+</html>

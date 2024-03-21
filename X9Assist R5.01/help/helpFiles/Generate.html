@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Generate</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Generate</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Generate is a powerful data generation tool that allows you to create
+files from scratch to meet your specific testing requirements. File
+creation is typically a two step process, which consists of Make
+followed by Generate. Although these are often discussed as separate
+functions and topics, they are integrated into our Make function
+allowing them to be viewed and run as a single tool. </p>
+<p>Make and Generate provide very different functions: </p>
+<ul>
+<li><strong>Make</strong> is used to create items. </li>
+<li><strong>Generate</strong> is used to wrap those items with the
+header and trailer records that are needed to build a valid file. For
+x9, this also consists of optionally drawing images that match the item
+level data, allowing CAR/LAR to be be run against the constructed file.
+</li>
+</ul>
+<p>Remember that the input to Generate should be viewed as individual
+items which can be either debits or credits. Generate has a large number
+of parameters which allow you to tailor the data generation process to
+your specific requirements. We would like to hear from you about how
+this function can be improved. Your suggestions are welcome. </p>
+<p>Generate Configurations</p>
+<p>Over a period of time and as part of your testing processes, you will
+most certainly use Generate to manufacture different test data for
+varying purposes. Each of these may require different parameters to
+allow you to assign the appropriate data for the file header records,
+cash letter header records, and so forth. </p>
+<p>Generate simplifies this process by allowing you to define and then
+save a Generate configuration. You can then restore and reuse this
+configuration in the future. This eliminates the need to repetitively
+enter information and also eliminates the potential for errors and
+omissions. </p>
+<p>Input to Generate</p>
+<p>Although Generate is design to work in combination with Make, it can
+also function independently. You can run Generate directly from the
+toolbar. When you do so, you will receive a prompt screen where you will
+identify the input file that should be used by Generate. This must be an
+Excel file (XLS or CSV) that contains the logical representation of your
+data records. </p>
+<p>Generate will accept file (x9 and ach) and cash letter header (x9)
+records when they are present on the input CSV file. If you provide
+these record types, they will be used exactly as presented for file
+generation. If these record types are not present on the CSV input file,
+Generate instead creates these control records from the configuration
+parameters. </p>
+<p>There are three types of inputs that can be processed by
+Generate:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Generate</td>
+<td>Applies to X9 ?</td>
+<td>Applies to ACH ?</td>
+<td>Description</td>
+</tr>
+<tr class="even">
+<td>Output from Make. </td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Items from Make flow into Generate. </td>
+</tr>
+<tr class="odd">
+<td>Output creation by your own internally developed applications. </td>
+<td>Yes</td>
+<td>Yes</td>
+<td>You can develop processes which create this same file format and
+then feed that input directly into Generate. This scenario is used when
+you want to build your own item based data generation system, and you
+want to leverage the Generate capabilities as part of your process.</td>
+</tr>
+<tr class="even">
+<td>CSV files which are essentially in export format, structured as
+records and fields. </td>
+<td>Yes</td>
+<td>No</td>
+<td>CSV files that are specifically contain type 25 records (checks). If
+you are creating a deposit, then this file can also contain one or more
+type 61 credit reconciliation records. If type 61 records are present,
+they must precede their respective checks. The amounts on the type 61
+credit reconciliation records can be specified as zero, allowing
+X9Assist to automatically calculate the credit amounts from the debits
+that follow. If you specify the credit amount on your type 61 record (it
+is not zero), then your amount will be used. You can have more than one
+type 61 record on your Excel file. When type 61 records are present,
+there must be at least one check that follows each credit. This check
+file can also optionally include a file header (type 01), cash letter
+header(s) (type 10), and the various check addendum records; when
+present, these user supplied record types will be used by Generate
+instead of being artificially created. </td>
+</tr>
+</tbody>
+</table>
+<p>New Batches / Bundles</p>
+<p>Items will begin in a new bundle in one of several ways:</p>
+<ul>
+<li>The item count per bundle is exceeded (as defined in your
+generator).</li>
+<li>The item is a credit, and your generator indicates that credits
+should begin in a new bundle.</li>
+<li>You populate values in Bundle Cycle Number, Bundle User Field, or
+both of these columns. A new bundle is started automatically when these
+columns are populated and the value changes. </li>
+<li>You forcibly indicate that an item should begin in a new bundle. You
+can do this using the debit/credit indicator column, where you instead
+insert the keyword “Bundle” on a row by itself (since this row is a
+separator and will not contain an actual item). Doing so will force the
+subsequent item to begin in a new bundle. </li>
+<li>You insert a “Y” in the new bundle column as identified by your
+reformatter. </li>
+</ul>
+<p>Dates</p>
+<p>Generate utilizes various different dates when creating output x9
+files. Default values are assigned to each of these dates, and you can
+also modify these assignments based on your requirements. The dates
+assignments are as follows: </p>
+<ul>
+<li>File create date/time (default value is assigned as current
+date/time). </li>
+<li>Business date (default value is assigned as a Mon-Fri that is one
+day before the current date). </li>
+<li>Secondary endorsement date (default value is assigned as a Mon-Fri
+that is one day before the business date). </li>
+<li>BOFD endorsement date (default value is assigned as a Mon-Fri that
+is one day before the secondary endorsement date). </li>
+<li>Beginning and ending dates for created check images. Dates are
+assigned sequentially (within your provided range) as virtual check
+images are created. </li>
+</ul>
+<p>These above four dates are all currently exposed and modifiable
+through the Generate user interface, on the dates tab. For example, the
+type 50 record is generated with the BOFD endorsement date, and the type
+52 is also generated with the BOFD endorsement date.  </p>
+<p>Generate – X9</p>
+<p>Generate has a standard set of columns that is utilized by Make and
+can also be constructed by client specific applications. Be advised that
+this list of fields may change from release to release, so if you create
+an application that uses this interface, you should design it in such a
+manner that it can be updated in the future should changes be needed.
+Please reference the notes panel that is provided by Generate (from the
+tool bar) for a complete list of these fields. </p>
+<p>Generate looks at the incoming Excel file and determines which of
+these three file types it is being presented with. This is determined
+based on the record types that are on the file and the number of fields
+(columns) that are actually present in the data. You do not need to tell
+Generate what type of file you have. But you do need to ensure that it
+follows the rules associated with these three file requirements. </p>
+<p>Generate will create all of the items (checks) that are routed to it
+for processing. Your decision as to how many checks to generate must be
+made by the tool that you are using to create your input to Generate.
+For example, within Make, you can specify how many items that you want
+created which will control the number of checks that will ultimately be
+on the x9 file from Generate. </p>
+<p>Obviously you can use other tools to create your Generate input file.
+The Generate input can come from the X9Assist Export function, but can
+also come from your tools that manufacture your own test cases or use
+Export output to build consolidated files that represent your specific
+testing requirements. </p>
+<p>When Generate first starts, it will read the input file and extract
+the check information that is present. It will also assign default
+values to any data that is missing. For example, it must do this if you
+are providing an ICL extract since there will be several ICLR based
+fields that are not present in your input. </p>
+<p>Generate will inform you of the number of checks it has found on the
+input file and the total dollar amount. You can double check this
+against your expectations before you actually generate your x9 file.
+</p>
+<p>Optional CSV Record Types<strong> – X9</strong></p>
+<p>Generate allows you to provide certain record types on your incoming
+CSV file and can then optionally use these record types when the new
+file is constructed. </p>
+<ul>
+<li>File and cash letter headers</li>
+<li>Check addendum records</li>
+<li>Return addendum records </li>
+</ul>
+<p>Use of this facility can allow you to utilize Generate for more
+complex situations and not  have to revert to writing an application
+that feeds import. For example, if you need to use specific file and
+cash letter header records in your output file, you can cut and paste
+these records into your CSV file and then have Generate use those
+records. You can similarly do this with the check and return addendum
+records.</p>
+<p>Use of these record types makes it possible to take Export output and
+then use that to easily create new files. You can export an existing
+file, remove various records from that file, and then have Generate use
+the resulting file with your defined Generate configuration. </p>
+<p>Sample CSV Input File <strong> – X9</strong></p>
+<p>This is a sample CSV input file to generate that will create a
+deposit using a type 61 credit reconciliation format. The credit format
+(Metavante or DSTU) must be selected via the Generate parameters. Note
+that the credit amount is zero so it will be automatically calculated by
+X9Assist based on the credits that follow. </p>
+<blockquote>
+<p>61,1234,"",555555550,"123456789/",0,396408128,"G","",3,"","",""</p>
+</blockquote>
+<blockquote>
+<p>25,"","",08777026,9,"97937649/8081",0000010000,44000000,"G",0,1,"Y",03,0,"A"</p>
+</blockquote>
+<blockquote>
+<p>25,"","",02777001,2,"29801918/8856",0000010002,44000001,"G",1,1,"Y",03,1,"B"</p>
+</blockquote>
+<blockquote>
+<p>25,"","",09777035,6,"22690809/1921",0000010004,44000002,"G",2,1,"Y",03,2,"C"</p>
+</blockquote>
+<blockquote>
+<p>25,"","",09777068,6,"17789149/6202",0000010006,44000003,"G",3,1,"Y",03,3,"D"</p>
+</blockquote>
+<blockquote>
+<p>25,"","",08777050,2,"67626401/5455",0000010008,44000004,"G",4,1,"Y",03,0,"E"</p>
+</blockquote>
+<p>Generation Parameters<strong> – X9</strong></p>
+<p>Generate parameters allow the creation of both x9 and ach files.
+These parameters control the batching of items and the values that are
+populated in file headers and trailers. Generate related parameters are
+provided on the “right” side tabs of the Make panel. </p>
+<p>Generate parameters include the following:</p>
+<ul>
+<li>All file header field values can be assigned </li>
+<li>Credits can be automatically inserted to offset debits </li>
+<li>Addenda can be created</li>
+<li>Bundle size can be controlled </li>
+<li>Etc</li>
+</ul>
+<p>Images<strong> – X9</strong></p>
+<p>Generate will dynamically create images from one of several available
+options:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create missing image documents </td>
+<td><p>Images will be created from your defined “missing image”
+document. Note that this document can be customized as part of your
+X9Assist installation. </p>
+<p>Creating missing image documents is the fastest image generation
+option. This is because individual images do not need to be drawn and
+then converted into TIFF format (which is the most time consuming part
+of the image generation process). If you are doing repetitive x9 file
+creation as part of a testing process, you can consider initially
+inserting missing images until the x9 file is being created per your
+requirements. Once the x9 file is correct, you can then do the more time
+consuming process of generating individual images. </p></td>
+</tr>
+<tr class="even">
+<td>Create missing image documents that include MICR lines </td>
+<td>Images will be created from your defined “missing image” document.
+Note that the missing image document can be customized as part of your
+X9Assist installation. The created missing image documents will include
+a MICR line that is drawn from the x9 data. </td>
+</tr>
+<tr class="odd">
+<td>Draw images using the generated MICR and amount information for the
+check </td>
+<td>Images will be drawn using the generated information that is being
+assigned to the type 25 check detail record. X9Assist will ensure that
+the image meets tiff standards. You can customize information regarding
+the drawn image on the “draft check” tab within program options. </td>
+</tr>
+</tbody>
+</table>
+<p>Image Templates<strong> – X9</strong></p>
+<p>The Image Templates tab is used to select the check artwork that will
+be used for image generation. </p>
+<p>There are various categories that are used to store templates for
+image generation:</p>
+<ul>
+<li>business</li>
+<li>credits</li>
+<li>rcc</li>
+<li>retail</li>
+</ul>
+<p>If a check has an Aux OnUs field, then Generate will attempt to use a
+template from the business category. If no templates have been selected
+from the business category, then Generate will fall back and utilize a
+retail template. </p>
+<p>Addition points for consideration: </p>
+<ul>
+<li>Available formats are defined in folder / x9_assist / xml /
+templates /. This folder contains file “templates.xml” which is an index
+of all available formats by category. </li>
+<li>You can add formats to templates.xml to define your own check
+formats. These definitions include the fonts and point sizes that are
+used to dynamically draw check images. </li>
+</ul>
+<p><strong>Transformations – ACH</strong></p>
+<p>Addenda transformations allow existing items files to be into
+automatically converted into more complex returns and notification of
+change files. This functionality will create new addendas based on your
+provided parameters. Using the transformation drop down, you can create
+files for returns, notifications of change, dishonored returns,
+contested dishonored returns, and refused notifications of change. </p>
+<p>These transformations are purposefully designed to be as simple to
+use as possible. Via the transformation panel, you can provide a list of
+values in a CSV format, separated by commas) which will be applied to
+the generated addenda. These values are used on a circular (round-robin)
+basis, allowing specific data to be assigned within the created
+addendas. However, if you omit the transformation data, then generate
+will instead create the addendas using a variety of randomly assigned
+reason codes, change, codes, and information strings. This random
+assignment allows you to create a complex file in seconds. </p>
+<p>When you first begin using the transformation function, you should
+omit the transformation data and allow generate to automatically
+construct the addenda records. This core functionality may be all that
+you need. For more advanced requirements, you can optionally assign the
+transformation data to be used, which will be saved with your generator
+for future reuse. The most basic value to be assigned is the return or
+change reason code(return reason, change reason, dishonored reason,
+contested reason, or refused change reason). This is a three character
+value ("Rxx" or "Cxx") and applies to all transformations. This can be
+entered as a single value (eg, R01) or a list of values (R01,R02,R03).
+There are optionally more complex data formats, which are defined as
+follows: </p>
+<ul>
+<li>NOC data is formatted as "changeCode|changeData".</li>
+<li>Dishonored returns data is formatted as
+"dishoneredReason|returnReason|addendaInformation".</li>
+<li>Contested returns data is formatted as
+"contestedReason|dishoneredReason|returnReason".</li>
+<li>Refused notification of change data is formatted as
+"refusedCode|changeData". </li>
+</ul>
+<p>These expanded data formats are optional and allow you to further
+tailor the constucted data to your specific requirements. </p>
+<p>Although these system generated transformations are quick and easy,
+they are also a bit brute force in nature and do not always provide the
+granularity needed to satisfy more complex use case requirements. In
+those situations, you should instead consider using our Make function,
+where spreadsheet input can be provided on an item by item basis. Using
+Make is a much more detailed approach, where you fully define all
+contents, and hence allows you to take complete control over the entire
+data assignment process for each addenda record. </p>
+<p>Generation</p>
+<p>Use the “Generate” button to initiate file generation. This can be a
+lengthy process if you are drawing a large number of x9 images. Once the
+output file is created, you will be placed in the viewer so you can
+browse results. You can also save the generated file for external use,
+allowing you to send files to your capture and downstream applications.
+</p>
+</body>
+</html>

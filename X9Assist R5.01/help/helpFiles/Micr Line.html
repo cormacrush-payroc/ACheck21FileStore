@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Micr Line</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>Appendix <em><strong>A</strong></em>: <em><strong>MICR
+Line</strong></em></p>
+<p>Magnetic Ink Character Recognition (MICR) technology was adopted in
+the US in the late 1950's as a standard mechanism to electronically and
+accurately read check information using the technology that existed at
+that time. The encoded information identifies the financial institution
+that issued the check and the account that is associated with the
+transaction. Numerous standards are defined which identify where the
+information must be printed and how it must be formatted.</p>
+<p>The MICR line is printed using magnetic ink or toner, which is read
+using a MICR reader. Use of magnetic ink allowed the data to be read
+even when it was written over or otherwise obscured by subsequent
+information that was printed on the physical check.</p>
+<p>Newer technologies allow information to be more easily captured using
+Optical Character Recognition (OCR). Many devices today will do a
+combination of MICR and OCR reads which then compare the results for
+improved quality.</p>
+<h2 id="micr-line-standards">MICR Line Standards</h2>
+<p>There are standards that govern the placement and format of some
+fields of information printed in the MICR data of a check. The fact that
+standards do not cover the location or meaning of all the</p>
+<p>information contained in the MICR data of a check presents a problem
+for parsing operations. The process of inspecting the MICR data
+information and separating particular fields of information can be done
+by the MICR reader or host application. In any case, a set of rules must
+be developed to separate the various information fields. This will only
+work on checks whose MICR data format follows industry conventions. Once
+the fields are separated, the information is reformatted for processing
+by an on-line check processing and clearing service. </p>
+<p>The MICR line contains 65 positions, numbered from right to left and
+grouped into four fields:</p>
+<ul>
+<li>Auxiliary On-Us</li>
+<li>Transit</li>
+<li>On-Us</li>
+<li>Amount</li>
+</ul>
+<p>All checks have at least three of the fields (amount, On-Us, and
+transit number). Commercial checks have an additional field on the left
+of the check, called the auxiliary On-Us field. Some checks also have an
+external processing code (EPC) digit, located between the transit and
+auxiliary On-Us fields. The amount and transit fields have a
+standardized content, while the contents of the On-Us fields can vary to
+meet the individual bank's requirements. </p>
+<h2 id="micr-line-parsing">MICR Line Parsing</h2>
+<p>The X9Ware SDK includes class X9MicrLineParser which includes our
+standard logic which will parse captured MICR line data into their
+component fields. This class requires that you provide the characters
+your MICR line symbols, since they can vary based on your scanner. The
+SDK also includes class X9MicrParserFactory which can be used to
+allocate new X9MicrLineParser instances using the MICR symbols that are
+present in an externally defined x9header XML file. </p>
+<h2 id="section"></h2>
+<h2 id="micr-line-characters">MICR Line Characters</h2>
+<p><img src="Pictures/100000000000027B00000132128CF07F6886BA69.png"
+style="width:6.2091in;height:3.4874in" /></p>
+<h2 id="micr-line-fields">MICR Line Fields </h2>
+<p>MICR line fields (from right to left on the check) are as follows:
+</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Amount</td>
+<td>1 – 12</td>
+<td>Amount with leading and trailing E13B amount symbols. This field is
+typically not encoded in the image environment.</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>On-Us</td>
+<td>13– 32</td>
+<td>On-Us identifies the customer account and may contain other
+information such as the check serial number, transaction code, or both.
+The last position of this field is usually followed by a blank in
+position 32.</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Transit</td>
+<td>33 – 43</td>
+<td>Nine-character routing number with leading and trailing E13B transit
+symbols. The transit field identifies the payor financial institution.
+On a check having four fields, the transit field is second from the
+left. However, shorter personal checks will not have an Auxiliary On-Us
+field, and in that situation the transit field is the left-most field of
+the three fields that are present. US (FRB) routing numbers will
+typically be a nine-digit number where he last digit is calculated using
+a MOD10 algorithm. You will also see US routings formatted as xxxx-xxxx
+(with an embedded dash). You may also encounter Canadian items which are
+formatted as xxxxx-xxx.</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>EPC</td>
+<td>44</td>
+<td>The external processing code (EPC) is an optional field that is
+encoded between the transit and auxiliary On-Us fields in position 44.
+When present, this field indicates that the document is eligible for
+special processing.</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Auxiliary On-Us</td>
+<td>45-65</td>
+<td>The auxiliary On-Us field is an optional field which is typically
+used by the payor bank for business check serial numbers or other
+internal information. When present, it is left-most on the check in MICR
+line positions 45 through 65. (actual number of potential characters is
+dependent on the physical width of the item). Aux OnUs is not present on
+personal checks because of physical size of those items.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-1"></h2>
+<h2 id="micr-line-layout">MICR Line Layout</h2>
+<p><img src="Pictures/1000000000000281000000848F87E9CF257719BA.png"
+style="width:6.6252in;height:1.3638in" /></p>
+<p><img src="Pictures/1000000000000284000000841B766412C97F5E75.png"
+style="width:7.0098in;height:1.3575in" /><img
+src="Pictures/10000000000002B10000017DE5E2591FCB5F3049.png"
+style="width:6.6252in;height:3.6634in" /></p>
+<h2 id="section-2"></h2>
+<h2 id="micr-line-regex">MICR Line RegEx</h2>
+<p>RegEx matches are usually “greedy” so they will match as many
+characters as possible. This means using a wildcard character can be
+used to match everything. For example, </p>
+<ul>
+<li>A* would match all of the A’s in AAAAAAAAAAAAAAAAAAAAAB, </li>
+<li>A+ would also match them, A would match the first one,</li>
+<li>A{10} would match the first 10,</li>
+<li>And so on.</li>
+</ul>
+<p>Commonly used RegEx expressions: </p>
+<blockquote>
+<p>(?&lt;= ) - this looks for a match to whatever terms are after the =
+but does not return it, when put in front of a search it has to match
+this first.  Effectively acts as a left boundary.</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>(?= ) - this looks for a match to whatever terms are after the = but
+does not return it, when put after of a search it has to match this
+last.  Effectively acts as a right boundary.</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>\d = any digit.</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>[A] = match any A.</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>[ABC] = match any A, B, or C character.</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>[0-9] = match any digit from 0-9.</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>[0-9]+ = match all digits in a row, minimum 1.</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>[0-9]* = match any number of digits in a row (including none).</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>^ = start of a line.</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>$ = end of a line.</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>\ = used as an escape character, e.g. \\ matches the \ character.</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>? = after a character or ( )? Makes that term optional (greedy means
+it will include it if it there).</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>( ) = group terms and also creates the bracket contents as a variable
+(variable is referenced as a number based on the order of the opening (
+e.g. first ( ) is 1, and so on, can be inside brackets themselves.</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>\1 $1 = depends on implementation but can be used to reference the
+value of the corresponding term in brackets.</p>
+</blockquote>
+<p>Based on the above: </p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Amount</td>
+<td>(?&lt;=B)\d+</td>
+<td>Matches the part of a string preceded by B that consists of only
+numbers - it will get all the numbers and stop when it reaches anything
+not a number.</td>
+</tr>
+<tr class="even">
+<td>On-Us</td>
+<td>(?&lt;=A)[0-9DC]+(?=C|B|$)</td>
+<td>Matches the part of a string preceded by A, that contains numbers,
+C, or D and ends with B, C or the end of the line<strong>.
+</strong></td>
+</tr>
+<tr class="odd">
+<td>Transit</td>
+<td>[0-9D]+(?=A)</td>
+<td>Matches the part of a string that precedes A and has numbers or
+D.</td>
+</tr>
+<tr class="even">
+<td>EPC</td>
+<td>(?&lt;=^|B)[0-9](?=A)</td>
+<td>Matches a single number that is preceded by B or the start of the
+line, and is followed by A.</td>
+</tr>
+<tr class="odd">
+<td>Aux On-Us</td>
+<td>[\dD]+(?=CA)</td>
+<td>Matches the part of a string that consists of digits and D, and is
+followed by CA. </td>
+</tr>
+</tbody>
+</table>
+<p>Further RegEx Reading </p>
+<blockquote>
+<p><a
+href="https://www.regular-expressions.info/"><em><em>https://www.regular-expressions.info/</em></em></a></p>
+</blockquote>
+<blockquote>
+<p><em></em></p>
+</blockquote>
+<blockquote>
+<p><em><em>https://regexr.com/</em></em></p>
+</blockquote>
+<p> </p>
+</body>
+</html>

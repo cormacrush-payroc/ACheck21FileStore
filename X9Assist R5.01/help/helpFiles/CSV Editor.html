@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CSV Editor</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><em><strong>CSV Editor</strong></em></p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>Tool Type</td>
+<td>Tool Usage</td>
+</tr>
+<tr class="even">
+<td>System Editor</td>
+<td>Editors maintain runtime tables which control the application
+environment.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The CSV Editor allows the content of a comma separated value (CSV)
+file to be edited and saved. The editor includes many commonly used
+tools, which simplifies the task of modifying a CSV file. Most
+importantly, it allows CSV files that have a variable number of columns
+to be edited without converting the file to a fixed column format. </p>
+<p><strong>Other CSV Editors</strong> </p>
+<p>Unfortunately, most CSV editors will save a CSV file in a fixed
+column format, based on the maximum number of rows that are found across
+the entire file. Although that makes sense for most CSV file usage
+(especially those that are compliant with RFC4180 which defines a fixed
+column standard), it does not apply to our CSV usage for X9.37 and ACH
+files, each of which require a specific number of fields (cells) on each
+row based on record type. Support for this variable column format is
+core to our CSV Editor, where trailing non-populated fields on a given
+row will be gray when they are not present. Editing a variable column
+CSV file with most other editors may destroy their content, due to the
+empty fields that might be appended to shorter rows. </p>
+<p>Other CSV editors can have various annoying features. For example,
+MS-Excel often converts numeric values into floating point (“E”) format.
+MS-Excel also uses unusual and unexpected techniques when adding quote
+marks around cell values. CSV files saved using MS-Excel are often times
+unusable. The best CSV Editor we have found is actually LibreOffice,
+which is quote mark friendly, but still converts files from variable
+columns to fixed columns. </p>
+<p>The bottom line is that our CSV Editor resolves all of these issues
+by behaving in a manner that is compatible with our CSV file
+requirements. </p>
+<p><strong>Editor Highlights</strong> </p>
+<p>The CSV editor is a high function tool, since it: </p>
+<ul>
+<li>Supports a variable number of columns on each row. </li>
+<li>Columns are identified using both column numbers and Excel
+identifiers. </li>
+<li>Implements common row and copy operations.</li>
+<li>Uses extensive highlighting to provide feedback on rows and columns
+being edited. </li>
+<li>Provides search capabilities to quickly find values within a file.
+</li>
+<li>Tracks modifications that have been made to the file since it was
+initially loaded.</li>
+<li>Includes the ability to revert any given row back to it’s initial
+value. </li>
+<li>Allows files to be saved under their current name or an alternate
+name. </li>
+</ul>
+<p>Trailing-Truncated Fields </p>
+<p>Each row within the editor can have a variable number of fields. The
+number of columns presented by the editor is based on the maximum number
+of columns found across all input rows. </p>
+<p>If a row has trailing fields that are physically omitted from that
+particular row, then those cells will be grayed-out to indicate that
+they are not present to indicate they are truncated. These cells are not
+written when the file is saved. </p>
+<p>A trailing field can be marked as truncated (not present) in one of
+several ways. First by selecting that row using the check box on the
+left, and then using the truncate command to mark all trailing fields as
+omitted. This can also be done for a single trailing field by entering a
+value of ‘/ into that cell. When ‘/ is entered, that cell is marked as
+truncated and will now be grayed out in the editor. The visual use of
+the grayed-out cells makes it easy to identify these fields. </p>
+<p>Trailing fields on a given line can be changed to empty strings using
+the pad command, which is essentially the opposite of truncate. </p>
+<p>A file can be converted from variable columns to fixed columns using
+the select function (which can be used to select all) and then using the
+pad command to pad all selected rows. This function should be used
+carefully, since the concept of variable rows will be lost for this CSV
+file. </p>
+<p>Paste Board</p>
+<p>The editor includes a “paste board” which can hold one or more rows
+or a single column. We refer to this component as the paste board since
+we do not want it confused with the operating system based clip board;
+these are entirely different entities.</p>
+<p>Any operation that stores data into the paste board will overlay the
+previous content. The status line (at the bottom of the editor) always
+informs you as to the current content of the paste board. Highlighters
+are also included to visually show the data that has been copied into
+the paste board.</p>
+<p><strong>Selecting Rows</strong> </p>
+<p>Rows are selected as input into our various row oriented command that
+are available on the status line (at the bottom of the editor). Rows can
+be selected in one of several methods:</p>
+<ul>
+<li>Column one check boxes (on the left side of the editor) is used to
+select one or more lines. Selected lines will be highlighted as they are
+selected. </li>
+<li>A block of rows can be selected by using the check box to select the
+first and last rows, and then hitting the select button on the status
+line to select the range. The selected block will then be highlighted.
+</li>
+<li>The reset button can be used to change all rows/columns to a
+non-selected status. </li>
+</ul>
+<p><strong>Selecting Columns</strong></p>
+<p>Columns are selected using the radio buttons that are present at the
+top of each column. Columns are selected as input to the various column
+oriented commands (insert, delete, copy, etc) Only one column can be
+selected at a time.</p>
+<p><strong>Editor Commands</strong> </p>
+<p>The following editor commands exist on the status line, at the bottom
+editor:</p>
+<ul>
+<li>Insert – is used to insert a new row or new column after the
+selection. </li>
+<li>Delete – is used to delete the selected rows or column. </li>
+<li>Copy – is used to copy the selected rows or column into the paste
+board. </li>
+<li>Cut – is used to cut the selected rows or column and store them into
+the paste board. Those rows will be deleted as part of this operation.
+</li>
+<li>Paste – is used to paste the content of the rows or column that
+currently exist in the paste board, after the currently selected row or
+column. The paste board will be cleared. </li>
+<li>Truncate – is used to mark the trailing fields on the selected rows
+or column as omitted (not physically present). These cells will become
+gray and will not be written when saved. </li>
+<li>Pad – is used to pad the selected rows to the maximum number for
+this CSV file by setting those cells to the empty string. </li>
+<li>Revert – is used to revert the selected rows or column to their
+original values, at the time that the file was first loaded. </li>
+<li>Select – is used to select multiple rows. A block of rows can be
+selected by first selecting the first row in the block, then selecting
+the last row in the block, and finally using the select button on the
+status line to select the entire block. A column can be selected using
+the radio button at the top of the column. Highlighting is used to
+provide visual feedback on the result of the selection and confirmation
+that it was done as expected. </li>
+</ul>
+<p><strong>Saving a File</strong> </p>
+<p>A modification count is always provided on the status line, in the
+lower left corner of the editor. This is a count of the number of rows
+that have been modified.</p>
+<p>Save is initiated using the button provided on the status line. A
+file chooser will be presented allowing the output file to be chosen.
+Once confirmed, the file is saved and then reloaded into the editor
+which confirms that the contents are as expected. </p>
+<p>Search / Replace </p>
+<p>The CSV Editor includes a find function, but does not include a text
+based search/replace tool. However, you can use typically other more
+generic text tools (eg, NotePad or NotePad++) when this is needed. These
+tools have very powerful search/replace capabilities. Because of that,
+our thought has been that it is not needed in our editor at this time.
+</p>
+<p><strong>Modifying Files Using Import/Export</strong> </p>
+<p>The CSV Editor can be used in conjunction with our Import/Export
+tools as a powerful combination which allows files to be modified in a
+large number of ways. This is accomplished through the following basic
+steps:</p>
+<ul>
+<li>Export the file (either X9.37 or ACH) to CSV. </li>
+<li>Use the CSV Editor to make changes, which can be such things as
+remove records, rearrange records using cut/paste, etc. </li>
+<li>Import the modified CSV file.</li>
+<li>Perhaps use Repair based on the final status and the modifications
+which have been made.</li>
+</ul>
+<p>The combination of these tools is especially useful when data is
+needed for negative testing, where invalid record sequences are needed
+for specific use cases. This can be fully accomplished using the CSV
+Editor in a very straight forward manner. </p>
+</body>
+</html>

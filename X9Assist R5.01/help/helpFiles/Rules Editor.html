@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Rules Editor</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>Rules Editor</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>Tool Type</td>
+<td>Tool Usage</td>
+</tr>
+<tr class="even">
+<td>System Editor</td>
+<td>Editors maintain runtime tables which control the application
+environment.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Rules Editor is an advanced topic that allows rules files to be
+viewed, modified, and saved. The resulting xml file can be utilized by
+the Configuration Editor to build custom validation rules.</p>
+<p>Rules are used to define the records and fields for a given
+specification. These rules define the record types that are accepted and
+the list of fields that constitute that specification.</p>
+<p>X9Validator and X9Assist have some of the most advanced and flexible
+validation capabilities that you will find within the industry today.
+The X9Rules Editor allows configurations to be customized based on
+specific requirements for records, fields, and their associated
+validation rules.</p>
+<p>The rules panel has two tabs which are used within the editor: </p>
+<ul>
+<li><blockquote>
+<p>Controls – used to provide the values for the control values that are
+to be assigned to this set of validation rules. The editor allows you to
+indicate if a given control is to have a value assigned (included in the
+output xml) or allowed to default (excluded from the output xml). This
+is especially important for extension documents, where a given control
+value should be inherited from the higher level document. You only need
+to attach a specific control value to the current x9rules definition
+when you need to explicitly override the assignment default, which may
+come from the higher level rules document. </p>
+</blockquote></li>
+<li><blockquote>
+<p>Records – used to specify high level controls along with the list of
+records that are defined within this definition. The controls are
+essentially attributes that are utilized by the validation engine. The
+attributes themselves are largely self explanatory. Similarly, the list
+of records defines all of the record types that will be accepted by this
+definition. </p>
+</blockquote></li>
+<li><blockquote>
+<p>Fields– used to enter a detailed table of fields that are associated
+with this rules definition. These entries will vary based on the
+specification that is being implemented, per those requirements. </p>
+</blockquote></li>
+</ul>
+<p>The Rules Editor can be used to modify an existing set of validation
+rules, and then either update those rules or save them to an alternative
+xml file name.</p>
+<p>Please refer to the X9 Rules topic within the SDK User Guide for more
+detailed information about this xml file and content. </p>
+</body>
+</html>

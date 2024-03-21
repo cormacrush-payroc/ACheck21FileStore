@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Merge</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Merge</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Merge allows the content of one or more additional user selected
+files to be appended to the end of the currently loaded file. Merge is a
+convenient way to combine multiple files into a single (larger) file.
+This is helpful in several different scenarios:</p>
+<ul>
+<li>When you want to combine various files with different test cases
+into a single file that can be used for ongoing testing. </li>
+<li>When you want to combine multiple files to create a single larger
+file, possibly to be used for stress testing purposes. </li>
+<li>When you purposefully want to create invalid data conditions by
+combining data of unlike transaction types within the same logical file.
+</li>
+</ul>
+<p>Merge can be run repetitively to include more and more data into a
+single file. This is helpful when you are pulling in files from multiple
+input folders. When doing multiple merges, you must save the results
+each time to an external file before proceeding to the next merge step.
+</p>
+<p>Merge will automatically renumber the bundles (batches) as needed to
+ensure that their individual identifiers are unique. </p>
+<p>For x9 merge, you have the option to either merge as bundles or merge
+as cash letter(s). When you merge as bundles, the bundles from the
+selected x9 file will be appended to the last cash letter that exists
+within the currently loaded x9 file. </p>
+<ul>
+<li><ul>
+<li>When you merge as cash letters, the cash letter(s) from the selected
+x9 file will be appended to the end of the currently loaded x9 file.
+</li>
+<li>When merging as bundles, you have the additional option to copy the
+origination / destination RT from the cash letter header record to the
+merged bundles. This is a validation requirement per UCD rules. This
+option will only be applied when merging bundles is selected. </li>
+</ul></li>
+</ul>
+<p>Regardless of which merge process is selected, you have a common
+option to assign new item sequence numbers to all output items. When
+this option is selected, new sequence numbers are assigned to both the
+current and the inserted (merged) items. Selecting this option will
+ensure that your new x9 file does not have duplicate item sequence
+numbers. </p>
+<p>Selecting Files</p>
+<p>You can select multiple files as input to a single merge operation.
+This is done in a standard way based on your OS platform. For
+example:</p>
+<ul>
+<li>You can select multiple files by holding down the CTRL key as you
+select individual files.</li>
+<li>You can select a range of files by selecting the first file within
+the range and then holding down both the CTRL and SHIFT keys as you
+select the last file. </li>
+<li>You can select all files within a folder by using the CTRL A key
+combination. </li>
+</ul>
+<p>Your selected files will be displayed in the “Selected Files” panel
+on the right.</p>
+<p>Identifying the Output File</p>
+<p>Merge by default will write to an intermediate file which is located
+in the temp folder. This default action is appropriate since it is
+important that you closely review the created output file before you
+save it to your target file. However, in some situations, it can be
+beneficial to bypass the writing of the intermediate file and instead
+write the merged output directly to you target output file. Doing so
+saves a step which can potentially take a measurable amount of time, and
+especially when results are being written to a networked drive. </p>
+<p>In support of this optimization, Merge allows you to optionally
+choose your target file (before the merge process is initiated) thus
+eliminating creation of the intermediate file. When doing so, the target
+file will still be reread and validated on completion. You should
+closely review the created file and ensure it is correct based on your
+requirements and before it is used for any subsequent purpose.</p>
+<p>Initiating the Merge</p>
+<p>Once you have selected files, press the Merge button to initiate the
+merge process.</p>
+<p>Merge will launch a newly created file validation process for the
+resulting merged file. It is very important to review the validation
+results to ensure that the created file does not have any unexpected
+errors. The merged file remains in memory after the merge process has
+been run. If the output was written to the intermediate file, then you
+must save these results to an external file once you have determined
+that the results are corrected and beneficial per your requirements.
+</p>
+</body>
+</html>

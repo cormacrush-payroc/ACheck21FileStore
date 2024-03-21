@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Template Editor</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>Template Editor</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Check image creation within X9Assist, as utilized by Make/Generate,
+can be extended with your own custom artwork. This includes
+modifications to our predefined templates (for example, changing a font
+size or definition) or adding your own templates. Image formats are
+defined within predefined categories, which are retail (for wallet side
+checks), business (for commercial size checks that include the auxiliary
+OnUs field), and credits. These category definitions may be extended in
+the future based on user requirements.</p>
+<p>The Template Editor allows the image templates used by Make/Generate
+to be viewed, modified, created, and saved. Template definitions are xml
+files stored in the / documents / x9_assist / xml / templates / folder.
+Overall, this process can become complex, and use of this tool should be
+considered as an advanced topic. We recommend that you frequently backup
+the xml template definitions when the Template Editor is being used.
+</p>
+<p>The editor provides functionality in two areas. First is that it
+allows the x/y positions of template fields to be updated based on their
+visual placement within the template. Without this, the process of
+adjusting positions is very complex, since you cannot easily determine
+the overlay positions of the various template fields. Second is that the
+editor eliminates the need to manually update the associated xml files
+needed to support templates. Without the editor, these xml files must be
+updated on a manual basis using tools such as NotePad, NotePad++, or
+WordPad. </p>
+<p>This editor makes the process of creating and updating those
+parameters much easier than the alternative of using a simple text
+editor (eg, NotePad or NotePad++). Using our Template Editor eliminates
+the xml document errors that can often result from that alternative
+process. This editor allows you to concentrate on content and not all of
+the technical intricacies that are associated with an XML file. </p>
+<p>Functionality </p>
+<p>The editor allows existing templates to be viewed and modified. It
+also allows new templates to be added or deleted. All needed xml files
+(including templates.xml) are updated. </p>
+<p>The editor also includes a rudimentary paint tool. We realize that
+the paint tools are very basic, but there are enough tools to allow
+basic templates to be drawn. The editor allows an existing template to
+be saved with an alternate name, allowing it to be the basis for new
+work. This is the only available method for creating a new template.
+</p>
+<p>The paint tools include basic shapes including line, rectangle, and
+text, along with undo and redo. These shapes can be drawn onto the
+underlying image, and will be burned into the template image when saved.
+The paint tools are an attempt to simplify your template development
+work. They are not envisioned as the end-all that would completely
+eliminate the need to use other tools such as MS-Paint or Gimp. </p>
+<p>The editor displays the currently loaded template image within a
+drawing canvas in the upper left panel. Mouse coordinates are displayed
+on the toolbar as the move is moved within the panel. Our drawing
+actions are located on the toolbar, and you should read through the
+popup help that is associated with each functional icon.</p>
+<p>The editor also displays the fields that have x-y coordinates for
+this template. These fields are shown within the lower panel, where the
+data can be modified. For example, to move a template field to a new
+position on the drawing canvas, move the mouse to where you want the
+field to be positioned. Make note of the mouse x-y coordinates and then
+enter those positions within the field table. You will see that the
+field is then moved accordingly within the canvas. </p>
+<p>Fields can be displayed using either an X9Assist font or a System
+font. The X9Assist fonts are internally defined and always available.
+The System fonts are dependent on the fonts that are available within
+the system font directory for the current workstation. You need to be
+careful when using System fonts, since these fonts are not permanent;
+they may come and go.</p>
+<p>As part of saving a template, the image will always be written in
+black-white TIFF, regardless of the original format. This is an image
+exchange (x9.100-181) standard. </p>
+<p>Delete formats WITH CARE. You should never delete a system supplied
+format, since X9Assist is dependent on the existence of these templates.
+</p>
+<p>Tools</p>
+<p>The editor supports the following tools: </p>
+<ol type="1">
+<li>Text – adds specific text where the font and size can be
+selected.</li>
+<li>Line – draws a straight line, which can be dragged to size. </li>
+<li>Rectangle – draws a rectangle, which can be dragged to size. </li>
+<li>Draw – allows free form text to be drawn, using the current brush
+size. </li>
+<li>Erase – allows image pixels to be cleared, using the current brush
+size. </li>
+<li>Copy – copies the shape that is current positioned under the
+mouse.</li>
+<li>Remove – removes the shape that is current positioned under the
+mouse.</li>
+<li>Move – moves the shape that is current positioned under the
+mouse.</li>
+<li>Resize – resizes the shape that is current positioned under the
+mouse.</li>
+<li>Undo – repetitively undo the last action.</li>
+<li>Redo – repetitively redo the last action.</li>
+<li>Save – saves the current template to the name and category
+identified on the right-side panel. The current template can be saved as
+an alternate name, which can then be edited.</li>
+<li>Delete – deletes the current template.</li>
+<li>Reset – resets the editor.</li>
+<li>Cancel – exits the editor. </li>
+</ol>
+<p>Manual Updates (not using the Editor) </p>
+<p>If you decide to update templates on a manual basis (not using the
+editor), then the following steps must be followed when adding check
+artwork:</p>
+<ul>
+<li>Use a third party paint tool to create your check artwork. You can
+look at our existing formats in the x9assist/images folder to get a good
+idea of how the current check image formats have been designed. </li>
+<li>A key part of your design is to ensure that MICR band (the bottom
+9/16 of an inch) remains blank at the bottom of the image. </li>
+<li>When creating your check formats, you must consider the size
+(especially the length) based on your desire to support the Aux OnUs
+field which is required on business checks. Your check formats must also
+be defined within the minimum and maximums per industry standards. </li>
+<li>Our check formats were designed and drawn using Photoshop which
+allows a very clear and sharp image to be created. You could do the same
+using other tools such as GIMP or MS-Paint. Depending on your
+requirements, this can become a somewhat complex task and does require a
+good working knowledge of the image design tools that you select.
+MS-Paint is especially good for adding overly text to an existing image.
+</li>
+<li>The images should be saved in black-white format, either as TIFF or
+PNG. We have found this a bit complex using some of the above mentioned
+image tools, but we have found this conversion much easier using
+IrfanView64. Obviously, your choice of tools is up to you. </li>
+<li>The template images must be saved at 240 DPI. </li>
+<li>Each format has a front image and an optional back image. </li>
+<li>Once the images are created and in black-white format, they should
+be store your created image format(s) in folder: / Program Launch /
+X9Ware LLC / X9Assist Rx.xx /images/. You can take look at our images to
+get a feeling for how they were saved. </li>
+<li><p>All check formats are defined in multiple places, as follows:</p>
+<ul>
+<li><ul>
+<li>Each format is defined in “templates.xml” within folder / xml /
+templates /. This is an index of all available templates and defines
+their associated category. When you create a new entry within the
+templates xml file, make sure it is marked as “User” and not “System”.
+This is because the system entries are internally defined, which means
+that it is important that your additions be marked as user entries.
+</li>
+<li>Each format is then fully defined within a check format xml file
+that must be stored within the appropriate category folder.</li>
+<li>Finally, the associated images must be stored in folder: / images /.
+</li>
+</ul></li>
+</ul></li>
+<li>You will need review these existing xml files and get a good
+understanding of how check formats and their associated fields are
+specified. You will need to use an editor and add your new formats and
+fields to this xml definition. For each logical element within your
+check image format, you will provide the font, x/y coordinates, and
+length. Make sure you store this updated file in a safe location (where
+it is backed up) since it may be updated when you install the next
+X9Assist release. </li>
+<li>Determine what fonts you want to use for the various fields that
+will be drawn on top of your image format. You must also provide the
+initial font size to be used for the drawing process. If the drawn text
+will not fit within the available space, X9Assist will progressively
+reduce the font size until the text will fit. However, there is a
+performance impact when this resizing is required, so you will want to
+ensure that your font and size will allow all text to be drawn within
+the defined space. This process is simplified if your image design
+allows sufficient space for all fields. </li>
+<li>As a part of this process, you will need to document the x/y
+coordinates and lengths of each of the fields for your new check format.
+The coordinates and lengths must be defined in inches. Most paint tools
+allow you to use the mouse and point at any pixel within the image and
+get the x/y coordinates. For example, GIMP will display these
+coordinates in either pixels, inches, or centimeters. This is a very
+detailed step but easily accomplished when you use a tool that provides
+the needed positional feedback. </li>
+<li>Once your modifications are tested, always backup your modifications
+to a zip file so you always have reference to these in case they are
+replaced during a future release installation. </li>
+</ul>
+<p>If your custom check artwork is created by scanning your existing
+internal items, you may have color images that need to be converted to
+black and white before they can be used for Make / Generate. When this
+is the case, you will need to convert your images from color (RGB) to
+bi-tonal (black/white) images as required by standard image exchange.
+This can be done using various image tools. Here is an example of how to
+do this using GIMP:</p>
+<ul>
+<li>Load your color image. </li>
+<li>From the menu, select Colors / Components / Channel Mixer; check
+monochrome, preserve luminosity, and save. </li>
+<li>From the menu, select Colors / Brightness-Contrast, move the
+brightness slider to the left and move the contrast slider to the right.
+You may find that this is a repetitive process that you can continue to
+do until you achieve the best possible black / white version of your
+image. When OK when you are satisfied with the results. </li>
+<li>From the menu, select Image / Mode / Indexed; select use black and
+white (1 bit) palette and then use the convert button which will
+translate your image from color to black / white. </li>
+<li>From the menu, select File / Export As to write your transformed
+image to an external file. The image file name that you enter in the box
+at the top must have a valid image file extension which will determine
+the image format to be used. Our suggestion is to export as PNG since it
+is a lossless image format and is commonly used within the industry. You
+should not select TIFF since your exported image will not have valid
+TIFF tags per image exchange standards. </li>
+</ul>
+</body>
+</html>

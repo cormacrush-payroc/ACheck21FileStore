@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>XML Editor</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>XML Editor</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The XML Editor allows the content of a properly structured XML file
+to be edited and saved; access to a defining schema is not required. The
+editor includes many commonly used tools, which simplifies the task of
+modifying an XML file. Most importantly, it presents a user interface
+(UI) that is oriented towards the actual data elements withing the file,
+and not the Extensible Markup Language (XML) tags that are used to
+internally define an xml file. This presents numerous advantages over
+using text editors (eg, NotePad or WordPad) to edit an XML document,
+since you can concentrate on element content and not the wrapper tags.
+</p>
+<p><strong>Editor Highlights</strong> </p>
+<p>The XML editor is a high function tool, since it: </p>
+<ul>
+<li>Supports xml documents with a varying number of elements, fields,
+and attributes. </li>
+<li>Supports xml documents with a varying depth. </li>
+<li>Columns are identified using both column numbers and Excel
+identifiers. </li>
+<li>Implements many common element level tools including copy and paste.
+</li>
+<li>Uses extensive highlighting to provide feedback on rows being
+edited. </li>
+<li>Provides search capabilities to quickly find values within a file.
+</li>
+<li>Tracks modifications that have been made to the file since it was
+initially loaded.</li>
+<li>Allows files to be saved under their current name or an alternate
+name. </li>
+</ul>
+<p>Paste Board</p>
+<p>The editor includes a “paste board” which can hold the content of one
+or more rows. Each row in the paste board can be a leaf element (it has
+no children) or a parent element that owns a sub-tree of elements. We
+refer to this component as the paste board since we do not want it
+confused with the operating system based clip board; these are entirely
+different entities. </p>
+<p>The paste board is a great way to copy and paste (or cut and paste)
+elements from one place within the xml document to another. Just
+remember that you can copy a sub-tree of elements, which makes this a
+very powerful function. </p>
+<p>Any operation that stores data into the paste board will overlay the
+previous content. The status line (at the bottom of the editor) always
+informs you as to the current content of the paste board. Highlighters
+are also included to visually show the data that has been copied into
+the paste board.</p>
+<p><strong>Selecting Rows</strong> </p>
+<p>Rows are selected as input into our various row oriented command that
+are available on the status line (at the bottom of the editor). Rows can
+be selected in one of several methods:</p>
+<ul>
+<li>A singe row can be selected using the check box for that row. </li>
+<li>Multiple discontiguous rows can be selected by using their
+individual row check boxes. </li>
+<li>A block of rows can be selected by using the check box to select the
+first and last rows, and then hitting the select button on the status
+line to select the range. The entire selected block will then be
+highlighted. </li>
+<li>The reset button can be used to change all rows/columns to a
+non-selected status. </li>
+</ul>
+<p><strong>Editor Commands</strong> </p>
+<p>The following editor commands exist on the status line, at the bottom
+editor:</p>
+<ul>
+<li>Insert – is used to insert a new row after the selection. </li>
+<li>Delete – is used to delete the selected rows or column. </li>
+<li>Copy – is used to copy the selected rows into the paste board. </li>
+<li>Cut – is used to cut the selected rows and store them into the paste
+board. Those rows will be deleted as part of this operation. </li>
+<li>Paste – is used to paste the content of the rows that currently
+exist in the paste board, after the currently selected row. The paste
+board will be cleared. </li>
+<li>Up – is used to move the currently selected row up one slot within
+the element list. </li>
+<li>Down – is used to move the currently selected row down one slot
+within the element list. </li>
+<li>Select – is used to select multiple rows. A block of rows can be
+selected by first selecting the first row in the block, then selecting
+the last row in the block, and finally using the select button on the
+status line to select the entire block. Highlighting is used to provide
+visual feedback on the result of the selection and confirmation that it
+was done as expected.</li>
+<li>Reset – is used to reset current find status and all row selections.
+</li>
+</ul>
+<p><strong>Saving a File</strong> </p>
+<p>A modification count is always provided on the status line, in the
+lower left corner of the editor. This is a count of the number of rows
+that have been modified.</p>
+<p>Save is initiated using the button provided on the status line. A
+file chooser will be presented allowing the output file to be chosen.
+Once confirmed, the file is saved and then reloaded into the editor
+which confirms that the contents are as expected. </p>
+<p>Search / Replace </p>
+<p>The XML Editor includes a find function, but does not include a text
+based search/replace tool. However, you can use typically other more
+generic text tools (eg, NotePad or NotePad++) when this is needed. These
+tools have very powerful search/replace capabilities. Because of that,
+our thought has been that it is not needed in our editor at this time.
+</p>
+</body>
+</html>

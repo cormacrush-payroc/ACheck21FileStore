@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Import</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Import</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Import allows a new file to be created from a user supplied CSV file
+which represents the exact content of the new file on a record by record
+and field by field basis. The input CSV contains one for each data
+record, with each record field then listed within each row. For example,
+</p>
+<p>The leading records on an X9 file would appear as follows:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><p>01,03,T,123456780,123456780,20141017,1201,N,VIEW,VIEW,A,,,</p>
+<p>10,01,123456780,123456780,20141016,20141017,1201,I,G,1,X9ASSIST,,C,,,</p>
+<p>20,01,123456780,123456780,20141016,20141017,57000000,1,,123456780,,</p>
+<p>25,,,05777093,0,20915353/7837,0000010000,44000000,G,8,1,Y,03,0,B</p></td>
+</tr>
+</tbody>
+</table>
+<p>Similarly, the leading records on an ACH file would appear as
+follows: </p>
+<table>
+<tbody>
+<tr class="odd">
+<td><p>1,01,555555550,123456780,180402,0951,A,094,10,1,Test
+Bank,TestCo,SD1300</p>
+<p>5,200,TestCo,Discretionary,TestCo1,PPD,TestDesc1,,180402,,1,55555555,0000001</p>
+<p>6,22,12345678,0,12345,0000010011,id1,name1,d1,1,123456780000001</p>
+<p>7,05,transaction1,0001,0000001</p></td>
+</tr>
+</tbody>
+</table>
+<p>Import requires that you provide the exact values for each field
+within each record. Import takes your field values and applies
+construction rules to ensure that individual fields are populated within
+each record appropriately. For example, if a field is required as
+numeric zero filled, then the value will be padded with zeroes on the
+left as required by the data specification. Another example is
+justification, where fields are required to be justified left or right
+and then blank filled. The Import process performs the appropriate
+justification and padding per all field specifications. </p>
+<p>Although you must provide every record in every field, you do not
+need to provide the accumulated values for the summary counts and
+amounts in the various trailer records. A value of zero can be supplied
+instead as proxy for those various fields, and then indicate that
+auto-repair of the trailer records should be run as part of the import
+process. When you set the trailer counts and amounts to zero, you must
+then select the trailer repair option on the import panel. Note that
+this repair will not run all available repair actions, but will ONLY
+repair the summary accounts and amounts in the various file trailer
+records. </p>
+<p>Importing a Previously Exported File</p>
+<p>Import can be used to create a new file from a file that was
+previously exported, since they share the same CSV format. This is a
+very common and logical approach to create a new file when you need to
+apply complex or repetitive data modifications. In this scenario, you
+can export a file, modify the created CSV file using various data
+manipulation tools, and then import the resulting CSV file to create a
+new and modified result. </p>
+<p>CSV Format</p>
+<p>Some tools that create CSV files will include column definitions as
+header rows on the front of the created file. If you have such a file
+and cannot easily remove those header lines, import will allow you to
+provide the number of lines to be skipped. Remember that the first line
+being imported must always be a file header record. </p>
+<p>CSV files will typically have all fields enclosed in single or double
+quotes, with fields separated by either commas or tab characters. Import
+supports these various formats and will automatically identify and
+accept those characters appropriately when present. </p>
+<p>Check Images</p>
+<p>The x9 output file created by the Import will always contain images.
+Images can either be imported from external files, or they can be
+dynamically inserted by X9Assist. If you provide the images, then a
+separate tiff file must exist for each front image and back image. </p>
+<p>There are several available options. You can directly provide the
+actual images that you want to include in the x9 file. A separate front
+image and back image must be provided for each check. Your images will
+be included and inserted into the x9 file being generated. The import
+operation will be aborted if your image cannot be found, or if it is
+determined that the image you have provided is not a valid tiff format
+and hence is not usable. </p>
+<p>You can alternatively insert replacement images for each front and
+back image using one of the following options:</p>
+<ul>
+<li>Insert missing image documents: missing image documents will be
+inserted. These images can be customized with your specific missing
+image design. </li>
+<li>Insert missing image documents that include MICR lines: missing
+image documents will be inserted, where the front image will contain
+MICR lines that are constructed from the x9 data. </li>
+<li>Dynamically draw the images from the imported x9 data: images will
+be redrawn using the information that is being assigned to the type 25
+or type 31 check detail record. X9Assist will ensure that the image
+meets tiff standards. You can select the check format (artwork) on the
+image templates tab. You can also provide additional customization using
+the “draft check” tab within program options. </li>
+</ul>
+<p>Record Type 52</p>
+<p>The x9 check image record is record type 52 (image view data record).
+</p>
+<p>Field 52.18 (check image length): your value for this field is
+ignored; Import will assign this length automatically from the image
+itself. </p>
+<p>Field 52.19 (check image): there are several options for this
+field:</p>
+<ul>
+<li><ul>
+<li>The images can be located within a single folder. In that case, the
+image file name can be unqualified, and you can instead select the
+folder which contains the images. Each check will have two images (front
+and back) and hence they must be uniquely named. </li>
+<li>Images can instead be located in multiple folders. In this case, you
+would not select an import folder, but would instead provide a fully
+qualified image file name for each check image. </li>
+<li>You should use a file naming scheme that defines the check number
+and the logical image side. An example would be to name your image files
+“Check_nnnnn_sssss.tif”, where nnnnn is the check number or record
+number within the overall x9 file; sssss is either “front” or “back”.
+</li>
+</ul></li>
+</ul>
+<p>Import Data Example</p>
+<p>This import example is included in the examples folder and includes
+the check images. You can actually import the file and examine the
+results. </p>
+<table>
+<tbody>
+<tr class="odd">
+<td><p>01,03,"T",555555550,555555550,20130331,0537,"N","TEST","TEST","A",,,1</p>
+<p>10,01,555555550,555555550,20130329,20130331,0537,"I","G",1,"X9Assist",,"C",,,</p>
+<p>20,01,555555550,555555550,20130329,20130331,5300000000,1,,555555550,,</p>
+<p>61,1234,,555555550,"123456789/",0000050020,412564320,"G",,3,,,</p>
+<p>50,1,555555550,20130328,00,00,0000000,0,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000000,,,,0,,,,,0000,,0,,0001502,"Bundle_000003/Image_000006_amount_50020_front.tif"</p>
+<p>50,1,555555550,20130328,00,00,0000000,1,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000000,,,,0,,,,,0000,,0,,0002153,"Bundle_000003/Image_000008_amount_50020_back.tif"</p>
+<p>25,,,12777012,9,"16808908/9084",0000010000,44000000,"G",0,1,"Y",03,0,"A"</p>
+<p>26,1,047770801,20130328,44000000,,,,"Y",0,,,</p>
+<p>28,01,097770330,20130328,1,"N",0,0,"A",,,</p>
+<p>28,02,127770129,20130328,2,"N",0,0,"A",,,</p>
+<p>50,1,555555550,20130328,00,00,0000000,0,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000000,,,,0,,,,,0000,,0,,0006161,"Bundle_000003/Image_000014_amount_10000_front.tif"</p>
+<p>50,1,555555550,20130328,00,00,0000000,1,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000000,,,,0,,,,,0000,,0,,0001816,"Bundle_000003/Image_000016_amount_10000_back.tif"</p>
+<p>25,,,07777098,1,"47872929/4691",0000010002,44000001,"G",1,1,"Y",03,1,"B"</p>
+<p>26,1,117770236,20130328,44000001,,,,"Y",1,,,</p>
+<p>28,01,027770711,20130328,3,"N",1,1,"B",,,</p>
+<p>28,02,037770934,20130328,4,"N",1,1,"B",,,</p>
+<p>50,1,555555550,20130328,00,00,0000000,0,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000001,,,,0,,,,,0000,,0,,0006109,"Bundle_000003/Image_000022_amount_10002_front.tif"</p>
+<p>50,1,555555550,20130328,00,00,0000000,1,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000001,,,,0,,,,,0000,,0,,0001816,"Bundle_000003/Image_000024_amount_10002_back.tif"</p>
+<p>25,,,02777097,3,"41344424/7958",0000010004,44000002,"G",2,1,"Y",03,2,"C"</p>
+<p>26,1,037770565,20130328,44000002,,,,"Y",2,,,</p>
+<p>28,01,127770572,20130328,5,"N",2,2,"C",,,</p>
+<p>28,02,057770846,20130328,6,"N",2,2,"C",,,</p>
+<p>50,1,555555550,20130328,00,00,0000000,0,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000002,,,,0,,,,,0000,,0,,0006096,"Bundle_000003/Image_000030_amount_10004_front.tif"</p>
+<p>50,1,555555550,20130328,00,00,0000000,1,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000002,,,,0,,,,,0000,,0,,0001816,"Bundle_000003/Image_000032_amount_10004_back.tif"</p>
+<p>25,,,10777085,1,"58149612/6870",0000010006,44000003,"G",3,1,"Y",03,3,"D"</p>
+<p>26,1,127770242,20130328,44000003,,,,"Y",3,,,</p>
+<p>28,01,127770187,20130328,7,"N",3,3,"D",,,</p>
+<p>28,02,027770892,20130328,8,"N",3,3,"D",,,</p>
+<p>50,1,555555550,20130328,00,00,0000000,0,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000003,,,,0,,,,,0000,,0,,0006127,"Bundle_000003/Image_000038_amount_10006_front.tif"</p>
+<p>50,1,555555550,20130328,00,00,0000000,1,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000003,,,,0,,,,,0000,,0,,0001816,"Bundle_000003/Image_000040_amount_10006_back.tif"</p>
+<p>25,,,03777062,0,"44594284/3463",0000010008,44000004,"G",4,1,"Y",03,0,"E"</p>
+<p>26,1,117770388,20130328,44000004,,,,"Y",4,,,</p>
+<p>28,01,127770899,20130328,9,"N",4,0,"E",,,</p>
+<p>28,02,027770591,20130328,10,"N",4,0,"E",,,</p>
+<p>50,1,555555550,20130328,00,00,0000000,0,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000004,,,,0,,,,,0000,,0,,0006138,"Bundle_000003/Image_000046_amount_10008_front.tif"</p>
+<p>50,1,555555550,20130328,00,00,0000000,1,00,0,,,,,0,,,,</p>
+<p>52,555555550,20130329,,44000004,,,,0,,,,,0000,,0,,0001816,"Bundle_000003/Image_000048_amount_10008_back.tif"</p>
+<p>70,0005,000000050020,000000050020,00012,,</p>
+<p>90,000001,00000005,00000000050020,000000012,"File
+Generator",20130331,</p>
+<p>99,000001,00000051,00000005,0000000000050020,,,</p></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

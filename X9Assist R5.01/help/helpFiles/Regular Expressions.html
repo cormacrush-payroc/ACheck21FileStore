@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Regular Expressions</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>Regular Expressions (RegEx)</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Regular expression patterns consist of meta-characters, which are
+characters that represent other characters. These meta-characters tell
+the regular expressions parser how to scan the input string and what to
+search for. Regular expressions are used by search engines, search and
+replace dialogs of word processors and text editors, in text processing
+utilities, and in lexical analysis. Many programming languages provide
+regex capabilities either built-in or via libraries, as it has uses in
+many situations. X9Assist supports Java RegEx as an additional search
+option from various tools such as Search/Replace. </p>
+<p>You can find many online tutorials that can be helpful to learn more
+about Java RegEx capabilities. There are also online tools that can be
+used for interactive development and testing of RegEx strings to meet a
+specific objective. Here is a brief, high level summary of some RegEx
+functions. </p>
+<p>Greedy searches – regex matches are usually greedy so they match as
+much as possible, this means using a wildcard can match everything.  A*
+would match all of the A’s in AAAAAAAAAAAAAAAAAAAAAB, A+ would also
+match them, A would match the first one, A{10} would match the first 10
+and so on.</p>
+<p>(?&lt;= )  - this looks for a match to whatever terms are after the =
+but does not return it, when put in front of a search it has to match
+this first.  Effectively acts as a left boundary.</p>
+<p>(?= ) - this looks for a match to whatever terms are after the = but
+does not return it, when put after of a search it has to match this
+last.  Effectively acts as a right boundary.</p>
+<p>\d = any digit</p>
+<p>[A] = match any A</p>
+<p>[ABC] = match any A, B, or C character</p>
+<p>[0-9] = match any digit from 0-9</p>
+<p>[0-9]+ = match all digits in a row, minimum 1</p>
+<p>[0-9]* = match any number of digits in a row (including none)</p>
+<p>^ = start of a line</p>
+<p>$ = end of a line</p>
+<p>\ = used as an escape character, e.g. \\  matches the \ character</p>
+<p>? = after a character or ( )? Makes that term optional (greedy means
+it will include it if it there)</p>
+<p>( ) = group terms and also creates the bracket contents as a variable
+(variable is referenced as a number based on the order of the opening (
+e.g. first ( ) is 1, and so on, can be inside brackets themselves.</p>
+<p>\1 $1 = depends on implementation but can be used to reference the
+value of the corresponding term in brackets</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Field</td>
+<td>Regex</td>
+<td>Regex Notes</td>
+</tr>
+<tr class="even">
+<td>Amount</td>
+<td>(?&lt;=B)\d+</td>
+<td>Matches the part of a string preceded by B that consists of only
+numbers - it will get all the numbers and stop when it reaches anything
+not a number.</td>
+</tr>
+<tr class="odd">
+<td>On-Us</td>
+<td>(?&lt;=A)[0-9DC]+(?=C|B|$)</td>
+<td>Matches the part of a string preceded by A, that contains numbers,
+C, or D and ends with B, C or the end of the line<strong> NOTE: May need
+to update to also include the trailing C</strong></td>
+</tr>
+<tr class="even">
+<td>Transit</td>
+<td>[0-9D]+(?=A)</td>
+<td>Matches the part of a string that precedes A and has numbers or D. 
+<strong>NOTE: May need to be made more robust to have a preceding A (but
+not all checks had this), can also be set to be exactly 9
+numbers</strong></td>
+</tr>
+<tr class="odd">
+<td>EPC</td>
+<td>(?&lt;=^|B)[0-9](?=A)</td>
+<td>Matches a single number that is preceded by B or the start of the
+line, and is followed by A.</td>
+</tr>
+<tr class="even">
+<td>Aux On-Us</td>
+<td>[\dD]+(?=CA)</td>
+<td>Matches the part of a string that consists of digits and D, and is
+followed by CA. <strong>NOTE: May need to allow for C in the string, and
+not sure if it will always have the C (and it also needs a B).  Sample I
+have uses C at each end whereas the standard has B at the
+end.</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Further RegEx Reading </p>
+<blockquote>
+<p><a
+href="https://www.regular-expressions.info/"><em><em>https://www.regular-expressions.info/</em></em></a></p>
+</blockquote>
+<blockquote>
+<p><em></em></p>
+</blockquote>
+<blockquote>
+<p><em><em>https://regexr.com/</em></em></p>
+</blockquote>
+</body>
+</html>

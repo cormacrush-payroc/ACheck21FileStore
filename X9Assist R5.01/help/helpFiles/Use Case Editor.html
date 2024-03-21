@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Use Case Editor</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Use Case Editor</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>Tool Type</td>
+<td>Tool Usage</td>
+</tr>
+<tr class="even">
+<td>System Editor</td>
+<td>Editors maintain runtime tables which control the application
+environment.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The Use Case Editor is used to<strong> create</strong> new use case
+lists. Use case files are stored in folder /x9_assist/lists/useCases.
+They must be stored in that folder to be available to the Make and Scrub
+functions. </p>
+<p>Use case lists are utilized by several functions within our desktop
+tools. </p>
+<ul>
+<li>Make can utilize a use case list as the basis to create an input
+file to Generate. Note that a use case list is the most basic of
+information that can be processed by Make, since Make can take many more
+columns (data elements) than are available in a use case list.</li>
+<li>Scrub can utilize a use case list as part of sanitizing the data in
+check detail and return detail records. </li>
+</ul>
+<p>Use case lists consist of the following four data elements:</p>
+<ul>
+<li>ABA</li>
+<li>Account number</li>
+<li>Process control field (consumer check serial number and possible
+transaction code)</li>
+<li>Auxiliary OnUs for commercial (long) checks </li>
+</ul>
+<p>Use Case Creation Alternatives</p>
+<p>The Use Case Creator is one of several tools that you can use to
+create a new use case file. </p>
+<p>You need to consider your alternatives as to how you want to create
+and maintain your use case files. Here are several alternatives for the
+creation of these lists: </p>
+<ul>
+<li>Use the supplied Use Case Editor tool</li>
+<li>Use our Export tool to build a list from your production x9
+files</li>
+<li>Use MS_Excel (or a similar tool) to create and maintain a list in
+XLS or CSV format (Excel XLS files must be saved as an Excel 97-2003
+workbook)</li>
+<li>Use other tools (like PERL, GREP, etc) to create use case files from
+your test beds</li>
+<li>Develop your own applications (C, Java, etc) to extract data from
+your test systems and put the test information into our required use
+case format </li>
+</ul>
+<p>Take special care when you use this function that you do not
+mistakenly overwrite an existing file that you do not want replaced.</p>
+<p>Options on the input panel allow you to:</p>
+<ul>
+<li>Either assign the same ABA to all entries or select the ABA randomly
+from a list. You can utilize an ABA list provided with X9Assist or you
+can build and maintain your own ABA lists for your unique purposes.
+</li>
+<li>Select where you want the check serial number placed. The check
+serial number can be up to ten digits long. Typically, any check serial
+number longer than four digits must be placed in the Auxiliary OnUs
+field. You can indicate that the check serial number should be placed in
+the Process Control field, then you should specify parameters such that
+the serial number does not exceed four digits. You can alternatively
+indicate that the check serial number be placed in the Auxiliary OnUs
+field, or should be placed in the appropriate field based on the actual
+length of the check serial number. </li>
+<li>Select the ABA list to be used if you are randomly selecting ABA
+numbers from a list.</li>
+<li>Select an account number ModCheck routine that you want to use to
+direct the generation of account numbers. You can use routine
+definitions that are installed with X9Assist or you can use the ModCheck
+Editor to define your own routines. </li>
+<li>Indicate the number of account numbers to be generated. </li>
+<li>Indicate the range (low to high) from which account numbers will be
+issued. </li>
+<li>Indicate the range (low to high) for check serial numbers to be
+randomly issued. </li>
+<li>Optionally indicate a prefix to be appended to the Process Control
+field. </li>
+<li>Optionally indicate a suffix to be appended to the Process Control
+field. </li>
+</ul>
+<p>Use Case List Formats</p>
+<p>Use case lists must be stored in either Excel or CSV format. You need
+to consider which of these formats will be easier to work with based on
+your specific requirements.</p>
+<p>If you are creating the use case file automatically using your own
+tools, then using the CSV format is probably your best option.</p>
+<p>If you are editing the use case file using tools such as Excel, then
+for ease of use you should maintain the use case file in XLS format.
+These native Excel formats can be read directly by any function within
+X9Assist that would otherwise process a CSV. </p>
+<p>When building and maintaining a use case list in CSV format, you will
+need to be aware of and follow some general formatting requirements.
+</p>
+<p>Per CSV file standards, numeric fields do not need to be enclosed in
+quotes. Since these are all numeric fields, there is no absolute
+requirement to enclose the field values in quote marks (they are
+optional). However, missing fields (those that are not present) are
+indicated through the use of two consecutive quote marks. </p>
+<p>Your quote mark usage can be single quote ( ‘ ) or double quote ( “ )
+but must be used consistently throughout your entire file. Field
+separators can be either commas or tab characters. </p>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Image Quality</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span>Image Quality</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Image Quality tests can be performed during file validation
+processing. These functions are enabled from the tool bar and must be
+set prior to a file being loaded. This design minimizes the impact of
+performing these tests since they share the same file read operation as
+is used by validation. The image quality tests that are available are as
+follows: </p>
+<ul>
+<li>IQA (Image Quality Analysis) which will check if images are too
+light or too dark </li>
+<li>ECI (Electronically Created Image) Detection which is used to
+identify suspect items that were computer created and were not
+physically scanned. </li>
+</ul>
+<p>Image Quality Analysis</p>
+<p>In the image capture environment, IQA can encompass more
+sophisticated tests than our more simplistic too light and too dark
+tests (for example, streaks, bands, edge detection, piggyback detection,
+and so forth). These more complex IQA functions are currently beyond the
+scope of what has been currently implemented within our current
+inspection tools. There are several reasons behind our current
+implementation and capabilities:</p>
+<ul>
+<li>Too light and too dark are the minimal IQA tests performed on a
+standard basis by many processors or financial institutions. There are
+published industry standards around IQA settings (for example, the FRB
+has published their too light / too dark settings on their website.
+</li>
+<li>Too light and too dark tests can be performed with a minimal amount
+of system resources by computing pixel density. This makes the tests
+faster than the more complex tests. Our image inspection process has
+implemented a multi-threaded approach that results in a high performance
+solution that produces results in a minimal elapsed time.</li>
+<li>Although the too light / too dark tests are simplistic, they are
+very effective in identifying poor images. This makes them very popular
+by most image capture systems.</li>
+<li>Too light / too dark are useful tests which can catch a variety of
+image related errors. For example, they often detect camera issues,
+streaks, bands, and swapped front-back images. </li>
+<li>Too light / too dark are obviously the easiest IQA tests to
+implement. Our current design is to not perform as a full fledged IQA
+product, but to instead provide meaningful information on a timely
+basis. </li>
+</ul>
+<p>On a default basis, image inspection will tag all IQA failures as
+informational errors. You can change the severity of these errors by
+updating the appropriate messages xml configuration file. </p>
+<p>On a default basis, image inspection applies the too light and too
+dark tests to the front image only. Examination of just the front will
+allow detection of typical camera issues as well as swapped front versus
+back issues. The front issue is also the most critical from an image
+exchange perspective. This is a clearly a time tradeoff, since examining
+the back images will typically double the amount of time required to
+perform these tests. </p>
+<p>Errors are thrown during validation for items that do not meet the
+defined too light or too dark thresholds. When an item fails a too light
+or too dark test, the actual pixel density can be obtained in one of two
+manners:</p>
+<ul>
+<li>Use the record viewer (in the lower left of the dash board) to
+interrogate the density that was computed. The pixel density is
+calculated as the number of black pixels as a percentage of the total
+pixels that are present. You will have to slide the record viewer to the
+right to be able to see the supplemental information for these errors.
+</li>
+</ul>
+<ul>
+<li>Use the Item Viewer to examine the item, which can be launched
+either using Tools / Item Viewer or from the menu bar. You will then
+have to activate pixel density using the check box at the bottom of this
+panel. </li>
+</ul>
+<p>Electronically Created Item Detection</p>
+<p>ECI is used to identify suspects items that are believed to be
+computer (electronically) created. ECI detection may be an important
+consideration (especially during the onboarding of new customers) given
+the potential fraud associated with these items. Our inspection process
+implements imaging techniques which look for “perfect” images, which are
+typically achieved when the image is computer drawn but is otherwise not
+possibly achieved when images are physically captured. ECI images are
+identified using two separate algorithms: </p>
+<ul>
+<li>Pixel noise per square inch, which is separately associated with the
+front and back images. Random pixel noise, especially around captured
+text and graphics, is typically introduced by the capture process but
+would not be drawn into an electronically created image. </li>
+</ul>
+<ul>
+<li>Horizontal image skew, which is calculated from the front side image
+and represents any slant that may exist within the capture image.
+Computer drawn images do not have any skew and are very horizontally
+level from left to right. </li>
+</ul>
+<p>ECI detection can be used identify “remotely created checks” which
+represent an electronic authorization to debit an account. In this
+transaction scenario, the image itself is computer drawn (as proxy for a
+customer check) and does not bear the signature of the the person on
+whose behalf the check is drawn. The RCC will instead include the
+account name or perhaps just a statement that the account holder has
+authorized the payment. The RCC must include a valid MICR line for the
+item which includes the bank routing and customer account number. RCCs
+are often created by credit card companies, utilities, and telemarketing
+operations. RCCs are processed through the x9.37 check clearing network
+and may be alternatively be converted to an ACH debit for clearing. </p>
+<p>Activation</p>
+<p>IQA can be activated in one of two manners:</p>
+<ul>
+<li>IQA can be activated on a default basis using the tiff rules that
+are assigned to the current configuration. For example, you can define
+certain configurations to automatically perform IQA while others do
+not.</li>
+</ul>
+<ul>
+<li>IQA and/or ECI can be selectively activated using the tool bar. Once
+activated, the selected function will be applied to the next file that
+is loaded and validated. </li>
+</ul>
+<p>Settings </p>
+<p>IQA/ECI settings can be established as follows:</p>
+<ul>
+<li>Default IQA settings are specified through the tiffRule xml
+configuration file. Note that you can define various tiff rules that can
+be automatically applied through your configurations. These parameters
+allow you to activate IQA and then set their pixel density thresholds.
+</li>
+</ul>
+<ul>
+<li>The tiff rules XML parameters are defined on a default basis from
+the FRB web site, as follows: </li>
+</ul>
+<blockquote>
+<p>&lt;applyIqaRules&gt;false&lt;/applyIqaRules&gt;</p>
+</blockquote>
+<blockquote>
+<p>&lt;applyIqaToFrontOnly&gt;true&lt;/applyIqaToFrontOnly&gt;</p>
+</blockquote>
+<blockquote>
+<p>&lt;frontTooLight&gt;0.900&lt;/frontTooLight&gt;</p>
+</blockquote>
+<blockquote>
+<p>&lt;frontTooDark&gt;90.000&lt;/frontTooDark&gt;</p>
+</blockquote>
+<blockquote>
+<p>&lt;backTooLight&gt;0.380&lt;/backTooLight&gt;</p>
+</blockquote>
+<blockquote>
+<p>&lt;backTooDark&gt;98.000&lt;/backTooDark&gt;</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<ul>
+<li>File / IQA Settings / can be used from the menu bar to view and
+optionally modify the IQA settings for the current user session. These
+settings are not saved across user sessions. </li>
+</ul>
+</body>
+</html>

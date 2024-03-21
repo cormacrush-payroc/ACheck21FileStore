@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Filter Export-Import</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>Filter Export-Import</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Filters represent a subset of items within the currently loaded file.
+Any individual item can be only occur once within a filter, but can
+exist in separately defined filters at the same time. The items within a
+filter are arranged in a sequential order (relative to how they appear
+within the current file) regardless of the order that they may have been
+added. </p>
+<p>Please read the “Filter” topic for more information regarding filters
+and their capabilities.</p>
+<p>Filter export-import share a common CSV format, which means that an
+exported filter can be subsequently used by the filter import tool. A
+filter can be created using our various functionality (find,
+search/replace, individual item selection, etc) and then exported to an
+external CSV file. In more advanced situations, filters can also be
+created using other external tools to address user specific needs. The
+filter identifies individual items. It can then be subsequently imported
+from the exported filter content. An exported filter contains the
+following five (5) fields:</p>
+<ul>
+<li>Item sequence number</li>
+<li>Amount</li>
+<li>Routing</li>
+<li>Account number</li>
+<li>Check number</li>
+</ul>
+<p>Typically, filters are used through several consecutive steps:</p>
+<ul>
+<li>First, build a filter using a tool such as find. This allows you to
+enter item selection criteria which is then matched against the
+currently loaded data file. The result will be a filter tab that
+contains the matching items.</li>
+<li>Second, use the filter-export tool to export the item selection
+criteria to a CSV file. Export always writes the output CSV file in a
+standard five column format (ittem sequence number, amount, routing,
+account number, and check number).</li>
+<li>Finally, at some future time, some other file can be loaded and the
+exported CSV criteria file can then be imported and matched against the
+current data file. This allows the already entered criteria to be
+applied again, to some other file. </li>
+</ul>
+<p>However, CSV filters can be used for more expansive purposes other
+than just our standard tools. For example, you might have an external
+process that creates an account number list filter, containing just two
+columns (routing and account number). This could be considered to be
+general purpose pick-list that could be applied frequently to files, as
+needed. This filter could be maintained using a text editor, but could
+also be a dynamic list that is created by an application program. Once
+this list is constructed, it can be imported and then applied to any
+file that is loaded.</p>
+<p>In this situation, you need to describe columns that are associated
+with your CSV criteria file. Our standard is to have five attribute
+columns, but you can have less or more than that depending on your
+specific requirements. Just as importantly, the columns do not have to
+be consecutive, which means that you might have a CSV file from some
+other purpose that can be imported an applied. In these situations, just
+remember:</p>
+<ul>
+<li>Load/Save is used to define the filter configuration, which defines
+the columns that are to be used for matching. Many users will not need
+this, since they are using our standard five column attributes
+definition. However, if this is not the case, then you can configure and
+save your own column definitions. This information is stored as an XML
+file in folder / xml / filter.</li>
+<li>Import is then used to load the CSV datea file, which is mapped
+based on the current filter configuration. </li>
+</ul>
+<p>Remember that filters can be used for a variety of purposes: </p>
+<ul>
+<li>Create File can be used to create a new file that contains only
+those items that exist within a selected filter (this uses the filter
+list for inclusion). </li>
+<li>Create File can be used to create a new file that does not contain
+those items that exist within a selected filter (this uses the filter
+list for exclusion). </li>
+<li>Delete items from the currently loaded file. </li>
+<li>Image Print the selected items. </li>
+</ul>
+</body>
+</html>

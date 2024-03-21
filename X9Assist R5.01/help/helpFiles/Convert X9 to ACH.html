@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Convert X9 to ACH</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>Convert X9 to ACH</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>NO</td>
+<td>YES</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Convert X9 to ACH is used to create a new ACH file from the currently
+loaded x9 file. A user selected standard entry class is used to build
+the new ACH file. This includes the various entry classes that represent
+checks (ARC, BOC, POP, RCK, TRC, and XCK) as well as some more generic
+entry classes which may provide utility within the user environment (CCD
+and PPD).</p>
+<p>Conversion Overview</p>
+<p>Convert is a generalized conversion tool that can be used to
+translate from one file format to another. X9Ware is in a unique
+position to implement this functionality given our support for both the
+X9 and ACH file formats. This allows the user to load an x9 file, browse
+that file to ensure the content is correct, possibly modify the content
+of that file if needed (for example, remove records), and then use those
+results to create an ACH file. All of this is done within the same tools
+and using using a consistent user interface.</p>
+<p>The following fields must be entered for the X9 to ACH
+conversion:</p>
+<ul>
+<li>Debit transaction code: defines the transaction code to be assigned
+to debits. </li>
+<li>Credit transaction code: defines the transaction code to be assigned
+to credits. </li>
+<li>Identification number: defines data that is assigned to ACH field
+6.7. This value will be automatically assigned from the check serial
+number for standard entry classes of ARC, BOC, POP, and RCK. Other entry
+classes allow you to explicitly assign the value to be used. When a
+value is not entered and has no default, it will otherwise be assigned
+from the check serial number. </li>
+<li>Receiver information: defines data that is assigned to ACH field
+6.8. This value will be automatically assigned from the process control
+field and the item sequence number for standard entry classes of TRC and
+XCK. Other entry classes allow you to explicitly assign the value to be
+used. When a value is not entered and has no default, it will otherwise
+be assigned from the trc/xck process control and item sequence number
+format. </li>
+<li>Discretionary data: is an optional two character field that is
+assigned to ACH field 6.9. </li>
+<li>Starting sequence number: is a seven (7) digit number that is used
+to sequentially assign the trace number for the created items, which is
+populated into ACH field 6.11. The overall trace number is 15 digits and
+consists of the 8 digit ODFI routing number which is suffixed by this
+sequence number. On a default basis, this starting sequence number is
+“DD00000” where DD is a variation taken from Julian day within the
+current year. However, this default would not be appropriate for large
+files and when multiple conversions are done within the same day. In
+those situations, the user must provide the starting sequence number
+which guarantees the trace number to be unique. </li>
+</ul>
+<p>These various parameters will be written to user preferences at the
+end of the current user session, allowing them to be easily restored and
+reused in your next session. </p>
+<p>Generators</p>
+<p>Convert/Generate is an integrated process where the generator is
+accessible during the conversion process. Convert allows a generator to
+be loaded, modified, saved, and ultimately used to create the output
+file. This process is extremely integrated. Generator definitions are in
+a common format that is shared with Make. </p>
+<p>The “generate” tab defines all of the file level parameters that are
+available. These parameters represent a generate configuration that can
+be saved to xml and then repetitively used in the future. This reuse
+allows you to ensure that the created files are always generated using
+the same parameters and thus provide the same results. </p>
+<p>Running Convert</p>
+<p>Use the “convert” button to initiate the file conversion process.
+Convert will launch a new validation process for the converted file,
+which remains in memory after the conversion process has been run. You
+must save the results to an external file when you have reviewed results
+and determined that the output is beneficial based on your requirements.
+</p>
+<p>Standard Entry Classes</p>
+<p>The ACH file format has certain standard entry classes which
+represent a paper check item, and those formats are especially
+appropriate for these actions. These are ARC, BOC, POP, RCK, and TRX.
+Additionally, we support CCD and PPD since they are common layouts;
+these may be used for data exchange within an organization, but should
+not be used to route the resulting transactions on an external basis.
+The supported standard entry classes are:</p>
+<ul>
+<li>ARC, which represents an eligible check received via the U.S. mail
+or at a drop box location, which was presented for the payment of goods
+or services. The source document (the check) is used to identify the
+Receiver’s routing number, account number, check serial number, and
+dollar amount for the transaction. </li>
+<li>BOC, which represents an eligible check received at the point of
+purchase or manned bill payment location for the in person purchase of
+goods or services. The source document (the check) is used to identify
+the Receiver’s routing number, account number, check serial number, and
+dollar amount for the transaction. </li>
+<li>POP, which represents a payment for the in person purchase of goods
+or services by Receivers. These debit entries are initiated by the
+Originator based on a written authorization between the Originator and
+Receiver and notice provided by the Originator at the point of purchase
+or manned bill payment location. The source document, which is voided by
+the merchant and returned to the Receiver at the point of purchase, is
+used to collect the Receiver’s routing number, account number, and check
+serial number that will be used to generate the debit entry to the
+Receiver’s account. This type of entry may only be used for
+non-recurring, in-person (at the point-of-purchase) entries for which
+there is no standing authorization with the merchant for the origination
+of ACH entries to the Receiver’s account.</li>
+<li>RCK, which represents a debit initiated by an Originator pursuant to
+an oral authorization obtained over the telephone to effect a transfer
+of funds from a Consumer Account of the Receiver. This entry may only be
+used when there is no standing authorization for the origination of ACH
+entries to the Receiver’s account. A TEL entry would instead be used
+when there is an Existing Relationship between the Originator and the
+Receiver, or, when there is not an Existing Relationship between the
+Originator and the Receiver, when the Receiver initiates the telephone
+call.</li>
+<li>TRC, which represents truncated checks being safe kept by the keeper
+bank (Originator) as defined by a check truncation program. This entry
+has one transaction per truncated check. The TRX format (which is not
+currently supported by this conversion process) allows financial
+institutions to use a single transaction entry to carry information from
+multiple checks, where each check is identified within addenda records
+attached to the item. </li>
+<li>CCD, which represents funds are transferred between unrelated
+corporate entities, or transmitted as intra-company cash concentration
+and disbursement transactions. This entry class can be used for
+standalone funds transfer, or it can support a limited amount of payment
+related data with the funds transfer. The CCD class is not appropriate
+for these items, but is included to facilitate data conversions for
+files processed within a given single environment. </li>
+<li>PPD, which Direct Deposit or Pre-authorized Bill Payment. Direct
+deposit is a credit application that transfers funds into a consumer’s
+account at the Receiving Depository Financial Institution. The funds
+being deposited can represent a variety of products, such as payroll,
+interest, pension, dividends, etc. Pre-authorized payment is a debit
+application. Companies with billing operations may participate in the
+ACH through the electronic transfer (direct debit) of bill payment
+entries. Through standing authorizations, the consumer grants the
+company authority to initiate periodic charges to his account as bills
+become due. This concept has met with appreciable success in situations
+where the recurring bills are regular and do not vary in amount
+insurance premiums, mortgage payments, and installment loan payments
+being the most prominent examples. Standing authorizations have also
+been successful for bills where the amount does vary, such as utility
+payments. The PPD class is not appropriate for these items, but is
+included to facilitate data conversions for files processed within a
+given single environment. </li>
+</ul>
+</body>
+</html>

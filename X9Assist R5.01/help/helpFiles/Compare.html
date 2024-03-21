@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Compare</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Compare</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Compare is used to compare record and image data across two x9 files,
+subject to possible field exclusions. The currently loaded file is
+compared against a secondary file which is user selected. This is an
+excellent regression testing tool since it confirms that a modified file
+is logically equal to an original file, which could be the current file
+before modifications or a previously verified file which contains
+expected results. </p>
+<p>Compare requires that the items within the file be structured in the
+same logical order to allow the matching process to remain aligned
+within the two files. Positioning is internally maintained by record
+type and then additionally on item amount and item sequence number.
+There are no other assumptions or requirements for the matching process.
+Any missing or inserted items will be reported and optionally listed.
+</p>
+<p>The compare process reports on field level difference by field name
+when there are individual records that are aligned by the matching
+process. This makes it easier to identify the actual differences between
+two records that have been matched. The compare process also reports on
+records determined to be inserted on one side or the other of the
+matching process. These records are present on file one but are not
+present on file two. </p>
+<p>Reviewing Differences</p>
+<p>The compare process is invoked as follows:</p>
+<ul>
+<li>Use the 'select' button to select the secondary file to be used for
+the compare. Once a file is selected, it will be located and summary
+information will be provided which helps you determine if you want to
+continue with the compare. </li>
+<li>After statistics are confirmed, then use the 'compare' button to
+initiate the actual file compare process. Differences will be displayed
+as identified. The progress bar will be updated as the compare
+continues. A text file will be written to the TEMP folder and can be
+used (as needed) when you require a log of the identified differences.
+</li>
+<li>Once the compare has been completed, the “differences' button can be
+used to obtain a summary of all fields across all record types which
+were determined to be different. </li>
+<li>The “launch' button can be used to invoke a more detailed file
+comparison (at the record level) when a compare tool is available for
+your environment. This process can be very informative since it provides
+a better visual comparison of the differences between the two files.
+This comparison includes image lengths but not the actual image data.
+The compare tool itself is pluggable and can be modified based on your
+specific requirements. </li>
+<li>Use the 'reset' button to reset and allow the currently loaded file
+to be compared to another secondary file. </li>
+</ul>
+<p>Excluding Fields</p>
+<p>The default is to compare all fields within all record types. There
+are times when that is not appropriate. For example, you may have
+modified an application that creates files and you know that as a result
+of that change you are expecting a certain field to have different
+contents. In this situation, it is very helpful to explicitly exclude
+that one field from the comparison so you can then easily determine that
+all other fields within the file are equal as expected. This exclusion
+is accomplished by using the selection panel on the right. One or more
+fields can be excluded from the compare process. You should indicate the
+fields to be excluded before you select the secondary file to be
+compared. </p>
+<p>Implementing an External Compare Tool</p>
+<p>The file compare process can be further enhanced by adding an
+external compare tool. This compare can then be launched after the file
+compare has been completed and allows you to do further analysis of any
+differences which may exist. This is an optional process to add value to
+your environment. This is a text-to-text comparison of two text files
+which are created during the compare process. Launch of the external
+compare tool allows you to visually explore the differences between the
+two files that have been compared. This is possible due to the powerful
+string matching capabilities of the text compare tools that are
+available in the industry today. </p>
+<p>X9Assist is not hard-wired to a specific external comparison tool.
+You can implement the preferred external comparison tool of your choice
+through the “comparex9.bat” batch script. This single batch script is
+used to both identify and launch the comparison tool. This batch script
+allows the compare tool to be generic and external to our comparison
+process.</p>
+<p>Our distribution by default supports the following external compare
+tools:</p>
+<ol type="1">
+<li>WinMerge: a freeware Windows alternative. </li>
+<li>Meld: a freeware alternative which is available for Windows and
+Linux. </li>
+<li>UltraCompare: a powerful file edit / compare tool and an industry
+leader which is installed by many organizations on a world wide basis.
+</li>
+</ol>
+<p>Batch file “comparex9.bat” is located in the program launch folder. A
+parameter of “-isDefined” is initially invoked to determine if the
+compare tool exists. This pre-launch must return an exit code of 10 when
+the compare tool exists. The compare is then launched using this same
+batch file, using two parameters which represent the two files to be
+compared. The comparex9.bat file can be modified to invoke the preferred
+tool for your environment. </p>
+<p>WinMerge Usage </p>
+<p>The following options should be set to maximize your usage. </p>
+<ol type="1">
+<li><p>View from the menu bar</p>
+<ol type="a">
+<li>Enable line differences</li>
+<li>Enable line numbers</li>
+<li>Enable margins</li>
+</ol></li>
+<li><p>Options (wrench) from the tool bar </p>
+<ol type="a">
+<li>General – enable compare white space</li>
+<li>General – enable ignore case </li>
+<li>Editor – enable view line differences at character level </li>
+</ol></li>
+</ol>
+<p>Meld Usage </p>
+<p>The “up arrow” and “down arrow” on the tool bar can be used to skip
+to each identified difference within the compare.</p>
+<p>UltraCompare Usage </p>
+<p>The “up arrow” and “down arrow” on the tool bar can be used to skip
+to each identified difference within the compare.</p>
+</body>
+</html>

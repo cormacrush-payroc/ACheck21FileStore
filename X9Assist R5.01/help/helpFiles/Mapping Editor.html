@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Mapping Editor</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Mapping Editor</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>Tool Type</td>
+<td>Tool Usage</td>
+</tr>
+<tr class="even">
+<td>System Editor</td>
+<td>Editors maintain runtime tables which control the application
+environment.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The binding process is designed to allow incoming files to be
+validated per specific user requirements, where rules are appropriately
+applied based on the type of file that has been received. The design
+goal is to attempt to do all of this on an automated basis based on
+header record inspection. X9Assist refers to this processing as
+<em><strong>binding</strong></em>, with the attempt to automatically the
+correct rules to specific file content. </p>
+<p>The x9 standard level within the file control header identifies the
+x9 specification that was used to encode that specific x9 document.
+Unfortunately, due to a goal to maximize file compatibility across the
+various x9 specifications, the x9 standard level is field can be
+insufficient in many situations to fully and accurately identify the x9
+standard to be applied to a given x9 file. Binding and mapping provides
+automation to supplement this decision process. </p>
+<p>Across many financial institutions, the combination of Origination
+and Destination Routing can be used to fully define the validation rules
+that are to be applied to the file. X9Assist allows this definition to
+be by Routing, but also allows the definition to be done on a generic
+basis for Origination Routing, Destination Routing, or both. </p>
+<p>For example, you can define the configuration to be applied to a
+specific Destination Routing regardless of origination. Or you can
+define the configuration to be applied to a specific Origination Routing
+regardless of destination. In many environments, the configuration can
+be assigned from the file header Standard Level and UCD Indicator, with
+no need to drill down to the Origination and Destination Routing
+levels.</p>
+<p>Through use of the Mapping Editor, you can provide automated
+instructions to the binding process which allow you to define overrides
+(exceptions) that are based upon the Origination and Destination Routing
+from the x9 file header. This allows you to ensure that X9Assist will
+automatically use the correct configuration file based on your specific
+requirements. </p>
+<p>System Entries versus User Entries</p>
+<p>A system entry is one which is created internally and added to this
+table. The content of system entries may change from release to release.
+The editor will allow user entries to be modified or deleted, while
+system entries are not allowed to be changed. </p>
+<p>Use of the Mapping Editor </p>
+<p>The Mapping Editor defines the rules which are used by the Binder to
+automatically assign incoming x9 files to system defined configurations.
+This automated bind process is largely accomplished based on the
+contents of the type 01 file control header. </p>
+<p>The following file control header fields are used to drive the
+automated bind process and can be specified using the Mapping
+Editor:</p>
+<ul>
+<li>Origination Routing </li>
+<li>Destination Routing </li>
+<li>Standard Level</li>
+<li>UCD Indicator</li>
+</ul>
+<p>Each entry within the mapping table is defined as either a system
+entry or a user entry:</p>
+<ul>
+<li>System entries are automatically added (internally) by
+X9Assist.</li>
+<li>User entries can be added and maintained by the user. These
+definitions can either supplement or overrides to the system entries
+that are internally created. </li>
+</ul>
+<p>By first establishing configurations and then defining your mapping
+to those configurations, you can provide information to X9Assist to
+automatically use the appropriate x9 and tiff rules when applying
+validations to an x9 file. For example, if you have a specific and
+consistent destination RT that is used for image exchange files, you can
+easily direct X9Assist to automatically apply the correct edits to those
+files. </p>
+<p>These fields are concatenated and used to construct a logical key
+which must be unique for each entry added to the Mapping Editor.</p>
+<p>The status column provides an indication if the defined configuration
+has been located and that all rules associated with the configuration
+exist. </p>
+<p>Entries can be deleted by selecting them (via their check box) and
+then selecting delete. </p>
+<p>This table must be saved for your changes to be effective. The reset
+button can be used to restore to your last save point. Results will be
+saved to xml/map.xml.</p>
+<p>Mapping Entry Load Sequence </p>
+<p>The mapping file is loaded as follows:</p>
+<ul>
+<li>The process begins with an empty table. </li>
+<li>User entries are first loaded to the table from the “map.xml” file.
+All user entries from this file are sequentially loaded to the table
+(note that system entries on “map.xml” are ignored since they will
+instead be reconstructed and added at load time. The key for each user
+entry (origination routing, destination routing, standard level, and UCD
+indicator) must not exist within an existing table entry for the new
+entry to be loaded. </li>
+<li>Standard system entries are then dynamically created and internally
+added to the mapping table. Each system entry is loaded only when it's
+mapping key (origination routing, destination routing, standard level,
+and UCD indicator) does not already exist within the table. This means
+that a system entry will not overlay and will thus never replace a user
+defined mapping entry. </li>
+</ul>
+<p>Hierarchical Search</p>
+<p>The search process against the mapping file is one using specific
+values followed by a generic value of “all”. For example, the search is
+done using the origination routing, and if an entry is not found using
+that specific value, then it is substituted with a value “all” and the
+search is repeated. This hierarchical search is performed until a
+matching mapping key is identified. In a worse case scenario, a key of
+“all/all/all/all” will used until on a default basis to identify the
+configuration to be used for x9 bind. This means that an
+“all/all/all/all” entry must always be present. </p>
+<p>X9 System Configuration as defined in Program Options</p>
+<p>You can define the configuration that will
+<em><strong>always</strong></em> be used in program options. This is
+done from the “X9” tab using the “X9 System Configuration” setting. </p>
+<p>The default is for this to be <em><strong>system
+assigned</strong></em>, which means that the configuration will be
+determined from the contents of the x9 file header. X9Assist will then
+use either X9.37 or X9.100-187 + UCD rules to apply validations based on
+the contents of the file header.</p>
+<p>Through use of program options, you can override this process to
+always use a specific configuration file. For example, if your standard
+is to always use the newer X9.100-187 + UCD validation rules, then you
+can define this in your program options. In this way, binding is no
+longer dynamic based on the contents of the file header, but instead
+will always be done using your specified configuration. </p>
+<p>Endpoint Validation</p>
+<p>X9Assist has the ability to validate the Origination and Destination
+routing numbers that are present in the file header. Use of this feature
+is optional, which means that you can allow all such routing numbers to
+be received and accepted. You can also decide to validate the
+Origination Routing, the Destination Routing, or both of these fields.
+</p>
+<p>This validation includes the ability to define an endpoint with start
+and end dates which define when x9 files will be accepted. Depending on
+your application environment, it may be possible to extract and even
+synchronize the endpoint table from your electronic cash letter system
+and make that available to X9Assist in support of this validation
+process. </p>
+</body>
+</html>

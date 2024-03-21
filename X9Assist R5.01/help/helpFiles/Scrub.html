@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Scrub</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Scrub</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Scrub is designed to remove varying levels of proprietary information
+from the currently loaded file by applying arbitrary and potentially
+random values to the customer confidential fields within the file. For
+X9 files, Scrub can also optionally perform replacement actions against
+the images associated with each item, allowing the image CAR/LAR to
+match the sanitized data content. Actions for a Scrub session to be save
+in a user defined scrub configuration file which is then available for
+future reuse. </p>
+<p>The scrub process is very helpful when you want to use the currently
+loaded file as the basis to create a new output file to be used for
+testing or other internal purposes. This is a powerful facility, since
+the intent is to remove all possible customer data to create a new
+output file that has the same spirit as the currently loaded file, but
+with all proprietary information removed. Scrubbed files are very useful
+for testing environments where there is the need to minimize the use of
+actual customer data within the testing environment. Scrub is also very
+beneficial when you need to share the content of an existing file with a
+business partner, but you do NOT want to share customer information such
+as account numbers or check images. </p>
+<p>Scrub has a standard list of available cleansing actions that can be
+selected based on your specific requirements. The current implementation
+is very robust however we realize that there is always room for
+improvement. Please let us know if you have additional scrub actions
+that you feel are missing that we can add to our standard scrub process.
+</p>
+<p>Scrub will consistently update various records within the currently
+loaded file. For example, if you are scrubbing user or reserved fields,
+then those fields will be sanitized (replaced with spaces) across all
+record types that contain those specific field types. </p>
+<p>Scrub <strong>Multi-File</strong></p>
+<p>Scrub within X9Assist runs on a single file basis as part of the user
+interface. However, note that scrub is also available from our
+X9Utilities product, where it can be run in multi-file mode, against a
+folder or group of folders. The scrub facility in X9Utilities is also
+multi-threaded for increased performance when running against a large
+number of files. </p>
+<p>Scrub Actions</p>
+<p>Scrub actions are used to direct the specific sanitization efforts to
+be applied:</p>
+<ul>
+<li>Scrub images</li>
+<li>Scrub item fields</li>
+<li>Scrub file headers/trailers</li>
+<li>Scrub amounts</li>
+<li>Scrub other headers/trailers</li>
+<li>Scrub addenda</li>
+<li>Scrub item sequence numbers</li>
+<li>Scrub date fields</li>
+<li>Scrub file ID modifiers</li>
+<li>Scrub user fields</li>
+<li>Scrub reserved fields </li>
+</ul>
+<p>Field Inclusion and Exclusion</p>
+<p>Records and fields are typically selected using the "Actions" related
+options on the left side panel. In some situations, certain fields must
+be added or removed from our standard scrub logic. This additional
+include/exclude functionality allows you to customize the scrub process
+by either adding or removing specific fields. Our design is to provide
+standard scrub support for all fields that contain personally
+identifiable information (PII) data. Because of that, this facility is
+most typically used to to exclude (remove) fields from the scrub that
+would have otherwise been selected. </p>
+<p>The field inclusion and exclusion tabs are used to define exception
+fields which further tailor the scrub process to meet your specific
+requirements. These list define fields to be included (added) to the
+scrub process, or similarly fields to be excluded (removed) from the
+scrub process. These lists are saved with your scrub configuration and
+applied to future sessions. </p>
+<p>By default, these lists will be disabled. This allows you to define a
+list which is saved with your scrub configuration, but then enable or
+disable the list when needed. The field lists are retained with your
+scrub configuration even when they are disabled. When you use this
+facilities, you must use the options panel (on the left) to active the
+particular list. Once active, these lists will be utilized by the scrub
+operation and then further identify targeted fields for the scrub
+process. </p>
+<p>MICR Line Replacement</p>
+<p>There are several options available for MICR line field replacement.
+When you replace MICR line data, you will typically always take some
+action against the images (since they contain the MICR data that is
+being sanitized). The MICR line replacement options are as follows:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Replace both MICR OnUs and Aux OnUs fields</td>
+<td>Numeric digits within the MICR OnUs and Aux OnUs fields will be
+replaced with newly assigned random digits. The format of these fields
+not be otherwise changed. For example, if the MICR OnUs field contains a
+current value of “12345678/1234” it might be reassigned as
+“43861091/2863”. The data length is not changed, only the digits that
+appear within the fields. </td>
+</tr>
+<tr class="even">
+<td>Replace the account number only</td>
+<td>Numeric digits within the MICR account number will be replaced with
+newly assigned random digits. The number of digits in the account number
+remains unchanged. Other content with the MICR OnUs field is not
+changed. The MICR OnUs field must be properly formatted as “optional
+field 4 / account / process control” for this action to be performed.
+</td>
+</tr>
+<tr class="odd">
+<td>Replace the entire MICR OnUs field</td>
+<td>Numeric digits within the MICR OnUs field will be replaced with
+newly assigned random digits. The number of digits in the various OnUs
+fields remain unchanged. The MICR OnUs field must be properly formatted
+as “optional field 4 / account / process control” for this action to be
+performed. </td>
+</tr>
+<tr class="even">
+<td>Replace all MICR line fields from the use case file</td>
+<td>MICR line fields are replaced using randomly selected entries from
+the provided use case file. The approach allows you to define MICR line
+data that properly applies to your test environment. </td>
+</tr>
+</tbody>
+</table>
+<p>The use case file for Scrub contains the following information in
+this specific column order (with no column headings), that will be
+applied to check detail records. You can use the Use Case Creator (which
+is available on the tool bar) to create one or more such lists, and then
+select from those lists when you are running a scrub. You can
+alternatively create your own use case files using your own tools such
+as Excel. The use case file contains four (4) columns with data as
+follows:</p>
+<ul>
+<li>Column 1 – routing </li>
+<li>Column 2 – account number</li>
+<li>Column 3 – process control information </li>
+<li>Column 4 – auxOnUs</li>
+</ul>
+<p>Scrub will randomly select accounts from your provided use case file
+and utilize that information to replace that corresponding data within
+the x9 check detail records. Each column within the use case file can be
+populated with a value, which is the replacement value, or can be blank,
+which implies that the original value should be retained. This approach
+allows account numbers to be changed while transaction codes (the
+process control field) is retained. </p>
+<p>The use case file ensures that you have MICR lines that match your
+specific testing requirements (appropriate combinations of routing
+account, and check serial number). This ensures that the combination of
+routing and account is assigned, and that appropriate check numbers are
+used based on the account number (eg, if you need to test such things as
+controlled disbursements or drafts). </p>
+<p>A use case can contain the Routing and Account Number only. In this
+situation, you can either leave Process Control and Aux OnUs empty. This
+format of the use case definition implies that you do not want to alter
+these fields; their current value will not be changed (only the Routing
+and Account Number fields will be sanitized). </p>
+<p>Images</p>
+<p>Scrub has the ability to replace check images within the x9 file,
+which is critical when the MICR information and amounts on checks have
+been changed. </p>
+<p>There are several options available:</p>
+<ul>
+<li>Draw images using the new MICR and amount information for each
+check: new images are drawn which will contain fields such as payee,
+date, courtesy amount, legal amount, memo, etc. The MICR line is
+obtained from the original image and will be drawn onto the new image
+within the clear band area. This allows you to eliminate a large amount
+of possible customer privacy information from the check since the
+redrawn image allows that data to be completely eliminated and replaced
+with a redrawn template image. X9Assist ensures that the newly drawn
+image meets tiff x9 exchange standards. You can use the image templates
+tab to select the business check formats (artwork) which will be used
+when dynamically drawing these images. X9Assist must use the business
+size checks to ensure that sufficient width exists to copy the MICR line
+data to the new image. </li>
+</ul>
+<ul>
+<li>Draw images while retaining the MICR line from the original images:
+images will be replaced with your defined “missing image” document. Note
+that this document can be customized as part of your X9Assist
+installation. </li>
+</ul>
+<ul>
+<li>Use missing image documents: images will be replaced with your
+defined “missing image” document. Note that this document can be
+customized as part of your X9Assist installation. The created missing
+image documents will include a MICR line that is drawn from the current
+x9 data. </li>
+</ul>
+<ul>
+<li>Scrub existing images using an XML definition that describes how
+input images should be manipulated to meet your specific business
+requirements: the image scrub process uses the original image to create
+a scrubbed image that retains portions of the original image. Parameters
+are then used to manipulate the image data to meet your specific
+business requirements while obfuscating as much data as possible. The
+image scrub process is applied to each incoming image (both front and
+back), allowing the physical image dimensions of those images to be
+retained. XML options are used to define the image manipulations that
+are applied, with separate actions defined for the front versus back
+images. Image scrub operates in one of two modes:</li>
+</ul>
+<ol type="1">
+<li><ol type="1">
+<li><ol type="1">
+<li>Begin with a blank image where all new fields will be drawn
+(including the MICR line) as a proxy for the current image. This is
+similar to our standard draw process but differs in to important ways.
+First is that the physical dimensions of each check image are retained.
+Second is that you cannot select the check design from a list of
+templates but must accept the standard template that will be drawn.
+</li>
+<li>Begin with the current image where specific boxes within that image
+data will be cleared. For example, this can be used to retain the entire
+front image of a check while clearing the customer name/address box in
+the upper left. </li>
+</ol></li>
+</ol></li>
+</ol>
+<p>Scrub image XML definitions are located in folder / documents /
+x9_assist / xml / scrubImages /. When image scrub is selected, you must
+then also indicate which XML definition will be used to control the
+scrub process. There are a series of standard definitions that are
+provided by X9Ware which can be modified as needed. The list can also be
+extended with your own unique image scrub actions. Please see below for
+a list of the standard image scrub definitions that are distributed with
+X9Assist and the parameters that can used within these definitions. </p>
+<p>Image scrub can retain the existing MICR line from the current check
+image, but be advised that this can be done only when the amount and
+MICR line data is not being modified by the current scrub operation.
+Retaining the MICR line has advantages when your exchange partners may
+not be consistently populating fields such as auxiliary OnUs in the type
+25 records, which would prevent X9Assist from accurately drawing a new
+MICR line from the x9 data. </p>
+<p>When retaining the MICR line, scrub will preserve the entire OCR
+clear band area at the bottom of each front image. This area is
+dedicated to the E13B MICR line on all check designs and should contain
+MICR data only. However, many checks impinge on that and may include
+lines and other check artwork within the clear band, even though they
+should not do so per defined standards. Customer signatures and other
+written notations may also appear within the clear band. Since scrub
+will retain the entire OCR clear band area, it is possible that some of
+this erroneous data is carried over into the new image that is drawn.
+</p>
+<p>Scrub will copy the clear band to the new image exactly as it appears
+within the original image. On the SDK tab within program options, you
+can specify the size of the MICR line area that will be copied to the
+newly drawn check image, with the default to copy the bottom one inch.
+This preserves the MICR line and provides substantial information even
+if a strip has been applied to the bottom of the check as part of reject
+repair. </p>
+<p>Scrub will inform you (as an error) when your scrub actions are not
+consistent with the image scrub definition that has been selected. For
+example, you cannot scrub MICR lines and then select an image scrub
+definition that retains the MICR line. </p>
+<p>Scrub image ensures that the redrawn images meet tiff x9 exchange
+standards and that the front images created by image scrub will always
+match the associated x9 data. </p>
+<p>Scrub Image Standard Definitions</p>
+<p>The following standard scrub image definitions are distributed with
+X9Assist. Entries within this list can be modified per your
+requirements. You can also add to this list with new entries to meet
+your specific needs. </p>
+<table>
+<tbody>
+<tr class="odd">
+<td>drawProxyRetainMicr.xml</td>
+<td>Draw a proxy replacement image while retaining the original MICR
+line. The size of the retained MICR line defaults to 0.80 inch which can
+be overridden using program options. Text including CAR and LAR fields
+will be drawn using a generic handwriting font. </td>
+<td>Retain the original back side image. </td>
+</tr>
+<tr class="even">
+<td>drawProxyDrawMicr.xml</td>
+<td>Draw a proxy replacement image and draw the associated MICR line
+from the current x9 data. while retaining the original MICR line. Text
+including CAR and LAR fields will be drawn using a generic handwriting
+font. </td>
+<td>Insert a drawn proxy as a replacement image.</td>
+</tr>
+<tr class="odd">
+<td>drawMissing.xml</td>
+<td>Insert a standard missing document as a replacement for the current
+image. </td>
+<td>Insert a standard missing document as a replacement for the current
+image. </td>
+</tr>
+<tr class="even">
+<td>drawMissingRetainMicr.xml</td>
+<td>Insert a standard missing document as a replacement for the current
+image while retaining the existing MICR line. </td>
+<td>Insert a standard missing document as a replacement for the current
+image.</td>
+</tr>
+<tr class="odd">
+<td>drawMissingDrawMicr.xml</td>
+<td>Insert a standard missing document as a replacement for the current
+image while drawing the MICR line from the x9 data.</td>
+<td>Insert a standard missing document as a replacement for the current
+image.</td>
+</tr>
+<tr class="even">
+<td>drawBlankRetainMicr.xml</td>
+<td>Insert a blank image that retains the original MICR line. The
+remainder of the image (other than the MICR line area) will be blank.
+The size of the retained MICR line strip is assigned a default value to
+capture standard MICR lines and can be overridden using program options.
+</td>
+<td>Insert a blank back side replacement image. </td>
+</tr>
+<tr class="odd">
+<td>retainImageBlockImageAreas.xml</td>
+<td>Retain the original image including the MICR line. Clear two areas
+within the image. First is the the name and address area located in the
+upper left hand corner of the check image. Second is a rectangle along
+the top edge of the check image.</td>
+<td>Insert a blank back side replacement image. </td>
+</tr>
+</tbody>
+</table>
+<p>Scrub Image XML</p>
+<p>The following options can be specified in the scrub image XML
+definitions. </p>
+<table>
+<tbody>
+<tr class="odd">
+<td>retainSize</td>
+<td>Retains the original image size and is applicable when either
+drawProxy or drawMissing has been selected. </td>
+<td>True or false with a default of true. </td>
+</tr>
+<tr class="even">
+<td>retainImage</td>
+<td>Retains the current image in its entirety. This parameter can be
+used in conjunction with one or more blockArea entries to clear possible
+confidential information within the image. The entire image is carried
+over if no blockArea definitions are present (which might be applicable
+to back side images). </td>
+<td>True or false with a default of false. A value of false can be used
+to set the back side image to blank. </td>
+</tr>
+<tr class="odd">
+<td>drawProxy</td>
+<td>Draws a standard proxy image (including CAR and LAR fields) while
+retaining the MICR line from the current image. </td>
+<td>True or false with a default of false. This parameter only applies
+to a front side image. </td>
+</tr>
+<tr class="even">
+<td>drawMissing</td>
+<td>Draws a standard missing document. If this is a front image, then a
+MICR line can be optionally drawn or retained based on specified
+parameters.</td>
+<td>True or false with a default of false. </td>
+</tr>
+<tr class="odd">
+<td>drawBlank</td>
+<td>Draws a blank image which will always retain the size of the
+original image. If this is a front image, then a MICR line can be
+optionally drawn or retained based on specified parameters.</td>
+<td>True or false with a default of false. </td>
+</tr>
+<tr class="even">
+<td>retainMicr</td>
+<td>Retains the original MICR line within an original image (which is
+the clear band area at the bottom of the image) but blocks the remainder
+of the image. This parameter is applicable only to retainImage and is
+needed since the position of the clear band varies based on check
+height. </td>
+<td>True or false with a default of false. This parameter only applies
+to a front side image. </td>
+</tr>
+<tr class="odd">
+<td>drawMicr</td>
+<td>Draws a MICR line at the bottom of a proxy or missing image. The
+MICR line will be drawn in the clear band area using current x9 data.
+</td>
+<td>True or false with a default of false. This parameter only applies
+to a front side image. </td>
+</tr>
+<tr class="even">
+<td>scrubBoxes</td>
+<td>Defines a list of one or more boxes to be scrubbed. The contents of
+each of these boxes will be forced to white space. </td>
+<td>Box list. </td>
+</tr>
+<tr class="odd">
+<td>scrubBox</td>
+<td>Used when retainImage has been specified and is then used to define
+one or more boxes that are to be cleared with the check image. A
+blockArea parameter defines each box to be cleared. There are four
+parameters as follows: x coordinate of the box to be blocked specified
+in inches from the upper left hand corner; y coordinate of the box to be
+blocked specified in inches from the upper left hand corner; width of
+the area to be blocked in inches (defaults to the document width);
+height of the area to be blocked in inches (defaults to the document
+height). </td>
+<td><p>Example as follows: </p>
+<p>&lt;scrubBox&gt;</p>
+<p>&lt;x&gt;0&lt;/x&gt;</p>
+<p>&lt;y&gt;0&lt;/y&gt;</p>
+<p>&lt;width&gt;3.0&lt;/width&gt;</p>
+<p>&lt;height&gt;1.0&lt;/height&gt;</p>
+<p>&lt;/scrubBox&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<p>Scrub Image Exclusion by Routing</p>
+<p>Images can be excluded from the scrub image process by routing
+number, which can include wild cards. This exclusion process is useful
+when you have internal routing numbers that identify internal documents
+that do not contain confidential information and hence do not need to be
+scrubbed. Typical examples of images that can be excluded would include
+GL tickets and Cash Tickets, which would not typically contain customer
+related information. </p>
+<p>Images to be excluded from the scrub process are defined by routing
+in your scrub xml configuration. Each entry in this list should
+typically be nine characters and represents the routing as it appears in
+the x9 item record types (25, 31, 61, or 62). </p>
+<p>The routing exclusion is variable in nature and can contain as many
+entries as are needed for your environment. Each entry in the list is
+matched against the item routing number. The dollar sign (“$”) can be
+used as a wild card character and is considered a match against any
+single character within the routing number. </p>
+<p>Due to the variable nature of the routing exclusion list, it must be
+initially entered and then subsequently maintained using a text editor.
+Scrub user interface will recognize and inform you of the number of
+entries on the scrub panel. You should double check this count when you
+load your xml configuration. </p>
+<p>A sample scrub image exclusion list is as follows: </p>
+<p> &lt;scrubFields&gt;</p>
+<p> ….</p>
+<p> ….<br />
+&lt;/scrubFields&gt;<br />
+&lt;retailFormats /&gt;<br />
+&lt;businessFormats&gt;<br />
+&lt;checkFormat&gt;business3.png&lt;/checkFormat&gt;<br />
+&lt;/businessFormats&gt;<br />
+&lt;scrubImageExclusions&gt;<br />
+&lt;routing&gt;51???????&lt;/routing&gt;<br />
+&lt;routing&gt;52???????&lt;/routing&gt;<br />
+&lt;/scrubImageExclusions&gt;<br />
+&lt;/x9Scrub&gt;</p>
+<p>Routing Replacement</p>
+<p>Scrub will optionally replace bank routing numbers with new values at
+your direction. New routing numbers for individual items (debits and
+credts) are taken from the selected use case file. The routing numbers
+for other record types can be provided on the replacement tab. These
+values are saved to xml as part of your overall scrub configuration for
+future reuse: </p>
+<ul>
+<li>Origination ABAs</li>
+<li>Destination ABAs</li>
+<li>Return location ABAs </li>
+<li>Endorsement ABAs</li>
+</ul>
+<p>Scrub Results</p>
+<p>On completion, Scrub writes the sanitized data to an intermediate
+file and will provide a summary of the scrub actions that have been
+taken. This summary will include each selected action and the number of
+times that the action was applied to the current file. Scrub will then
+launch a new validation process against the scrubbed file, which will
+provide an updated status and allow you to browse the file and view the
+fields and images that have been substituted. </p>
+<p>The scrubbed file remains in memory after the scrub actions have been
+applied. You must save the results to an external file if you determine
+that the results are beneficial. </p>
+</body>
+</html>

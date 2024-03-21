@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Export</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Export</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Export allows you to export a variety of data types to external CSV,
+text, and xml files. Exported information can include data and/or
+images. These exported files can be used for more extensive data
+analysis or for input to other applications. Export supports a variety
+of output formats including an exact record-field version of the data
+(which can be used as Import input); a structured field format which is
+parsed into all commonly needed data fields; and an export into xml that
+can be used as is or externally translated to other xml schema formats.
+Additionally, exports can be done from a single file or from multiple
+files. When running in multi-file mode, export can be used to extract
+data from a large number of files into a single output file. </p>
+<p>Tabs within the export panel allow you to select the type of export
+being performed along with parameters which further define and control
+the export process. Export can automatically limit the scope of the
+exported data in several ways:</p>
+<ul>
+<li>You can specify a range of records to be applied to the export by
+entering the low and high record numbers. This will limit the export to
+a certain part of the file (for example, just one bundle or a group of
+items). </li>
+<li>You can specify that the export should be limited to certain record
+types (for example, only check detail records). </li>
+<li>You can combine these two selection capabilities (for example, only
+export the check detail records within a single bundle). </li>
+</ul>
+<p>The input filename can be optionally inserted into the first column
+of the CSV export file. This option is helpful in several situations.
+First when you are exporting information from various files over a
+period of time and you need a mechanism to remember and record the
+origination source. Second is when you are exporting data from multiple
+files in a single export run, and similarly need to identify the file
+source for each exported row. </p>
+<p>Single Versus Multiple File Exports </p>
+<p>Most typically, a single file is being exported. In this case, the
+file that is exported will be the file that is currently loaded into the
+viewer, hence there is no need for a file selection dialog.</p>
+<p>However, the export facility also allows you to select multiple input
+files to be exported in a single operation. This is a powerful function
+since it can read data from a large number of files to create your
+desired results. These capabilities should be used cautiously, since
+these exports can run for an extended period of time. This is especially
+true when there are a large number of files that are selected, when the
+files themselves are very large, or when the input files exist on
+external servers and must be read across a network. </p>
+<p>Quoted Fields </p>
+<p>Your CSV file can be created on either a “standard” or “quoted”
+basis. </p>
+<ul>
+<li><blockquote>
+<p>Our standard CSV format will only enclose a field within quote marks
+when it contains non-numeric data. Additionally, fields that are quoted
+will be trimmed to remove leading and trailing spaces. The result is
+that only the actual data remains. </p>
+</blockquote></li>
+<li><blockquote>
+<p>Our fully quoted CSV format will write all fields in quoted form and
+will preserve the leading and trailing spaces within each field. This
+format can be used if you need your CSV file to contain all data from
+each field and not be truncated in any fashion. </p>
+</blockquote></li>
+</ul>
+<p>CSV <span id="anchor-3"></span>Tools</p>
+<p>You can use exported files as input to other applications such as
+Excel or your proprietary application systems. Export is an excellent
+tool to allow you to create CSV files that are shareable and can be used
+in a large variety of ways. </p>
+<p>However, although Excel is a great spreadsheet tool, it does not fare
+well when used against CSV input. Because of that, X9Ware has developed
+our own Csv Editor, which is part of our X9Validator (AchValidator) and
+X9Assist (AchAssist) products. Alternative tools are Libre Office,
+NotePad, and NotePad++. These tools include search facilities allowing
+you to find data on a string basis, which can be very helpful when doing
+research. </p>
+<p><span id="anchor-4"></span>Export Layouts</p>
+<p>This table represents the available export formats with their
+attributes and common usage. </p>
+<table>
+<tbody>
+<tr class="odd">
+<td>(1)</td>
+<td>CSV in native record format. </td>
+<td>No</td>
+<td>Yes, but only if the images are drawn as proxies since the actual
+images are not exported along with the data, and then also only when all
+record types are exported.</td>
+<td>Yes</td>
+<td>This format contains the field values within the selected record
+types per the file that is currently loaded and the associated rules
+specification. It provides a full representation of the data content for
+the selected record types, and a complete data representation of the
+entire file when all record types are selected. A common usage is to
+limit the export to certain record types based on need. For example, the
+export might be limited to the type 01 file header, the type 25 check
+records, and the type 26-28 addenda. The output line numbers will match
+back to the input file when all record types have been selected. </td>
+</tr>
+<tr class="even">
+<td>(2)</td>
+<td>CSV in native record format with images.</td>
+<td>Yes</td>
+<td>Yes, but only when all record types have been exported.</td>
+<td>Yes</td>
+<td>This format contains the field values within the selected record
+types per the associated rules standard. The output line numbers will
+match back to the input file when all record types have been selected.
+This export file can be modified using various standard editor tools and
+then imported to create a new file which has been changed per user
+specific requirements. For example, the order of certain record types
+within the file can be changed; records can be removed; individual
+fields can be modified. Repair can also be run after the file is
+imported to correct trailer records when desired. </td>
+</tr>
+<tr class="odd">
+<td>(3)</td>
+<td>CSV parsed items into fixed fields. </td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Items are parsed into individual fields and exported into a fixed
+column format. This format can be easier to process since the items are
+populated on a standard basis into fixed columns. This item format is
+constant and does not vary regardless of the file type (forward
+presentment or returns) and the associated rules standard (x9.37 versus
+x9.100-180). Data fields for non-item groups (file headers, cash letter
+headers, bundle headers, etc) can be optionally included and will be
+presented in their native format. </td>
+</tr>
+<tr class="even">
+<td>(4)</td>
+<td>CSV parsed items into fixed fields with images.</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Items are parsed into individual fields and exported into a fixed
+column format. </td>
+</tr>
+<tr class="odd">
+<td>(5)</td>
+<td>CSV parsed items into fixed fields with images, with a descriptive
+column heading row inserted as row one.</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Items are parsed into individual fields and exported into a fixed
+column format. The first CSV row will contain column names. Only item
+level record types (those attached to debits and credits) will be
+exported; header and trailer records will not be exported. This is
+because column content must be in true fixed sequence to match the row
+zero column names. </td>
+</tr>
+<tr class="even">
+<td>(6)</td>
+<td>CSV record groups into variable columns. </td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Output is constructed on a record group basis, where each group is
+the owner record type with all attached subordinate types. This format
+can be easier to parse since the output records for each group are
+concatenated into a single string which eliminates the need to separate
+the rows into record groups in your parser. This format has the further
+benefit that all output fields are present. Note that record types can
+be excluded and will not appear within the output. For example, you can
+exclude record type 50-52 if that data is not needed. </td>
+</tr>
+<tr class="odd">
+<td>(7)</td>
+<td>Tiff tag information. </td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>This export format provides a vision into the tiff tags that are
+present for each image and is useful when performing a detailed image
+analysis for a specific originator or capture system. </td>
+</tr>
+<tr class="even">
+<td>(8)</td>
+<td>Record data.</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Records are exported in their text (txt) form, which provides access
+to their record data (eg, typically 80 bytes long) in the exact format
+as present on the input file. When using this export format, there is an
+option to append the record number as either a suffix or prefix to the
+written data. Appending the record number allows you to sort the data on
+various fields and still be able to resort the records into their
+original order. The record number also allows you to trace every record
+back to the original location within the original file. </td>
+</tr>
+<tr class="odd">
+<td>(9)</td>
+<td>XML. </td>
+<td>Yes, in Base64 encoded format</td>
+<td>No</td>
+<td>Yes</td>
+<td>Export to XML builds an output xml file that can be processed by
+other xml enabled applications. Please advise if you have requirements
+for this functionality and we would be glad to work with you on building
+new xml formats for specific vendor applications. </td>
+</tr>
+<tr class="even">
+<td>(10)</td>
+<td>Errors. </td>
+<td>No</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Errors for the currently loaded file are exported and shared with
+others. All selection criteria applies (record number range and record
+types). The export can be limited by type (data or image) or severity
+(error, warn, and info). Output is in a fixed format which can be easily
+analyzed. </td>
+</tr>
+<tr class="odd">
+<td>(11)</td>
+<td>Use cases.</td>
+<td>No</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Use cases which can be used by Make and Scrub when creating test
+data. This export facility can be used in several manners. First is to
+create a use case file from a single file. Second is to merge the use
+case content from the current file into an aggregated use case file that
+is being constructed using data from a series of files. When that is
+done, the additional files are added one at a time. Duplicate use case
+entries will be removed and only new use case entries will be added to
+the aggregated use case file. </td>
+</tr>
+</tbody>
+</table>
+<p>Type 52 Images (Applies to X9)</p>
+<p>Export will insert the name of the each image file into its
+corresponding type 52 image view data record. The name is stored into
+field 5.19, which is normally houses the image data. By putting the
+check image file name into field 52.19, Export is able to logically
+associate each image with its type 52 record. Note that when using the
+x9.100-180 standard, images are stored in field 52.27, which is fully
+supported by this process. </p>
+<p>When the type 52 record is exported, the image field is updated to
+contain one of the following values, subject to the selected
+options:</p>
+<ul>
+<li>Absolute file name, which contains the drive and path (folder) of
+each image file along with the actual file name. It is recommended that
+you use absolute file names since they fully describe the output file
+location. Absolute file names are required when the exported file is
+used by certain internal functions such as Generate. </li>
+<li>Relative file name, which contains the base file name only (it does
+not include the path). Relative names are useful when the exported CSV
+and images will be transported to other environments or systems. </li>
+<li>Base64-basic encodes the image using base64 and inserts the
+resulting string into the image field. This eliminates the external
+storage of the image in the file system and can simplify access to the
+image data. Base64 image exports run substantially faster than exports
+into the file system, since the operating system overhead to update the
+file system is eliminated. Image size is typically increased by 30-40
+percent when using this encoding format. </li>
+<li>Base64-mime is similar to base64-basic encoding, just based on the
+MIME format. </li>
+</ul>
+<p>Exporting Images (X9 Files Only) </p>
+<p>When exporting images, you will be directed to select your output
+image folder. Export will then create a new sub-folder for each file
+within this high level folder. This folder creation applies for the
+export of just one file, to make the process consist with multi-file
+export.</p>
+<p>Additional sub-folders are then created for each bundle using the
+record number of the type 70 bundle record. This has two advantages.
+First that the created bundle folder name will be unique and can be
+directly associated with the input file. Second that it allows the
+bundle folders to remain in ascending sequence for the overall file.
+</p>
+<p>Exported Image Formats (X9 Files Only) </p>
+<p>When exporting images, you can optionally select the image format
+that will be created, which can be TIF, PNG, JPG, or GIF. It is
+important to realize that embedded images within x9.37 files are in TIF
+format. This means that when images are written in TIF format (which is
+the default), they can be written exactly as they are contained within
+the x9.37 file and do not need to be converted in any manner. However,
+export also allows you to select an alternative format. When that is
+done, images must be converted from the TIF format to the user selected
+format. Please realize that image conversions can be time consuming,
+with PNG probably being the better alternative given its performance and
+compression. PNG and JPG images will retain their original size and DPI.
+Since GIF images to not have an internally defined DPI, they will be
+standardized to 200 DPI as a matter of convenience. Image conversions
+should be utilized carefully and only when absolutely needed. An
+alternative is to export images in TIF format and then subsequently
+utilize a batch conversion strategy to convert them later, perhaps when
+importing them into an archive or user application. </p>
+<p>Output Image Folders (Applies to X9)</p>
+<p>A high level output folder is provided to the export images function.
+A new sub-folder will be created within the selected folder using the
+current file, which will then own a series of bundle level folders. Each
+bundle folder is named using the record number for that specific bundle,
+which is unique and preserves the relative position of the bundle within
+the file. This common file level approach supports either single or
+multi-file export.</p>
+<p>Export includes an option to automatically clear an existing image
+folder, and it is highly recommended that this default is selected. If
+an output folder exists which is not cleared, then new bundles and image
+files will be created and merged into that folder structure which may
+overwrite existing files and can result in a confusing series of files
+and folders. </p>
+<p>Export as Items into Fixed Columns (Applies to X9)</p>
+<p>Items can be parsed into logical field content and then exported into
+fixed columns. This format can be easier to parse since the location of
+individual data columns will be fixed which can simplify your subsequent
+parsing of this data. Specifically, the type 25 and type 31 records are
+parsed into logical items that will contain the following columns:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Column Number</td>
+<td>Fixed Column Data Content for the Current Item</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Record type</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Amount</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Item sequence number</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Routing</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>MICR OnUs</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>MICR Auxiliary OnUs</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>MICR Epc</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>Documentation type indicator</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Returns Acceptance Indicator</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>MICR valid indicator</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>BOFD indicator</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>Addendum count</td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>Correction indicator</td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>Archive type indicator</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>Credit account</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>Return reason</td>
+</tr>
+<tr class="even">
+<td>17</td>
+<td>Forward bundle date</td>
+</tr>
+<tr class="odd">
+<td>18</td>
+<td>Return notification indicator</td>
+</tr>
+<tr class="even">
+<td>19</td>
+<td>Payor bank name</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>Payor bank business date</td>
+</tr>
+<tr class="even">
+<td>21</td>
+<td>Payor account name</td>
+</tr>
+<tr class="odd">
+<td>22</td>
+<td>Field4 parsed from the item MICR OnUs field</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>Account parsed from the item MICR OnUs field</td>
+</tr>
+<tr class="odd">
+<td>24</td>
+<td>Process Control parsed from the item MICR OnUs field</td>
+</tr>
+<tr class="even">
+<td>25</td>
+<td>Reserved-1</td>
+</tr>
+<tr class="odd">
+<td>26</td>
+<td>Reserved-2</td>
+</tr>
+<tr class="even">
+<td>27</td>
+<td>Reserved-3</td>
+</tr>
+<tr class="odd">
+<td>28</td>
+<td>Image creator date from the front image </td>
+</tr>
+<tr class="even">
+<td>29</td>
+<td>Image creator routing from the front image </td>
+</tr>
+<tr class="odd">
+<td>30</td>
+<td>Image reference key from the front image </td>
+</tr>
+<tr class="even">
+<td>31</td>
+<td>Front image name (when exported) </td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td>Back image name (when exported)</td>
+</tr>
+<tr class="even">
+<td>33-45</td>
+<td>First primary (26 or 32) or secondary (28 or 35) endorsement</td>
+</tr>
+<tr class="odd">
+<td>33</td>
+<td>Record type</td>
+</tr>
+<tr class="even">
+<td>34</td>
+<td>Routing</td>
+</tr>
+<tr class="odd">
+<td>35</td>
+<td>Endorsement date</td>
+</tr>
+<tr class="even">
+<td>36</td>
+<td>Item sequence number</td>
+</tr>
+<tr class="odd">
+<td>37</td>
+<td>Deposit account number</td>
+</tr>
+<tr class="even">
+<td>38</td>
+<td>Deposit branch</td>
+</tr>
+<tr class="odd">
+<td>39</td>
+<td>Payee name</td>
+</tr>
+<tr class="even">
+<td>40</td>
+<td>Truncation indicator</td>
+</tr>
+<tr class="odd">
+<td>41</td>
+<td>Conversion indicator</td>
+</tr>
+<tr class="even">
+<td>42</td>
+<td>Return reason</td>
+</tr>
+<tr class="odd">
+<td>43</td>
+<td>Endorsing bank identifier</td>
+</tr>
+<tr class="even">
+<td>44</td>
+<td>User field </td>
+</tr>
+<tr class="odd">
+<td>46-58</td>
+<td>Second endorsement</td>
+</tr>
+<tr class="even">
+<td>59-71</td>
+<td>Third endorsement</td>
+</tr>
+<tr class="odd">
+<td>72-84</td>
+<td>Fourth endorsement</td>
+</tr>
+<tr class="even">
+<td>Etc</td>
+<td>Continued for as many endorsements that exist for this item</td>
+</tr>
+</tbody>
+</table>
+<p>Export as Native Record Format</p>
+<p>Native format follows the current rules specification. For example,
+an input file encoded per the x9.37 DSTU specification will be exported
+per the record layouts that are defined by that standard. You must
+reference the associated file specification to obtain a list of the
+fields that are exported by record type. These fields will be the same
+as displayed within our file viewer. This export format has the
+advantage that it covers all record types and all fields. </p>
+<p>When using this export format, there is an additional option to
+append the record number as either a suffix or prefix to the written
+data. Appending the record number allows you to sort the data on various
+fields and still be able to resort the records into their original
+order. The record number also allows you to trace every record back to
+the original location within the original file. </p>
+<p>Export as Groups into Variable Columns</p>
+<p>Records can be exported as groups and not individual record types. A
+record group consists of the owner record type (for example, a type 25
+or type 31) followed by all records that are attached to that owner.
+Although the concept of record groups only applies to items, it also
+logically applies to other record types when they are the owner of type
+68 user records. For example, a record group might consist of only a
+single type 01 file header, but it could also consist of a type 01 file
+header followed by two type 68 user records. </p>
+<p>Record groups are exported as a CSV of all record types and fields
+within the group. For an item, this single CSV row might contain fields
+for the following record types: 25, 26, 28, 52, 54, 52, and 54. Also
+remember that record types can be excluded from this process. For
+example, you can exclude record types 50 and 52 from the export, and in
+that case this same record group would be exported as: 25, 26, 28, and
+28. If you only need the item with the attached BOFD endorsement, then
+you can exclude 28, 50 and 52, and then the exported record group will
+consist of just the 25 and 26 records. Although these are examples of
+forward presentment files, the process applies equally to return files.
+</p>
+<p>This export format is provided as a convenience since it may be
+easier to parse by your application programs. Although the concept of
+record groups is shared with item export, it has the benefit that it
+includes every field with the individual record types will be exported.
+</p>
+<p>Export As Errors </p>
+<p>Errors can be exported in CSV format to allow you to get a list of
+errors associated within a given file that you can easily share with
+others. All of the previously stated selection criteria applies (record
+number range and record types). </p>
+<p>In addition, error export allows you to indicate that you want to
+limit the export based on:</p>
+<ul>
+<li>All errors </li>
+<li>Record (data) errors only</li>
+<li>Image (tiff) errors only</li>
+</ul>
+<p>You can also identify the severity of the errors to be exported. This
+can be all error severities, or combinations of error level, warn level,
+and info level. The field data that is written is aligned per the
+columns as depicted on the Errors tab. This list of fields is as
+follows:</p>
+<ol type="1">
+<li>Error description</li>
+<li>Error identifier</li>
+<li>Error record number</li>
+<li>Error field number</li>
+<li>Error field name</li>
+<li>Error field data position</li>
+<li>Error field data length</li>
+<li>Error field value</li>
+<li>Error field mandatory indicator</li>
+<li>Error field list of allowable values</li>
+<li>Error field primary edit rule</li>
+<li>Supplemental information</li>
+<li>Item amount</li>
+<li>Item ECE sequence number</li>
+<li>Item routing number</li>
+<li>Cash letter record number</li>
+<li>Cash letter identifier</li>
+<li>Cash letter amount</li>
+<li>Cash letter business date</li>
+<li>Bundle record number</li>
+<li>Bundle amount</li>
+<li>BOFD routing number</li>
+<li>BOFD business date</li>
+<li>BOFD sequence number </li>
+<li>Formulated error message which best summarizes the error condition
+</li>
+</ol>
+<p>Export as Use Cases </p>
+<p>Use case files are input into various X9Assist functions, and very
+specifically Scrub and Make. In particular, the basic use case files
+which are utilized by Scrub contains four fields:</p>
+<ul>
+<li>Routing</li>
+<li>Account number </li>
+<li>Process Control</li>
+<li>Auxiliary OnUs</li>
+</ul>
+<p>Export Use Cases creates a file that is compatible with the above and
+contains the following fields:</p>
+<div>
+<ul>
+<li>Routing</li>
+<li>Account number </li>
+<li>Process Control</li>
+<li>Auxiliary OnUs</li>
+<li>Amount</li>
+<li>Item sequence number </li>
+<li>EPC</li>
+<li>Documentation type indicator</li>
+<li>Return acceptance indicator</li>
+<li>MICR valid indicator</li>
+<li>BOFD indicator</li>
+<li>Correction indicator</li>
+<li>Archive indicator</li>
+<li>Return reason</li>
+<li>Return notification indicator</li>
+<li>BOFD routing </li>
+</ul>
+</div>
+<p>The export use cases function allows you to create these lists using
+your production data, with data extracted from one or more files. The
+creation of these use case files from your production files will
+guarantee that valid MICR line combinations are used by X9Assist when
+creating sanitized checks. This will help to ensure that your downstream
+application systems will be able to process the sanitized data and will
+not arbitrarily reject items based on MICR content. </p>
+<p>This function allows you to either create a new use case file or to
+merge data into an existing file that you have previously created. By
+merging into an existing use case file, you can build use case files
+which contain a large number of routing and account numbers. The merge
+process ensures that any given routing/account number combination will
+only appear once in the accumulated use case file, no matter how many
+times it may appear in the individual files that you are using for this
+extract and accumulation process. </p>
+<p>Using this function, you may want to create use case files (for
+Scrub) that could be used for a variety of different functions. For
+example, you may want to have different use case files for forward
+presentment versus returned items files. You can then use these
+accumulated files for common functions such as Scrub, as an alternative
+to the vanilla files that can instead by created using the Use Case
+Editor. </p>
+<p>Export as Tiff Tags (Applies to X9)</p>
+<p>The IFD directories from Tiff images can be exported into CSV format.
+The export is in CSV format and will contain one row for each tff tag
+within each image. The content of each exported row is as follows: </p>
+<ul>
+<li><blockquote>
+<p>Record number</p>
+</blockquote></li>
+<li><blockquote>
+<p>Tiff tag index</p>
+</blockquote></li>
+<li><blockquote>
+<p>Offset of the tiff tag within the image</p>
+</blockquote></li>
+<li><blockquote>
+<p>Tag</p>
+</blockquote></li>
+<li><blockquote>
+<p>Type</p>
+</blockquote></li>
+<li><blockquote>
+<p>Count</p>
+</blockquote></li>
+<li><blockquote>
+<p>Value</p>
+</blockquote></li>
+<li><blockquote>
+<p>Directory entry in hex </p>
+</blockquote></li>
+</ul>
+<blockquote>
+
+</blockquote>
+</body>
+</html>

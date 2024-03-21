@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Repair</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Repair</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Repair can be utilized to apply automated repair actions against the
+currently loaded file. Repair is designed to operate as a series of
+actions which can be applied to record types and their associated
+fields. You can select both the actions and the record types (as well as
+the individual fields) that are eligible for a repair operation. Repair
+actions have been purposely designed around situations where errors can
+be automatically addressed without negatively impacting the original
+intent of the file as created by the originator. </p>
+<p>Repair is especially suited to correcting trailer records where the
+data is known to be correct but the totals in the trailer records are
+determined to be incorrect. In these scenarios, the trailer contents can
+be recomputed from the available data. </p>
+<p>Repair is similarly well suited for “brute force” corrective actions
+such as correcting data alignment within fields, correcting truncation
+indicators, or blanking out user or reserved data fields when that is
+required. </p>
+<p>Repair includes the ability to correct images. There are two
+available options:</p>
+<ul>
+<li>Replace errant images with missing image documents: Error images
+will be replaced with your defined “missing image” document. Note that
+this document can be customized as part of your product installation.
+</li>
+<li>Redraw errant images using the image data: Error images will be
+redrawn using the image data that is present, which will generate new
+tiff tags that meet required industry standards. If image inspection
+determines that an image is not usable, then it will instead replace
+that image with a “missing image” document. </li>
+</ul>
+<p>Selective Record Type and Field Repair</p>
+<p>Repair allows the scope of the repair actions to be limited to
+specific record types and/or fields. This is a powerful process since
+this allows the user to target all actions to a limited number of fields
+which will be targeted by the repair process.</p>
+<p>Modify Integration</p>
+<p>Repair is fully integrated with the Modify process. All field level
+changes that are created by Repair will create modification log entries.
+When Repair ends, you can view all of the field level changes that have
+been applied to your file by launching Modify and reviewing the log.
+This provides several advantages. </p>
+<ul>
+<li>You can both review and launch to any record that was modified by
+Repair. </li>
+<li>You can individually revert any change that has been applied by
+Repair.</li>
+<li>Finally, the modification log is available to your via Export or can
+be automatically created and written to a folder by Save.</li>
+</ul>
+<p>Repair Results</p>
+<p>On completion, Repair will provide a summary of the corrective
+actions that have been taken against the currently loaded file. This
+summary will include the total number of records that were repaired and
+then a list of repair actions by record type. </p>
+<p>If record types are repaired that you have determined that you want
+excluded, you can revise your repair criteria and run the repair action
+again. To do that, you will need to reload the original file and start
+anew. </p>
+<p>Repair will then launch a new validation process for the repaired
+file, which will provide an updated status on the errors that exist
+after the automated repairs were applied. </p>
+<p>The repaired file remains in memory after the repair has been run.
+You must save the results to an external file if you determine that the
+results are beneficial. </p>
+<p>Suggestions</p>
+<p>We are interested in your suggestions regarding possible new repair
+actions that can be added to our automated repair process. Ideal repair
+actions must be generic in nature (applicable to all files) and must be
+associated with corrective actions that will result in the creation of a
+repaired file that meet industry standards and are acceptable to a large
+number of financial institutions. </p>
+</body>
+</html>

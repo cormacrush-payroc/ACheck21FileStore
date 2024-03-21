@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Debug</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span>Debug</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Debugging is never easy. To make application debugging and support as
+painless as possible, X9Assist includes a significant amount of standard
+logging and then additional debug level logging that can be enabled as
+required. By enabling debug logging within the X9Assist desktop
+environment, we can gather the information needed to assist the problem
+determination and resolution process.</p>
+<p>System Log</p>
+<p>X9Assist writes the system log to folder / userid / appdata / roaming
+/ x9warellc / log /. </p>
+<p>Each X9Assist user session creates it’s own separate and independent
+log, using a date and time file stamped file name. This approach makes
+it easy to identify and locate the log file that is associated with a
+given user session, and to provide that log to X9Ware LLC for problem
+determination purposes. </p>
+<p>X9Assist automatically purges log files after a specified number of
+days. This is a configuration parameter which you can set via program
+options. There is normally no reason to adjust this setting. </p>
+<p>X9Assist provides GUI functionality to view the active log file that
+is being captured in support of the current user session. You can view
+using from the File menu, where you select System Log. Note that your
+view will be a snapshot of how the log looks at that particulate instant
+in time, and that records will continue to be appended to this log file
+as your session and activity continues. You can similarly view a log
+file by going the /x9_assist/log/ folder and launch any log as a text
+file from that folder. These “txt” files can be displayed using various
+tools including NotePad. </p>
+<p>Types of Debug Logs</p>
+<p>X9Assist allows debugging logs to be captured in two ways.</p>
+<ol type="1">
+<li>Activation of debug at a system level.</li>
+<li>Targeted debug activated for one or more Java classes. </li>
+</ol>
+<p>System Wide Debug</p>
+<p>Debug can be activated on an exception basis for an entire user
+session. This setting is activated from the command line using the
+“-debug” switch. This is not targeted at a specific class, but instead
+applies to the entire X9Assist application. The command line switch
+would be assigned by right clicking the X9Assist icon on your desktop,
+selecting properties, and then adding this switch to the “target”
+command line. This system wide level of debugging should be done against
+a small file that generates your specific error condition. Debug should
+then be turned back off once your logging data has been collected. </p>
+<p>Debug by Java Class</p>
+<p>X9Assist allows a logging override file to be placed in the log
+folder. This override file is used to activate debug logging for one or
+more Java classes. This process can be done when there would otherwise
+be an excessive amount of debug log data generated, and we instead need
+to target the debug logging process at specific Java classes. The name
+of the debug overrides file that can be created in the /x9_assist/log/
+folder is: </p>
+<blockquote>
+<p>overrides.txt </p>
+</blockquote>
+<p>You will need to work with X9Ware LLC when this level of debug
+tracing is required. An example of the overrides file is as follows:</p>
+<blockquote>
+<p># Activate debugging for X937Reader and X9Validator</p>
+</blockquote>
+<blockquote>
+<p>log4j.logger.sdk.X937Reader=DEBUG</p>
+</blockquote>
+<blockquote>
+<p>log4j.logger.main.X9Validator=DEBUG</p>
+</blockquote>
+<p>Java Console Launcher</p>
+<p>You can launch X9Assist using our console launcher, which is:</p>
+<p> /Program Files/X9Ware LLC/X9Assist/bin/x9assist_console.exe </p>
+<p>When you launch using with this EXE, a console window will remain
+open in the background which contains console messages associated with
+the application. If you are getting an abort and there is nothing in the
+log, then you will most probably be able to see the root cause by
+looking at the messages in the console window. If this happens, you can
+“print screen” and paste that window in an email to us, which will allow
+us to look at the specific issue you are encountering. </p>
+<p>The Nature of Debugging</p>
+<p>It is always immensely helpful if you can generate your specific
+error using a small test file. This is especially true if you can use
+Scrub to remove all proprietary information, and where your error still
+occurs with the scrubbed x9 file. If you can do this, then you will be
+able to provide the scrubbed x9 file to X9Ware LLC and we will be able
+to very quickly resolve the issue. </p>
+<p>In some rare situations, the current debug logging will be
+insufficient to gather information on the problem that is being
+experienced. When this does occur, there is an iterative process that
+requires program changes to X9Assist to gather more detailed logging
+based on the error that is being experienced. Although this can be a
+more time consuming process, the end product will be the resolution of
+the issue at hand as well as more detailed logging implemented within
+X9Assist. </p>
+</body>
+</html>

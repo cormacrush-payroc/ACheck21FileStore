@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Delete Filtered Items</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>Delete Filtered Items</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Delete Filtered Items is used to delete a list of items from the
+currently loaded file. These filter lists are created by other tools
+such as the find, search, and pick list facilities. This is a powerful
+function, since it allows items a group of specific items to be removed
+from the current file. </p>
+<p>As a review, Find and Search can be used to create lists of filtered
+items. Once one or more filter lists are created, there are a series of
+tools that can be used against the filters. For example, you can browse
+the items that exist within a given filter list, remove individual items
+from the filter, or merge two or more filters to create a new filter.
+The combination of these functions enable very powerful delete
+operations such as:</p>
+<ul>
+<li>Search on the certain field and create a filtered list</li>
+<li>Remove items from that list</li>
+<li>Search on another field and create a second filtered list </li>
+<li>Add specific items to the pick list</li>
+<li>Merge the three lists to get a single list that can be reviewed
+</li>
+<li>Delete the items using the provided list </li>
+</ul>
+<p>As an alternative to using Find / Search, you can also manually add
+items to an internal filter which is called the PickList. This is a
+special filter name, but otherwise behaves just like any other filter
+list and can be used by all of our filter based tools. One more more
+items can be selected from the viewer tree and added to the PickList in
+one of several manners:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>One Item</td>
+<td>Click an item in the ICL tree to select the desired item. </td>
+</tr>
+<tr class="even">
+<td>Multiple non-consecutive items</td>
+<td>Click an item in the ICL tree to select the first item. Then hold
+down the CTRL key and click additional items to add them to the
+selection. </td>
+</tr>
+<tr class="odd">
+<td>Consecutive items</td>
+<td>Click an item in the ICL tree to select the first item in the group.
+Then hold down the SHIFT key and click the last item in the group. </td>
+</tr>
+</tbody>
+</table>
+<p>You must have at least one filter defined before you invoke Delete
+Filtered Items. If there is only one filter currently defined, then it
+will be assumed to be the desired filter and you will immediately
+receive the “are you sure” message to confirm the delete. If there are
+multiple filters currently defined, a panel is displayed allowing you to
+select one or more filters which will identify the items to be
+deleted.</p>
+<p>Once you have selected the filters which identify the items to be
+deleted, you must press the delete button to initiated the delete
+process. A confirmation message will be displayed which will allow you
+to confirm that the items are to be deleted. </p>
+<p>The filters will be removed since they contain items which will no
+longer exist.</p>
+<p>The deleted items will be added to the current modification log which
+can be both viewed and optionally saved when the current file is itself
+saved. The modification log can also be used to revert any of the
+deletes that were applied. </p>
+<p>The counts and amounts in the trailer records for the current file
+will be automatically updated when the items are logically removed. You
+will not have to run repair. Entries will appear in the modification log
+for all trailer record updates that were applied. </p>
+<p>After your review, the modified file must be saved to the external
+file of your choice. </p>
+</body>
+</html>

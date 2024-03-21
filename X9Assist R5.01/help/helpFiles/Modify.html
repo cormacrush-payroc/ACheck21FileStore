@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Modify</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Modify</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Modify provides facilities to make changes to individual records and
+fields within the currently loaded file. Changes are made to an “in
+memory” copy of the currently loaded file and will not be available to
+other applications until you save your results to a new output file.
+</p>
+<p>It is highly recommended that you do not replace the current input
+file (by saving with the same file name), but that you instead create a
+new and unique file with your changes.  This is a best practice that
+should be used whenever possible. </p>
+<p>All file level validations will be run when you save a modified file
+to a new replacement file. You should always look at the results and
+attributes of the newly saved file very closely. This includes the
+number of records, dollar totals, and validation results. </p>
+<p>Modify Sessions</p>
+<p>Modify is an advanced facility which includes the ability to:</p>
+<ul>
+<li>Change individual fields within as many record types as
+desired.</li>
+<li>Delete records using several techniques (individually, by group, by
+record range, all good items, or all error items). </li>
+</ul>
+<p>A modify session can be enabled or disabled at any time. Note that
+modifications to the currently loaded file are only allowed when a
+modify session is actually enabled. This is a preventative measure that
+requires that you first activate the modify facility before making
+changes. </p>
+<p>You can easily tell when a modify session is active. The background
+color will change from the standard color (default is green) to an
+alternate color (default is turquoise). You can also visually tell which
+fields have been changed, since all modified fields will be highlighted
+using an alternate color as well (default is to show in a light orange).
+These colors can be changed through the program options panel based on
+your specific preferences. </p>
+<p>Modify includes a counter in the lower left corner of the dashboard
+that indicates how many modifications have been made to the current
+file. This counter provides a quick and easy mechanism to visually
+determine the number of field changes that have been applied.</p>
+<p>Modification Log </p>
+<p>The modification log is a running list of all of the field level
+changes which have been made to the in-memory copy of the current file.
+The modification log includes information about each field which has
+been modified, including the before and after values for each such
+field. If a field has been modified more than once, then the
+modification log will report the original value and the most recently
+assigned value for the modified field.</p>
+<p>The modification log can be used to jump to any record that has been
+modified, allowing you to view the context of the change that has been
+applied.</p>
+<p>The modification log will also allow you to revert any single
+modification. When a change is reverted, the original value will be
+applied and the modification will be removed from the log, just like it
+never happened.</p>
+<p>Fields that can be Modified</p>
+<p>The file specification (in xml) defines which fields can be modified.
+Typical defaults are assigned that allow virtually all fields within all
+record types to be modification. However, this facility can be
+customized by your organization should you want to limit the ability to
+apply certain modifications. This can be accomplished with an update to
+the various xml rule files.</p>
+<p>Audit Trail</p>
+<p>The modify panel will always provide a list of all modifications that
+have been made since your modification session was initiated. </p>
+<p>Modify will track changes at the field level and will tell you if you
+have changed a field more than once during your modify session. </p>
+<p>A modify report can be generated at any time using the reports
+facility (either PDF reports or the Excel Exporter). </p>
+<p>The modification log can be written to an external file as a part of
+the save process. Please refer to save for more information about this
+facility. </p>
+<p>Editing and Validation</p>
+<p>When you enter a new value for a field, modify will apply all field
+level edits and will ensure that the specific value that you enter is
+acceptable. You will receive an error if the value is not appropriate
+for this field. Modify will justify the new value automatically based on
+the specification rules for the current field. </p>
+<p>However, additional edits are required to cross check values against
+all other records. For example, if you change a truncation indicator,
+there are potential edits that will value this field against other
+record types (for example, an edit that would indicate that only one
+endorsement can have a truncation indicator of Y). You must rerun the
+validation process to have these edits applied. You will be reminded of
+this on the bottom of the DashBoard, where there will be count of how
+many changes you have made since the last validation was performed. You
+must run a validation prior to saving the file. </p>
+<p>Modify Individual Record Fields</p>
+<p>When you click the modify button for a given record, you are
+presented with a new panel that allows you to modify all fields within
+the current record within a single interaction. The modify record panel
+uses the defined alternate background color to highlight the fields that
+have been changed by earlier modifications applied during this user
+session. </p>
+<p>This panel includes various information for each field that can be
+changed, including:</p>
+<ul>
+<li>Field number</li>
+<li>Field name</li>
+<li>Current value</li>
+<li>New value (this is the column where new values will be entered)
+</li>
+<li>Error message (when there are issues with the new value that you
+have entered) </li>
+</ul>
+<p>You can use this panel to change one or more fields within the
+current record. You should pay very close attention to the “Error
+Message” column to ensure that the new values that you enter are
+acceptable per the edits that are identified for that particular
+field.</p>
+<p>Note that you do not need to be concerned with justification, since
+positioning of the data that you enter will be automatically determined
+and applied by the modify process. You only need to enter the new value.
+Modify will apply all defined edits for the field being changed and will
+return any errors that are identified. You must correct errors before
+your new value will be accepted. </p>
+<p>Overrides</p>
+<p>There may be situations where you want to override the standard field
+modification process to allow you to enter values that would otherwise
+not be accepted. Overrides are provided in the upper left to allow you
+to activate these override functions, as follows:</p>
+<ul>
+<li>You can apply an override to allow invalid values to be entered. You
+would want to use this override when you are purposely creating invalid
+data for capture and downstream application testing. You can do this by
+selecting the override option which is at the top right of the modify
+record panel. By enabling this override, you can force a new value to be
+accepted by modify regardless of errors. </li>
+<li>You can apply an override to allow lower case values to be entered.
+Normally, all lower case values will be automatically translated to
+upper case. By enabling this override, you can enter lowercase values
+and they will be retained and assigned. </li>
+<li>You can apply an override to allow leading and/or trailing blanks to
+be retained as entered. The standard field modification process will
+remove all leading and/or trailing blanks that you enter and will then
+justify the field based on the validations rules that are defined for
+each field. By enabling this override, you are turning off standard data
+justification and blanks will be retained exactly as you have entered
+them. </li>
+</ul>
+<p>Deleting Records and Record Groups</p>
+<p>There are several delete strategies that are designed to simplify the
+process of removing records from the current file. These are as
+follows:</p>
+<ul>
+<li>Delete by record range. This technique can be used to easily delete
+a single record or a group of records (eg, an item, a bundle, or an
+entire cash letter). </li>
+<li>Delete all records by record type within range. </li>
+<li>Delete all records with a given record type. </li>
+<li>Delete all good items within the file thus leaving all error items.
+</li>
+<li>Delete all error items within the file thus leaving all good items.
+</li>
+</ul>
+<p>When deleting by record number range, you should begin by positioning
+the viewer on the first record within the group that you want to delete.
+After that positioning is set, you then indicate that you want to begin
+the delete using the tools-delete function from the menu bar. </p>
+<p>At that time, you will get the delete screen that is populated with
+information about the delete you just initiated. You should closely
+review this screen, including the record numbers, record types, and the
+number of records that have been chosen to be deleted. Based on your
+review, you can adjust the first and last record numbers within those
+respective fields. </p>
+<p>You can use delete by range to accomplish many goals. For example,
+you can remove a single addendum record within an item. Or you can
+create an invalid file by removing a batch/bundle trailer while leaving
+the associated header and associated items. You can see the overall
+power of this function. </p>
+<p>You obviously need to pay close attention to this record selection
+process. However, also be aware that you will have multiple levels of
+canceling your request. The most important is that you can review the
+change log (which will provide information on every delete you have
+done) and then will have to ultimately save the file for the changes to
+become effective.</p>
+<p>Records can be deleted by record type. This is helpful in situations
+where you want to remove all records with the same record type (eg, you
+want to remove all addenda). This would be extremely difficult if you
+attempted to delete the records one at a time. You can alternatively use
+this facility to quickly delete all records by type in a single
+operation. </p>
+<p>Finally, there is the ability to delete records based on their error
+status. You can also delete all error items (those marked with errors or
+warnings), or alternatively all items without errors (the good items).
+For example, this technique is commonly used to remove all good items
+from the current file and thus get a new file that contains only the
+error items so they can be more closely reviewed. In support of this
+capability, Delete also allows you to optionally remove all resulting
+empty bundles and/or cash letters from the file. </p>
+<p>Delete Confirmation</p>
+<p>Once you have reviewed your delete request and wish to proceed, you
+will next press the Delete button. When you do the delete, you will get
+a pop-up that must be approved for the delete to continue. Once deleted,
+you can then watch the modify log which will track all modifies and
+deletes that you perform during your session. You can also use the
+modify log to revert any individual changes that you have made. </p>
+</body>
+</html>

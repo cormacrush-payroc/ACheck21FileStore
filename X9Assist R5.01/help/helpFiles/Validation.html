@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Validation</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Validation</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>X9Assist is designed to apply all applicable validations to the
+incoming x9 and ach files. Each record field can have one or more
+assigned validations, all of which must be satisfied for the field to be
+considered to be valid. The field viewer shows the validation rules
+which are being applied to each field which is helpful to gain insight
+when running the same file against alternative rule sets.</p>
+<p>X9Assist is supplied with an extensive list of configurations which
+implement the validation rules for each of the commonly used standards.
+These validations are implemented through system supplied XML
+configuration files. It is possible to extend the standard edits that
+are packaged and distributed, but also please be aware that this is an
+advanced topic which requires a thorough understanding of the standards
+themselves. It is recommended that any user modifications be stored in
+separate configurations so they do not overlay the standard rule
+definitions. As part of Extended Support, X9Ware will provide consulting
+services to help with any such customization efforts. </p>
+<p>There are various field level edits that are defined within the
+validation standards:</p>
+<ul>
+<li>Field presence can be either mandatory or conditional. The standards
+state that a mandatory with a defined values list must contain one of
+those values to be considered as valid. Validation of conditional fields
+is more complex, which the term conditional means that the content of
+one field may be conditional on the content of other records and fields
+within the currently loaded file. Generally, conditional fields are
+essentially optional where their content can be blank, which means that
+a conditional field with a defined values list can normally be blank and
+still considered to be valid. However, this validation is dependent on
+the specific conditional field and the rules surrounding that
+conditional presence. The standard developers are a bit vague in these
+areas, with the presence of many fields identified as based on “clearing
+arrangements” which indicates that the rules are agreed upon by the
+originator and receiver. </li>
+<li>Fields can be defined with a data format attribute. For example a
+numeric field can only contain the characters zero through nine, which a
+numeric blank field can contain the values zero through nine as well as
+trailing blanks. </li>
+<li>Fields can be assigned a data alignment attribute, which indicates
+if padding blanks (when present) must be on the left or right. For
+example a numeric blank field is justified left which dictates that any
+padding blanks must be on the right. </li>
+<li>Fields can have a defined values list, which provides a specific
+list of allowable values for the fields. A field can also have multiple
+value lists, where its allowable content varies based on the value of
+other fields that exist within the file. </li>
+</ul>
+<p>Rule Definitions</p>
+<p>File validation is driven by xml documents which define record types,
+fields, field attributes, and the edits that are applied to each field.
+These definitions are located in the following folders: </p>
+<ul>
+<li>/rules/messages/: contains a list of error messages and the severity
+assigned to each. Although most installations will have a single
+messages file, it is possible to implement to vary the messages (with
+their severities) based on the file standard. </li>
+<li>/rules/tables/: contains a series tables with a list of values by
+table name. Table validations are applied by the
+&lt;edit&gt;table/tablename&lt;/edit&gt; rule. Tables are useful when
+the same list of values are applied to numerous fields and there is a
+desire to only define those allowable values in a single location.
+Tables are also useful when the list of valid values is extremely
+lengthy and thus not a good candidate for direct value checking. </li>
+<li>/rules/tests/: contains a series of test sets which are designed as
+test-pass-fail rules. Test set validations are applied by the
+&lt;edit&gt;/test/testSetName&lt;/edit&gt; rule. Each test set consists
+of a series of tests which are applied sequentially to validate a field
+value. Each test results in true or false. A test set is considered to
+be passed when the first successful test is encountered. If all tests
+are false, then the field value has been determined to be unacceptable
+and failed. Each test test assigns its own unique error message to
+describe the failure, along with an optional severity level. Refer to
+the SDK User Guide for more detailed information regarding the test set
+rules facility. </li>
+<li>/rules/tiffrules/: contains a series of tiff validation rules which
+define the allowed attributes of the tiff images that are embedded
+within the file. The tiff rules contain parameters to allow the values
+of individual tiff tags to be validated, and also indicate which tiff
+tags are mandatory and must be present within the tiff images. The tiff
+rules can be used to dictate the image format of the primary binary
+(bi-level) images that are attached to each item, as well as optional
+secondary images which can be gray scale and thus contain a different
+set of attributes and tiff tag requirements. Refer to the SDK User Guide
+for more detailed information regarding the TIFF validation rules.</li>
+<li>/rules/x9rules/: contains a series of validation rules which define
+the allowed content of files. The rules represent the core of our
+validation engine and drive the validation of each file. These rules
+indicate which record types may be present within the file, the fields
+that make up each record definition, and the validations that are
+applied to each field. Refer to the SDK User Guide for more detailed
+information regarding the validation rules.</li>
+</ul>
+<p>Validation Rules</p>
+<p>The rules engine implements the following proprietary design
+principles: </p>
+<ul>
+<li>A validation set can be either a basis document or an extension
+document. </li>
+<li>A basis document defines a core specification. </li>
+<li>An extension document defines a new specification that is built upon
+a defined base. When defining an extension, only the differences
+(against the base document) need to be defined and all else will be
+automatically inherited. This approach substantially reduces ongoing
+maintenance, since a change basis is automatically applied to any
+defined extensions. It also allows you to quickly and easily understand
+what is different in the extension specifications. </li>
+<li>Each specification has a set of controls which define the high level
+attributes associated with the rules. For example, the controls might
+indicate if the allowable character set is EBCDIC, ASCII, or
+EITHER.</li>
+<li>A base document must contain a controls definition and need only
+define those values that vary from the system defaults. </li>
+<li>An extension document must contain a controls definition and need
+only define those values that vary from the base document. </li>
+<li>Each specification is defined as consisting of a series of record
+types. </li>
+<li>Each record is defined as consisting of a series of fields. </li>
+<li>Each field is defined with its specific attributes and validation
+criteria. </li>
+</ul>
+<p>TIFF Rules</p>
+<p>The TIFF rules engine similarly implements the following proprietary
+design principles: </p>
+<ul>
+<li>Each TIFF specification has a set of TIFF controls which define the
+high level attributes associated with the TIFF rules. For example, the
+TIFF controls might indicate that duplicate tags are accepted or are not
+accepted. </li>
+<li>Each TIFF specification can have separate set of TIFF rules for
+Black White versus Gray Scale images. </li>
+<li>Each set of TIFF rules contains a list of TIFF edits that are
+applied to tags when they are present within an image. </li>
+<li>Each set of TIFF rules contains a list of TIFF tags that are
+mandatory for each image. </li>
+<li>The TIFF specification contains a list of descriptions of all
+possible tags that can be present across all images within the x9 file.
+</li>
+</ul>
+<p>More Information...</p>
+<p>Please contact X9Ware for more information regarding these validation
+rules and how they can be extended to meet your specific requirements.
+</p>
+</body>
+</html>

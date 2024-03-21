@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ToolBar</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Toolbar </p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The following functions are available from the tool and menu bars:
+</p>
+<table>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Open</td>
+<td></td>
+<td>Open a new x9 file, load into memory, and perform all x9 and tiff
+validations. Note that the initial (default) folder for open operations
+can be defined in program options. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Close</td>
+<td></td>
+<td>Close the current x9 file and reset all panels. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Save</td>
+<td></td>
+<td>Save the current x9 file to the same file name as was originally
+opened. The file that is saved will include any modifications that you
+may have made to individual fields or records within the file. As part
+of the save, you will be prompted to create an optional backup of the
+original x9 file. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Save As</td>
+<td></td>
+<td>Save the current x9 file to an external disk file with a new name of
+your choosing . The file that is created will include any modifications
+that you may have made to individual fields or records within the file.
+Save As will allow you to specific the attributes of the output x9 file,
+which can be different than the input x9 file. For example, the input x9
+file could be Ascii without field zero lengths, and the created x9 file
+could alternatively be Ebcdic with field zero lengths. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Find</td>
+<td></td>
+<td>Find a specific item based on your selection criteria. Find allows
+you to enter new selection criteria to begin a find operation. Your
+previous find criteria is initially displayed so you can easily adjust
+that criteria to begin your next search. You can create a filter to
+allow you to easily browse your selection results and then use the
+selected records for such further activities as creating a new x9 file
+with just those items or removing the filtered items from the current x9
+file. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Find Next</td>
+<td></td>
+<td>Find the next check based on your selection criteria. Notice that
+this icon will include information about how many items meet your
+selection criteria and you relative position within the selection list.
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Search</td>
+<td></td>
+<td>Search for specific values and conditions across all record types
+and then selectively for specific fields within specific record types.
+You can create a filter to allow you to easily browse your selection
+results and then use the selected records for such further activities as
+creating a new x9 file with just those items or removing the filtered
+items from the current x9 file. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Export</td>
+<td></td>
+<td>Export one or more of the X9Assist tables tables into Excel or a
+compatible spreadsheet program such as Open Office. You will first
+select which of the available tables should be exported. An XLS workbook
+will then be created that contains the selected tables, where each table
+will be a separate sheet within the workbook. The XLS spreadsheet is
+created in the /temp/reports folder. Each new workbook is created with a
+uniquely defined name through a date and time suffix that is appended to
+the file name. You can perform various functions with the generated XLS
+file once it is created. For example, you can print it, share it with
+others, or save it for future reference. The retention period (in days)
+for reports is a program option and can be modified based on your
+requirements. Spreadsheets created in the reports folder will be
+automatically deleted when this number of retention days is
+exceeded.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Print Tables</td>
+<td></td>
+<td>Print one or more of the X9Assist tables. You will first select
+which of the available tables should be formatted for printing. A PDF
+file will then be created that contains the selected tables. The PDF
+file is created in the /temp/reports folder. Each new print file is
+created with a uniquely defined name through a date and time suffix that
+is appended to the file name. You can perform various functions with the
+generated PDF once it has been created. For example, you can print it,
+share it with others, or save it for future reference. The retention
+period (in days) for reports is a program option and can be modified
+based on your requirements. PDF files created in the reports folder will
+be automatically deleted when this number of retention days is exceeded.
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Print Images</td>
+<td></td>
+<td>Print one or more images from the current x9 file. You can select
+the current check being displayed, one of your filters, or the entire x9
+file. Images are formatted and inserted into a PDF template which you
+can customize. You\ can control the number of checks that are printed
+per page, paper size, orientation, and the background template that is
+used for printing. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Validate</td>
+<td></td>
+<td>Run all x9 validations. This function would typically be used after
+modifications have been made to the x9 file. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Scrub</td>
+<td></td>
+<td>Scrub the file to remove all proprietary information. The types of
+proprietary information that will be removed is selectable as part of
+the scrub operation. This function is very helpful to allow you to
+create and then ultimately save a new x9 file that is based on this x9
+file but has customer or operational information removed based on
+confidentiality requirements. For example, you can use scrub to create a
+new x9 file that has replaced customer account numbers and the check
+images with randomly created information. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Modify</td>
+<td></td>
+<td>Modify allows you to start or stop a modify session, as well obtain
+a list of all changes that have been made to the current x9 file.
+Modification includes the ability to modify individual fields, delete
+certain x9 record types, and replace images with missing image
+documents. Modify allows you to review a list of your field changes and
+then easily jump to any record that has been changed. Modify also
+provides a facility to revert any individual change that has bee made.
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Delete</td>
+<td></td>
+<td>Delete the currently displayed x9 record when a modify session is
+active. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Repair</td>
+<td></td>
+<td>Apply automated repairs against the currently loaded x9 file. Repair
+will provide a list of all currently implemented repairs that can be
+applied against an x9 file. You can then select from this list and
+initiate the repair operation. A new file validation will be run once
+the repairs have been applied. You can then review the results and
+determine if they meet your specific needs. The repaired x9 file can be
+further modified and then ultimately saved based on your requirements.
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Import</td>
+<td></td>
+<td>Import and internally create a new x9 file from an external Excel
+file (XLS or CSV). Please refer to the import documentation for more
+information on this functionality. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Export</td>
+<td></td>
+<td>Export the current x9 file to an external CSV file and optional
+write the images to an output folder of your choosing. This CSV file can
+then be used for other purposes or routed to other applications for
+processing. It is also possible to make changes to the resulting CSV
+file and then import those results back into X9Assist. Please refer to
+the export documentation for more information on this functionality.
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ItemViewer</td>
+<td></td>
+<td>The Item Viewer provides full scale images for easy viewing and
+allows you to page back and forward to view checks within the current
+bundle. The Item Viewer allows you to flip a check from front to back.
+It also provides functionality to export an image to an external file
+and copy the image to the system clip board. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Make</td>
+<td></td>
+<td>Make is used to dynamically create X9 files from your
+specifications. Input can come from either CSV files or Excel worksheets
+Make allows your to define reformatters which translate your use cases
+to the input required by Generate. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Generate</td>
+<td></td>
+<td>Generate is used to dynamically create X9 files from your
+specifications. Generate will dynamically create images to match your x9
+items. Generate also wraps all of the generated items with the control
+records and totals needed for a completely valid x9 file. The generated
+x9 files can be used by your internal application testing to resolve
+many confidentiality issues associated with the use of production files
+in your test environments. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Clone</td>
+<td></td>
+<td>Clone is used to create large x9 files by cloning (copying) the
+bundles within an existing x9 file. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Merge</td>
+<td></td>
+<td>Merge allows you to merge the contents of another x9 file into the
+currently loaded x9 file. Merge is a convenient way to combine multiple
+x9 files into a single (larger) x9 file. This is helpful to combine
+various x9 files with different test cases into a single file that can
+be used for ongoing testing, or to combine various x9 files to create a
+single larger file, possibly to be used for stress testing purposes.
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Image MisMatch</td>
+<td></td>
+<td>Image MisMatch allows you to create checks where the front images
+are mismatched with the associated MICR line data (either ICL type 25 or
+ICLR type 31). This is a helpful process when you require image mismatch
+files for your downstream application testing. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Duplicate Items Detector</td>
+<td></td>
+<td>The Duplicate Items Detector can identify duplicate items either
+within the current x9 file, or across multiple x9 files. Duplicates can
+be identified for the following types of items: check detail records
+(type 25), return detail records (type 31), and credit reconciliation
+records (type 61). Duplicates are considered within record type, which
+means (for example) that you cannot have a duplicate that consists of a
+debit and a credit, even if they have the same MICR line and
+amount.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Add Item to Picklist</td>
+<td></td>
+<td>Add the currently positioned item or bundle to the Picklist. You can
+then use the Picklist for other functions such as creating an ICL/ICLR
+file or deleting the selected items. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Delete Items using a Filter</td>
+<td></td>
+<td>Delete the items from the current x9 file using items that are
+enclosed in a filter or the Picklist. You can select these items in one
+of several ways. Filters can be created using either the Find or Search
+tools. Individual items or bundles can be added to the system Picklist.
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Generate ICL/ICLR</td>
+<td></td>
+<td>Create a new ICL/ICLR file using the items from the currently loaded
+x9 file, or from the items that are enclosed in a filter or the
+Picklist. You can select these items in one of several ways. Filters can
+be created using either the Find or Search tools. Individual items or
+bundles can be added to the system Picklist. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Merge Filters</td>
+<td></td>
+<td>Merge two or more filters. You can then use the merged filter for
+other functions such as Delete Items or Generate ICL/ICLR. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Release All Filters</td>
+<td></td>
+<td>Release all currently defined filters. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Mapping Editor</td>
+<td></td>
+<td>The Mapping Editor allows you review and update your mapping rules,
+which are used to dynamically “bind” to configuration rules based on
+contents of the x9 file header. This process allows the correct rules to
+be applied to the file on an automated basis without manual
+intervention. For example, you can use the bind process to define those
+exchange partners who provide x9.100-187 files versus those who provide
+x9.37 files, when fields in the x9 file header are not assigned properly
+to allow that detection to be done based on the file alone. X9Assist is
+then able to apply the appropriate validation rules based on the
+originator. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Configuration Editor</td>
+<td></td>
+<td>The Configuration Editor allows you to define logical configurations
+that are used for x9 and tiff validation. Each configuration consists of
+a x9 rules file, a tiff rules file, an application options file, and an
+error message severities file. Each of these is an xml file which
+controls part of the file validation process. A combination of these
+four files can then be defined as a logical configuration and given a
+name which is used by the Mapping Editor for x9 file binding. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ABA Editor</td>
+<td></td>
+<td>The ABA Editor is an optional facility exists to define your
+upstream and downstream partners by their ABA. You can then indicate if
+their role (upstream, downstream, both) and their status (start date,
+end date, etc). This allows X9Assist to validate the origination and
+destination ABA’s that exist in the file header. This ABA file can be
+keyed or extracted from your image exchange application. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ABA List Editor</td>
+<td></td>
+<td>The ABA list editor is used to create ABA lists that can be used by
+several functions including the Scrub and the Use Case Editor. ABA
+numbers are created with the appropriate MOD check digits in FED
+districts of your choosing. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ModCheck Editor</td>
+<td></td>
+<td>The Modcheck Editor is used to maintain a list of available account
+number modulus routine definitions, which are input to the Use Case
+Creator. This list allows account numbers to be created that will
+appropriately self check for a given financial institution. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Use Case Editor</td>
+<td></td>
+<td>The Use Case Editor will generate use case lists that can then be
+used by Make and Scrub. A use case list contains information that is
+used to populate type 25 or type 311 detail records. This includes the
+aba, account number, process control, and AUX OnUs fields which are all
+required by the MICR line. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>RT Calculator</td>
+<td></td>
+<td>The RT calculator is a simple tool to calculate RT check digits.
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>System Log</td>
+<td></td>
+<td>The system log is used when researching issues either with X9Assist
+or your x9 data. Use of the system log can be complex and should be used
+when you are working directly with X9Ware. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Program Options</td>
+<td></td>
+<td>Program Options are used to display and optionally make changes to
+the default settings. You can update the current program options or
+create a new options file. All option files must be maintained within
+the xml/options folder. Program options are configured during X9Assist
+program startup, so you will have to restart the application to see the
+impact of your option changes. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>License Key Editor</td>
+<td></td>
+<td>The License Key Editor is used to enter a new X9Assist license key
+or review the current license key that is in place. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Help</td>
+<td></td>
+<td>Help will display a list of the available program documentation. You
+will then be able to view and search those individual documents to learn
+more about X9Assist. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>About</td>
+<td></td>
+<td>About provides detailed information about the X9Assist application
+and X9Ware as a company that wants to meet your x9 needs. There is also
+a link to our web site. If you have any questions regarding X9Assist,
+licensing options, enhancements that you would like to be made to the
+product, or possibly consulting opportunities, you can email us directly
+at <a
+href="mailto:x9ware@gmail.com"><em><em>x9</em><em>assist</em><em>@</em><em>x9ware</em><em>.com</em></em></a>.
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Exit</td>
+<td></td>
+<td>Exit the application. </td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

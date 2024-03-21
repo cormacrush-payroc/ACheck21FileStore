@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Code Line Match</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span>Code Line
+Match</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Code line match analyzes and compares the data fields within the item
+records against a code line that is extracted from the front image using
+OCR recognition techniques. Code line match will report exceptions where
+the data extracted from the front side image does not appear to
+logically match the data that is contained within the x9 item record
+(record types 25, 31, 61, or 62). <br />
+<br />
+Code Line Match (CLM) tests can be optionally applied as part of file
+loading. This selection is made from the tool bar and must be set before
+an x9 file is loaded. Once set, code line match test are then active and
+will be applied during file ingestion.</p>
+<p>Our CLM tests are designed to identify image mismatch conditions
+which can unfortunately be created during capture and processing, where
+the front side image for an item is not associated with the x9 data
+record. Many times, there is a one item offset (within the file) between
+data and image. Although this is an extremely infrequent condition, it
+creates extreme privacy issues from a processor and customer
+perspective. When such conditions exist, it is imperative to have tools
+that will identify the extent of the issue so appropriate correction
+actions can be taken. </p>
+<p>Detection </p>
+<p>Code line match detection is a difficult process, since the code line
+must be extracted from the image using OCR techniques to facilitate the
+compare. Our matching algorithms are X9Ware proprietary since a variety
+of contributing conditions. This includes the potential for digit
+misreads in the original x9 captured data as well as incomplete OCR
+recognition from the image data. There are other situations that
+contribute the this complexity including formatting issues (eg, embedded
+blanks and dashes) and incomplete original capture. Our CLM compare
+takes these differences into consideration with the goal of minimizing
+false positives. </p>
+<p>CLM Suspect Review</p>
+<p>A validation error will be generated and attached to the item record
+(type 25, 31, 61, 62) when a CLM suspect has been explicitly identified.
+These errors must then be reviewed to determine if there is an actual
+mismatch condition, or if it is instead a false positive.</p>
+<p>CLM automatically creates a pick list of the items that fail code
+line match. Using this pick list, you can then launch the Item Viewer to
+review each item that has failed code line match. The review process is
+greatly facilitated by the viewer option to append x9 data to the front
+image (this option is selected from the action bar at the bottom of the
+panel). The remove button can be used to drop any items that are false
+positives. </p>
+<p>Creating a Modified X9 File</p>
+<p>Our pick list tools can be used to:</p>
+<ul>
+<li>Review items within the list</li>
+<li>Remove false positives from the list</li>
+<li>Add new items to the list. </li>
+</ul>
+<p>Once the list of suspects has been finalized, a new x9 file can be
+created from the current x9 file without the code line mismatch items.
+This is done by using our pick list tools to remove the identified
+mismatch items from the x9 file. Once that removal is complete, the
+remaining items can be written to a new x9 output file. </p>
+<p>CLM Use During On-Boarding</p>
+<p>Although CLM tools are essential when you have an identified code
+line mismatch event, they are also very useful as a supporting test
+during on-boarding of new image exchange partners. CLM is yet another
+validation test that can be applied to new customer files to ensure that
+data and images have been properly captured and formatted for exchange
+by your new file originator. </p>
+<p> </p>
+</body>
+</html>

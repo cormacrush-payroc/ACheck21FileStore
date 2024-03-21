@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Item Viewer</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Item Viewer</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The Item Viewer is launched from the DashBoard using either the tool
+bar or the menu bar and provides access to several panels and tools that
+can be leveraged for the current item. The purpose of the Item Viewer to
+to use the entire panel to provide information regarding the current
+item. For x9 files, a large scale image can be displayed which provides
+image details that otherwise may not be readily visible from the smaller
+images that are displayed within the DashBoard.</p>
+<p>The Item Viewer allows the current item to be displayed in one of
+several modes which are selected from the action line at the bottom of
+the panel. The available modes are:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Tab Name</td>
+<td>Content</td>
+<td>Applies to X9 ?</td>
+<td>Applies to Ach?</td>
+</tr>
+<tr class="even">
+<td>Viewer</td>
+<td>A split panel shows the fields for the current item on the left, and
+the front/back images on the right (for x9 files). </td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Front</td>
+<td>An image panel shows the item front image (for x9 files). </td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Back</td>
+<td>An image panel shows the item back image (for x9 files). </td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Tiff Tags</td>
+<td>A split panel shows the current image on the top and a table of the
+associated TIFF tags on the bottom (for x9 files). </td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Hex</td>
+<td>A hex panel shows the current item record group in hexadecimal
+format, which includes the item and all attached types within the item
+group. </td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Viewer Panel</strong></p>
+<p>The Viewer panel is a consolidated panel which contains detailed
+information for the current item, which includes the field number, field
+name, field value, and an icon which represents any errors which were
+identified during validation</p>
+<p><strong>Field Values with Leading/Trailing Blanks </strong></p>
+<p>The value column is formatted to provide insight into how and where
+blanks are present within the data value. Leading and trailing blanks
+are displayed as a shaded gray area to make their presence and
+visibility more apparent. This formatting does not impact embedded
+blanks, but only the leading and/or trailing blanks that may appear as
+part of field justification. </p>
+<p><strong>Browsing Functions</strong></p>
+<p>The Item Viewer includes previous and next functions which allow you
+to easily walk through the items that are located within the current
+file, using the entire viewing space of your screen size, thus
+maximizing the data you can see and scroll through. When paging forward
+or backward, the Item Viewer will continue to show items until the very
+last item within the current file is displayed. This browsing process
+may automatically move forward to the next bundle or cash letter based
+on the current file structure. The Item Viewer will return to the
+DashBoard when there are no more items to be displayed within the
+current file. </p>
+<p>Modif<strong>ying Images </strong></p>
+<p>When users are licensed for modify, the Item Viewer has tools which
+allow the front and/or back images for the current item to be modified.
+This is accomplished using various icon-based tools that are available
+on the toolbar, followed by a replace function. Our UI has implemented
+image modification here, since this allows you to actually see the image
+as changes are made. For example, possible steps to modify an image
+might be:</p>
+<ul>
+<li>Sharpen the image.</li>
+<li>Deskew the image for better horizontal alignment. </li>
+<li>Repair the image to rescale (if needed) and recreate tiff tags.</li>
+<li>Replace the image, which attaches the modified image to the current
+item.</li>
+<li>Closely review results.</li>
+<li>Save the modified file to an alternate file name.</li>
+<li>Use X9Assist-Compare to compare the original file to the modified
+file. </li>
+</ul>
+<p>Once the replace function is used to attach a modified image to the
+current item, it can be subsequently reverted from the modification log.
+</p>
+<p>Item Viewer Tools</p>
+<p>The following x9.37 tools are available within the Item Viewer:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Export</td>
+<td>For x9 files, individual images can be exported to externally stored
+image files. These images can be written in TIFF format, but can also be
+written in other standard industry image formats such as PNG, JPG, GIF,
+etc. When images are exported in TIFF format, the exported TIFF file
+will contain the <em><strong>exact</strong></em> TIFF image data that
+exists on the x9 file (the same segments, TIFF tags, etc). </td>
+</tr>
+<tr class="even">
+<td>Copy</td>
+<td>For x9 files, individual images can be copied to the clipboard. This
+is a very convenient way to move images from X9Assist to other desktop
+applications. </td>
+</tr>
+<tr class="odd">
+<td>Strip</td>
+<td>For x9 files, appends a MICR strip using the actual item data from
+the current item record. The data will be extracted from the current
+item record which may for example be a 25, 31, 61, or 62. This function
+is very useful when you want to visually compare the image against the
+data that exists within the file itself. </td>
+</tr>
+<tr class="even">
+<td>OCR</td>
+<td>For x9 files, appends a MICR strip using data from an OCR Read,
+which is based on the X9Ware E13B-OCR product. The MICR data is
+extracted from the actual front side TIFF image. This function is very
+useful when you want to visually compare the image against our OCR reat
+results. The ? Button can subsequently be used to gain more insight into
+our E13B recognition process. </td>
+</tr>
+<tr class="odd">
+<td>MICR Gauge</td>
+<td>For x9 files, displays a MICR gauge as an overlay against front side
+images. This tool allows you to easily confirm that a MICR line has been
+properly positioned within the clear band area (the bottom 5/8 inches of
+the image). </td>
+</tr>
+<tr class="even">
+<td>Density</td>
+<td>For x9 files, displays the pixel density for the current image,
+which is either the “top” image (when both images are being displayed)
+or the current when in zoom ode. This tool can be used even when IQA is
+not enabled and provides insight into the too light or too dark
+attributes for any given image within an x9 file. </td>
+</tr>
+<tr class="odd">
+<td>Sharpen</td>
+<td>For x9 files, applies our sharpening tool to the current image and
+thus attempt to remove background noise. Depending on the condition of
+the image, the sharpened image may improve your image visibility and
+otherwise bring data into focus which is otherwise not readily viewable.
+</td>
+</tr>
+<tr class="even">
+<td>Blur</td>
+<td>For x9 files, applies our standard blurring tool to the current
+image to simulate scanner issues. If our standard blur does not meet
+your needs, we have included steps (documented below) to export an image
+so you can apply blurring using an external image tool such as GIMP.
+</td>
+</tr>
+<tr class="odd">
+<td>Deskew Left</td>
+<td>Slightly rotates the image left to attempt to remove possible
+capture skew. The undo button can be used if the results are not
+acceptable. </td>
+</tr>
+<tr class="even">
+<td>Deskew Right</td>
+<td>Slightly rotates the image right to attempt to remove possible
+capture skew. The undo button can be used if the results are not
+acceptable. </td>
+</tr>
+<tr class="odd">
+<td>Flip</td>
+<td>Changes the image orientation by 180% (horizontal flip). </td>
+</tr>
+<tr class="even">
+<td>Exchange </td>
+<td>Exchanges the front and back images for this item. </td>
+</tr>
+<tr class="odd">
+<td>Repair</td>
+<td>Attempts to repair the image using our TIFF repair capabilities.
+</td>
+</tr>
+<tr class="even">
+<td>Undo</td>
+<td>Undo recent changes that have been done within this item viewer.
+Undo cannot reverse changes after a replace has been done; that can only
+be done through the modification log. </td>
+</tr>
+<tr class="odd">
+<td>Next</td>
+<td>The next item will be displayed within the current file. </td>
+</tr>
+<tr class="even">
+<td>Previous</td>
+<td>The previous item will be displayed within the current file. </td>
+</tr>
+</tbody>
+</table>
+<p>X9 Image Replacement</p>
+<p>Image changes are logged in the same manner as field level
+modifications. Image changes can similarly be viewed using the
+modification log and can be reverted in the same manner.</p>
+<p>Images can be replaced using one of the following standard
+facilities:</p>
+<ul>
+<li><strong>Current viewer image: </strong>the current viewer image will
+be used to construct the replacement image. This image may have been
+modified using one or more tools such as sharpen, deskew, or repair.
+</li>
+<li><strong>Load external image</strong>: a replacement image is loaded
+from an external image file. If the replacement image is in TIFF format,
+then the byte array for that image will be inserted into the type 52
+record exactly as it appears in the external image file; no image
+manipulations will be performed. If the image is in another supported
+format (PNG, JPG, GIF, or BMP) then it will be converted to a standard
+TIFF image that is compliant with the x9.100-181 exchange standard. This
+includes conversion to black/white as needed. You retain the most
+control over your replacement image when it is provided in TIFF format,
+hence it is our recommendation to do that whenever possible. </li>
+<li><strong>Missing</strong>: the standard missing image document will
+be used to replace the current image (which might be either a front side
+image or a back side image). The missing image document is a standard
+document that can be customized to contain specific data per your site
+requirements. There are separate missing-front and missing-back images
+that can be defined as needed. </li>
+<li><strong>Both as missing</strong>: the standard missing image
+documents will be used to replace bot the front side and back side
+images for the current item. This is typically done when the wrong item
+image is associated with the current x9 item. </li>
+<li><strong>Zero length image</strong>: field 52.18 will be set to zero
+which implies that no image is present within the type 52 record.
+However, the type 52 record is retained within the item group. </li>
+</ul>
+<p>Blurring an Image</p>
+<p>It is occasional desirable to blur an existing image, as a negative
+use case for image processing. Creating blurred images is a complex
+process for several reasons:</p>
+<ul>
+<li>The image manipulations needed to blur an image are in themselves
+complicated.</li>
+<li>There are various blurring techniques that can be applied which will
+result in different results. These various tools need to be tried
+through a trial-and-error process, to achieve the best output subject to
+your requirements. </li>
+<li>Various parts of an image can be blurred. You may want to blur parts
+of the MICR line, the CAR/LAR fields, other image fields, or the entire
+image to emulate a bad camera.</li>
+</ul>
+<p>The toolbar includes our standard blur which can be applied to an
+image. However, if our standard blur does not meet your needs, you can
+use this alternative sequence of tasks to utilize an external tool (like
+GIMP) to manipulate the image. GIMP not only has various blurring tools,
+but also allows the blurring to be applied selectively to the image,
+with do-undo support as you work on the image. You do not need to use
+GIMP, you can use another tool of your choice. </p>
+<p>The sequence of steps to accomplish image blurring (or other image
+manipulations) is as follows: </p>
+<ul>
+<li>Go to the item that you would like to manipulate. </li>
+<li>Double click the front thumbnail image, which will put you into the
+item viewer.</li>
+<li>Using the buttons at the bottom, you can export this one image out
+to a file name of your choice.</li>
+<li>Now use another image tool to blur this image. My tool of choice
+would be GIMP. Once you’ve finished, export this image as a PNG.</li>
+<li>Go back to X9Assist, open up the file, and go back to this
+item.</li>
+<li>Turn on modify using the upper right hand corner check box that’s on
+the dashboard.</li>
+<li>Now modify the type 52 front image record.</li>
+<li>Inside the modify record panel, you will see field 52.19 at the
+bottom. Click modify to modify this image. </li>
+<li>Use the button options to indicate you would like to replace the
+image from an external image.</li>
+<li>Go into the file system, and select the image that you have blurred
+and saved.</li>
+<li>The selected image will now replace the original image, and you will
+see it in the item viewer.</li>
+<li>Finally, you can say this X9.37 file and you will have the image
+exactly as it has been modified and within this file.</li>
+</ul>
+<p>Now that you have the modified file that contains a blurred image,
+you can either send it for image processing, to a downstream
+application, or print if that would be preferred.</p>
+<p>Hex Viewer</p>
+<p>The Hex Viewer allows individual records to be viewed in hexadecimal
+format, as they appear on the input file. This viewer provides several
+important capabilities:</p>
+<ul>
+<li>Data is logically parsed into individual records based on actual
+data length</li>
+<li>The four byte record length prefixes are shown when they exist
+within the file (when they exist as the physical length of each logical
+record)</li>
+<li>For x9 files, the tiff image data from the type 52 image view data
+records is included </li>
+<li><p>Each data record includes:</p>
+<ul>
+<li>Record number</li>
+<li>Record length</li>
+<li>File offset</li>
+<li>Hexadecimal data (in either the Ebcdic or Ascii character set)</li>
+<li>Translated character data </li>
+</ul></li>
+</ul>
+<p>Structurally Flawed Files</p>
+<p>An important feature of the Hex Viewer is that it is automatically
+invoked when a structurally flawed file is opened. The purpose of this
+interface is to provide as much information as possible when flawed
+files are opened. </p>
+<p>These are always difficult situations and can easily turn into
+complex discussions. Most x9 tools provide little to no information on
+flawed files. However, X9Assist is designed to intercept these parsing
+errors and give you as much insight (as possible) as to where the error
+exists.</p>
+<p>When a structurally flawed file is open, X9Assist will:</p>
+<ul>
+<li>Provide a pop-up message with information on where the problem was
+encountered.</li>
+<li>Will then position you within the Hex Viewer at the point of the
+parsing failure. </li>
+</ul>
+<p>The pop-up message contains the following information: </p>
+<ul>
+<li>The number of records parsed up to the break point</li>
+<li>The percentage of overall data that was successfully parsed </li>
+</ul>
+</body>
+</html>

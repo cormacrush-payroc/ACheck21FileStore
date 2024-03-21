@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Configuration Editor</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Configuration Editor</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Tool Type</td>
+<td>Tool Usage</td>
+</tr>
+<tr class="even">
+<td>System Editor</td>
+<td>Editors maintain runtime tables which control the application
+environment.</td>
+</tr>
+</tbody>
+</table>
+<p>The Configuration Editor is used to define the various x9
+configurations that can be used for x9 file validations. Each
+configuration is a logical group of rule files that, when collectively
+taken as a group, define the validations that will be applied against an
+x9 file. </p>
+<p>X9Assist is installed with a predefined list of configurations. List
+standard list can then be changed using the Configuration Editor based
+on your specific requirements. This is especially important when you are
+adding your own x9 rule definitions and hence must construct a
+configuration to utilize your custom x9 rules. Every configuration
+consists of the following attributes: </p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Attributes</td>
+<td>Attribute Content and Purpose</td>
+</tr>
+<tr class="even">
+<td>X9 rules file</td>
+<td>Contains a list of the rules that are applied to the x9 records and
+fields within the x9 file. These rules are used to generate x9 related
+errors. </td>
+</tr>
+<tr class="odd">
+<td>Tiff rules file</td>
+<td>Contains a list of the rules that are applied to the tiff images
+within the x9 file. These rules are used to generate image related
+errors.</td>
+</tr>
+<tr class="even">
+<td>Messages file</td>
+<td>Contains a list of the error messages and their associated severity
+levels. These rules are used to assign the severity level of the errors
+that are generated during the validation process. Each error has an
+assigned severity level of Error, Warn, Info, or OK. </td>
+</tr>
+<tr class="odd">
+<td>Entry Type</td>
+<td>Defines the configuration as either “System” or “User”. System
+entries are automatically defined within the X9Assist environment and
+cannot be modified by the user. User entries can be created using the
+Configuration Editor and will be automatically retained across user
+sessions and X9Assist release installations. </td>
+</tr>
+</tbody>
+</table>
+<p>Each configuration is displayed with a “status” column, which
+provides the current validation status of the components with that
+configuration. If the configuration is displayed with a check mark, then
+all of the components within that configuration are present and
+validated.</p>
+<p>Entries can be deleted by selecting them (via their check box) and
+then pressing the delete button. System entries cannot be deleted. </p>
+<p>This table must be saved for your changes to be effective. Results
+will be saved to xml/config.xml.</p>
+<p>System Entries versus User Entries</p>
+<p>A system entry is one which is created internally and added to this
+table. The content of system entries may change from release to release.
+The editor will allow user entries to be modified or deleted, while
+system entries are not allowed to be changed.</p>
+<p>Load Identifiers</p>
+<p>The Configuration Editor load identifier column provides information
+as to the location and time stamp for each physical component. The
+location can be in one of three places:</p>
+<ul>
+<li>The launch folder (where X9Assist was loaded from) is identified as
+“L”.</li>
+<li>The home folder (within user documents) is identified as “H”.</li>
+<li>Otherwise, the load identifier can be blank, which indicates that
+the component was not found in either of these two locations but instead
+defaulted to the internal resources definition that is defined within
+the SDK itself. This is not a typical configuration for X9Assist, since
+our rules are distributed with that product and are installed in the
+launch folder. </li>
+</ul>
+<p>By convention, all rules should be stored in the launch folder (they
+should not be placed in the home folder). This is because rule parsing
+is dependent on the associated code that is implemented within the
+current release. Locating rules in the home folder would potentially
+make them available to more than one release of X9Assist, which would
+result in unpredictable results and most probably program aborts. </p>
+<p>Construction of the Configuration List</p>
+<p>X9Assist loads the internal configuration list during session
+initialization as follows:</p>
+<ul>
+<li>All system entries are internally populated to the configuration
+list based on the current release definitions. When you install a new
+X9Assist release, this may result in a new configuration list entry
+being automatically added, or it may alternatively result in an obsolete
+entry being removed.</li>
+<li>All user entries are then automatically merged from the config.xml
+definition. Only user entries are added during this merge process.
+System entries are not needed since they are already been populated. If
+you need to modify a system entry, then you should create a user entry
+with the same name, which will then overlay the system entry with that
+same name. </li>
+</ul>
+<p>Default Session Configuration</p>
+<p>The configuration editor allows assignment of the default session
+configuration. When this configuration has been set, it will override
+the standard use of our auto-detection process and instead will be used
+for validation whenever a new file is opened. Other configurations can
+still be made available for use, but they must be invoked manually from
+the tool bar. </p>
+<p>Standard Configurations</p>
+<p>X9Assist and the X9Ware SDK support the following x9.37 industry
+specifications: </p>
+<table>
+<tbody>
+<tr class="odd">
+<td>DSTU</td>
+<td>Introduced in 2003 as part of the Check Clearing for the 21st
+Century Act, the DSTU is the original and most commonly used image
+exchange standard which establishes the basis for U.S. check image
+exchange between two financial institutions. The DSTU continues to be
+widely used since it is the most basic of standards and it generally
+accepted throughout the industry. X9Ware fully supports the X9.37 DSTU
+standard. </td>
+</tr>
+<tr class="even">
+<td>X9.100-187</td>
+<td>X9.100-187 was introduced in 2008 as an updated replacement for the
+DSTU. It is used as the basis of the specifications that have been
+adopted by many financial institutions as a DSTU replacement, and
+clarifies many of the gaps that existed within the original standard.
+X9.100-187 standard was updated in 2013 and 2016. Each of the X9.100-187
+standards has an associated Universal Companion Document (UCD) which is
+an extension that contains commonly accepted by financial institutions
+and third party processors. X9Ware provides support for X9.100-187-2008,
+X9.100-187-2013, X9.100-187-2016, X9.100-187-2008-UCD,
+X9.100-187-2013-UCD, and X9.100-187-2018-UCD. </td>
+</tr>
+<tr class="odd">
+<td>X9.100-180</td>
+<td>X9.100-180 was published in 2006 with the intention to address many
+of the business requirements that were identified with the DSTU. The
+biggest desirable change was the ability to support credits, along with
+separate debit and credit totals in trailer records. Unfortunately, the
+various record types and fields within X9.100-180 became so different
+from the DSTU that adoption of this standard became extremely difficult.
+The X9.100-187 UCD was the industry response to X9.100-180, allowing
+specific needs to be addressed in more straight forward ways. As a
+result, X9.100-180 is largely unused by most financial institutions.
+X9Ware provides support for X9.100-180-2006 and X9.100-180-2016. </td>
+</tr>
+<tr class="even">
+<td>CPA 015</td>
+<td>Canadian Payments Association Standard 015 (CPA 015) is an extension
+to X9.100-187 and defines how image exchange has been implemented within
+Canada. This standard addresses currency requirements in support of CAD
+and USD and supports cross border exchange between banks. X9Ware
+provides full support for the CPA-015 standard. </td>
+</tr>
+<tr class="odd">
+<td>Cross Border</td>
+<td>X9Ware has implemented various extensions to the X9.100-187
+standards in support of cross border exchange. These extensions are
+limited to accepting routing numbers in a variety of formats including
+4-4 and 5-3 as required by Canadian financial institutions. </td>
+</tr>
+<tr class="even">
+<td>FRB</td>
+<td>The FRB provides electronic check image exchange services, based on
+the DSTU which is fully supported by X9Ware. </td>
+</tr>
+<tr class="odd">
+<td>EndPoint Exchange</td>
+<td>Endpoint Exchange provides electronic check image exchange services
+based on the DSTU which is fully supported by X9Ware. </td>
+</tr>
+<tr class="even">
+<td>ViewPointe</td>
+<td>ViewPointe provides electronic check image exchange services based
+on the DSTU which is fully supported by X9Ware. </td>
+</tr>
+<tr class="odd">
+<td>SVPCo</td>
+<td>SVPCo provides electronic check image exchange services based on the
+DSTU which is fully supported by X9Ware. </td>
+</tr>
+</tbody>
+</table>
+<p>Configuration Names</p>
+<p>Configuration names are used internally to identify the standard
+level. This is a basic requirement must be taken into consideration as
+you assign names to user defined configuration. This is accomplished
+through identification strings that must be embedded within the
+configuration name, as identified by this table:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>DSTU</td>
+<td>2003</td>
+</tr>
+<tr class="even">
+<td>X9.100-187</td>
+<td>100-187</td>
+</tr>
+<tr class="odd">
+<td>X9.100-187-2008</td>
+<td>100-187-2008</td>
+</tr>
+<tr class="even">
+<td>X9.100-187-2013</td>
+<td>100-187-2013</td>
+</tr>
+<tr class="odd">
+<td>X9.100-187-2016</td>
+<td>100-187-2016</td>
+</tr>
+<tr class="even">
+<td>UCD</td>
+<td>UCD</td>
+</tr>
+<tr class="odd">
+<td>X9.100-180</td>
+<td>100-180</td>
+</tr>
+<tr class="even">
+<td>X9.100-180-2006</td>
+<td>100-180-2006</td>
+</tr>
+<tr class="odd">
+<td>X9.100-180-2013</td>
+<td>100-180-2013</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

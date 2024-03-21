@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Duplicate Items Detector</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span>Duplicate Items
+Detector</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The Duplicate Items Detector can identify duplicate items either
+within the currently loaded x9 file, or across multiple x9 files.
+Duplicates can be identified for the following types of items:</p>
+<ul>
+<li>Check detail records (type 25)</li>
+<li>Return detail records (type 31)</li>
+<li>Credit reconciliation records (type 61) </li>
+</ul>
+<p>Duplicates are considered within record type, which means (for
+example) that you cannot have a duplicate that consists of a debit and a
+credit, even if they have the same MICR line and amount.</p>
+<p>Duplicates within the current X9 File</p>
+<p>When you open the duplicate panel, X9Assist will automatically search
+for duplicates within the current x9 file (using default duplicate
+criteria) and will inform you of how many duplicate items were located.
+</p>
+<p>You can then change the duplicate criteria as you see fit and use the
+“Check” button to initiate another duplicate search.</p>
+<p>The following criteria can be included in the identification of
+duplicate items:</p>
+<ul>
+<li>ABA number</li>
+<li>OnUs field (which in most cases will include the consumer check
+serial number) </li>
+<li>Auxiliary AuxOnUs </li>
+<li>External Processing Code (EPC) </li>
+<li>Amount</li>
+<li>Item Sequence Number </li>
+</ul>
+<p>When you have duplicates, X9Assist will display a screen that shows
+you both sides of each duplicate occurrence. The duplicate items panel
+has a divider (“=================”) between each duplicate case. </p>
+<p>Each duplicate provides information on the key (“duplicate […]”) that
+was used to identify the duplicate, which is based on the criteria that
+you have specified. Each duplicate also provides information on the
+source of the duplicate item (“from file….”). </p>
+<p>There will be two or more lines reported for each duplicate. Each
+line has a prefix that will tell you the file, record number, and record
+type that was the source of the duplicate item. Note that a single item
+may be duplicated with one or more other items, hence there can be two
+or more lines that are shown between each of the dividers.</p>
+<p>The following buttons are available from the Duplicate Items Detector
+panel:</p>
+<ul>
+<li><strong>Check</strong>: initiates another duplicate items analysis
+and is used when you have changed the criteria and want to update the
+results based on your new selections. </li>
+</ul>
+<ul>
+<li><strong>Filter</strong>: creates a new filter for those items that
+are duplicates within the current x9 file. </li>
+</ul>
+<ul>
+<li><strong>Delete</strong>: deletes those items that are duplicates
+within the current x9 file. You will be asked to confirm the delete
+before it is initiated. The deleted items are added to the current
+modification log (as supported by Modify). This will allow you to review
+the deleted items and revert any of the items as you so desire. You will
+need to run a Repair to correct trailer totals. Also note that if this
+file contains credits and you are deleting the debits, then the credit
+amount(s) will also have to be modified. Once your review of the x9 file
+is completed, you can save the modified file to a new x9 file name.
+</li>
+</ul>
+<p>Duplicates Across Multiple X9 Files</p>
+<p>The Duplicate Items Detector can be used to identify duplicates that
+exist across multiple x9 files. The identification of such duplicates
+can become a complex process and X9Assist provides tools to help in
+these difficult situations. </p>
+<p>Suppose you have duplicates that involve three different files. In
+this example, you would do the following:</p>
+<ol type="1">
+<li>Use X9Assist to open what you consider to be your primary x9 file
+associated with this event. This is the only file that you will be able
+to use for the “Filter” and “Delete” functions. </li>
+<li>Launch the Duplicate Detector for this file.</li>
+<li>Within the Duplicate Detector, use the “open” button on the tool bar
+to open the second file. You will get a popup message of how many items
+were found and loaded from this file. </li>
+<li>Within the Duplicate Detector, use the “open” button on the tool bar
+to open the third file. You will get a popup message of how many items
+were found and loaded from this file. </li>
+<li>Now assign your duplicate items criteria</li>
+<li>Press the “Check” button. </li>
+<li>You will get a popup message that identifies the number of duplicate
+items that have been found.</li>
+<li>If necessary, you can adjust your duplicate identification criteria
+and hit “Check” again.</li>
+<li>As necessary, you can repeat this process.</li>
+<li>You can now use the “Filter” button to allow you to generate a list
+of the duplicate items that exist within the first file that you
+opened.</li>
+</ol>
+<p>Duplicate Reporting</p>
+<p>The Duplicate Detector generates a display of all identified
+duplicate items so that you will know which items and which files are
+involved in the duplicate scenario. You can save this text file which
+provides great insight into the items that are participating in your
+duplicate event. </p>
+<p>Duplicates within the current x9 file can be inserted in a filter.
+You can Use the Excel Exporter to export these items into an Excel
+workbook. </p>
+<p>As you are well aware, duplicate items situations are always complex
+and demanding. X9Assist provides generic tools that are designed to
+provide help and guidance. Please let us know how we can improve upon
+these tools. As always, your suggestions are welcome. </p>
+</body>
+</html>

@@ -1,0 +1,2 @@
+JAVA_VERSION="17.0.5"
+MODULES="java.base java.datatransfer java.xml java.prefs java.desktop java.logging java.management java.security.sasl java.naming jdk.crypto.ec jdk.unsupported jdk.unsupported.desktop jdk.xml.dom com.x9ware.x9assist.merged.module"

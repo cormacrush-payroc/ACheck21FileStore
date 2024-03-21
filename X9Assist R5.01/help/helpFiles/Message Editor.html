@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Message Editor</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>Message Editor</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Tool Type</td>
+<td>Tool Usage</td>
+</tr>
+<tr class="even">
+<td>System Editor</td>
+<td>Editors maintain runtime tables which control the application
+environment.</td>
+</tr>
+</tbody>
+</table>
+<p>The Message Editor is facility can be used to edit and maintain error
+message file(s) on an interactive basis. The editor is used when there
+is a need to modify the standard error messages that are issued during
+file validations. Messages are assigned an internal identifier that is
+used to as a lookup mechanism to associate a specific error scenario
+with alternate message text. </p>
+<p>We have given considerable consideration as to how how error messages
+have been structured along with the text that has been assigned to each
+individual message. Although this facility has been created to allow
+messages to be customized, we would rather ask that you engage us when
+you have issues with any specific error message condition. We would
+rather make improvements to the overall environment whenever that
+possible. </p>
+<p>Within the overall environment, there are two types of message
+files:</p>
+<ul>
+<li>System – which is an internally defined set of messages that are
+used on a default basis. Since this default definition is defined
+internally, this complete message set does not need to be defined in the
+message table.</li>
+<li>User – which is an externally defined set of messages that override
+the system message file. Since these are overrides, you only need to
+define those messages where you want the assigned attributes to differ
+from the standard messages. When you save a user message file, the
+editor will automatically remove all messages where the attributes
+(severity and description) match the standard message. In this way, user
+message files will only contain override messages. </li>
+</ul>
+<p>For example, if you want to change the severity or text that is
+associated with two system messages, then you can create a user defined
+messages file that contains just those two messages that are to be
+modified. The record viewer (which is shown in the lower left corner of
+the dashboard) can be used to identify the message identifier that is
+associated with the error messages that are being thrown against any
+particular error. This panel includes a slider, which can be used to
+shift to the rightmost columns, where the error message name will be
+shown. This is the message identifier which can be used for message
+overrides. </p>
+<p>This message file will contain only the two override messages. These
+overrides will be applied as overrides to the standard set of messages.
+This design allows your user message set to be focused only on your
+modifications, and also makes it fairly independent of new system
+releases, since it only contains modifications, and does not need to
+contain the entire message set.</p>
+<p>Message File Locations</p>
+<p>As noted, all standard messages are defined internally and are not
+needed in an external message xml file. Because of that, the standard
+messages (with unchanged severity and description) will be automatically
+removed by the editor when a user message file is saved. </p>
+<p>In support of both documentation and transparency, the standard
+message file (which is named systemMessage.xml) is provided in the
+distribution and is included in the program launch folder, within folder
+/ rules / messages /.</p>
+<p>User message files can be stored in this same folder, or can
+alternatively be stored in the user’s home folder, which would typically
+be / UserId / documents / x9_assist / rules / messages /.</p>
+<p>User Message Files</p>
+<p>The Message Editor can be used to edit the system messages file,
+apply modifications, and then save that file to / documents / x9_assist
+/ rules / messages / using a name of your choice. When you save a
+customized user message file, the editor will remove all standard
+messages (those where severity and message description have not been
+changed). Those messages are not required since they will automatically
+default to the standard setting. This xml file can then be incorporated
+into a custom configuration using the Configuration Editor.</p>
+<p>Configurations</p>
+<p>User message files can be created and then used by the Configuration
+Editor to create customized configurations for your organization.
+Configurations are identified as either system or user, where the user
+configurations typically represent variants to the standard
+specifications. A user configuration can be created using a customized
+message set and then distributed within your organization for generate
+usage. </p>
+<p>Message Attributes</p>
+<p>The following message attributes are required:</p>
+<ul>
+<li>Identifier – is a drop down box where the selections are internally
+defined. This field is required to identify the specific message which
+is being referenced. </li>
+<li>Field – is a drop down box which allows the message override to be
+tagged to either all fields or to a specific field. </li>
+<li>Description – is a text box where the associated error message text
+must be entered. This text will be included when the message is thrown
+during the file validation process. </li>
+<li>Severity – is a drop down box where the selections are internally
+defined. This value identifies the severity level to be assigned to the
+message.</li>
+<li>Format – is a drop down box where the selections are full, sparse,
+and plain. This value identifies the format level assigned to the
+message. Default is full which indicates that all message fields will be
+populated in the resulting message. A value of sparse assigns a small
+set of critical fields, while plain populates the message text only.
+</li>
+</ul>
+<p>Basis Documents</p>
+<p>User message files are by their very definition an extension of the
+system messages xml file. This means that they are essentially overrides
+to that standard definition. In this same manner, it is also possible to
+have multiple levels of user message files, where one message file is an
+extension of another. For example, messageFile2 is an extension of
+messageFile1, and then logically messageFile1 is an extension of the
+system messages file. In this usage pattern, messageFile2 has a basis of
+messageFile1 and overrides (and extends) the messages as defined within
+that basis document. </p>
+<p>Sample Message File </p>
+<blockquote>
+<p>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</p>
+</blockquote>
+<blockquote>
+<p>&lt;errorMessages&gt;</p>
+</blockquote>
+<blockquote>
+<p> &lt;copyright&gt;X9Ware LLC 2012-2018&lt;/copyright&gt;</p>
+</blockquote>
+<blockquote>
+<p> &lt;company&gt;X9Ware LLC&lt;/company&gt;</p>
+</blockquote>
+<blockquote>
+<p> &lt;release&gt;R4.01&lt;/release&gt;</p>
+</blockquote>
+<blockquote>
+<p> &lt;buildDate&gt;2019.05.21&lt;/buildDate&gt;</p>
+</blockquote>
+<blockquote>
+<p> &lt;timestamp&gt;20190522_110531_079&lt;/timestamp&gt;</p>
+</blockquote>
+<blockquote>
+<p> &lt;basis&gt;&lt;/basis&gt;</p>
+</blockquote>
+<blockquote>
+<p> &lt;messages&gt;</p>
+</blockquote>
+<blockquote>
+<p> &lt;error&gt;<br />
+&lt;id&gt;missingFileTrailer&lt;/id&gt;<br />
+&lt;sev&gt;Ignore&lt;/sev&gt;<br />
+&lt;desc&gt;Missing file trailer record&lt;/desc&gt;<br />
+&lt;recordType&gt;0&lt;/recordType&gt;<br />
+&lt;fieldName&gt;&lt;/fieldName&gt;<br />
+&lt;pattern&gt;&lt;/pattern&gt;<br />
+&lt;format&gt;Plain&lt;/format&gt;<br />
+&lt;type&gt;User&lt;/type&gt;<br />
+&lt;/error&gt;</p>
+</blockquote>
+<blockquote>
+<p> &lt;/messages&gt;</p>
+</blockquote>
+<blockquote>
+<p>&lt;/errorMessages&gt;<br />
+</p>
+</blockquote>
+<p>Message Editor Functions</p>
+<p>The following functions are provided by the message editor:</p>
+<ul>
+<li>Insert – inserts a row into the table (either after a selected row,
+or at the beginning).</li>
+<li>Delete – delete all selected rows. </li>
+<li>Find – find a user entered string. </li>
+<li>Save – save the table. </li>
+</ul>
+<p>This table must be saved for your changes to be effective. The reset
+button can be used to restore to your last save point. Results will be
+saved to the message file of your choice. </p>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>DashBoard</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><span id="anchor"></span><span id="anchor-1"></span><span
+id="anchor-2"></span>Dashboard</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The Dashboard contains high level information regarding the currently
+loaded file that has been parsed and validated. It serves as the summary
+panel for all information that has been collected and allows you to
+easily launch various system functions. </p>
+<p>The Menu Bar is available at the very top of the panel and is used to
+launch application functions. Each entry within the menu has a drop down
+that is activated on a single click. Most functions have an assigned
+keyboard speed that can alternatively be used for initiation. </p>
+<p>The Tool Bar (which contains icons) is available immediately below
+the Menu Bar and can similarly be used to launch application functions.
+The Tool Bar can be easier to use than the Menu Bar for commonly used
+tools. </p>
+<p>The Dashboard contains tabs on both the top and right sides:<br />
+</p>
+<ul>
+<li>Tabs with their title in <strong>black</strong> contain information
+at the file level. These tabs are presented in right side tabs within
+the Dashboard. For example, the “Records” tab contains summary
+information about the various record types that exist within the current
+file. </li>
+<li>Tabs with their title in <strong>blue</strong> contain detailed
+information which will be updated as your positioning within the file
+changes. For example, the tab for the “Field Viewer” has field level
+information for the current record group that is selected within the
+browser tree. </li>
+</ul>
+<p>The Dashboard top side tabs are as follows: </p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Dashboard</td>
+<td>A summary of information associated with the file that is currently
+loaded. This includes bulletins (messages) and a summary of all
+identified errors.</td>
+</tr>
+<tr class="even">
+<td>Field Viewer</td>
+<td>A window shows the current record or record group, on a logical
+record by record and field by field basis. </td>
+</tr>
+<tr class="odd">
+<td>Images</td>
+<td>A panel that allows selection of either the front side or back side
+image (x9 files only). </td>
+</tr>
+</tbody>
+</table>
+<p>The Dashboard right side tabs are as follows: </p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Tab</td>
+<td>Applies to X9?</td>
+<td>Applies to ACH?</td>
+<td>Description </td>
+</tr>
+<tr class="even">
+<td>Summary</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>A summary of information associated with the file that was
+processed. This includes file attributes and the record types that are
+present on the file. </td>
+</tr>
+<tr class="odd">
+<td>Info</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>A list of the file level bulletins that were created when the file
+was loaded and validated. </td>
+</tr>
+<tr class="even">
+<td>Records</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>A summary of all record types that exist within the file. </td>
+</tr>
+<tr class="odd">
+<td>Errors</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>A detailed list of the errors that were found within the file. </td>
+</tr>
+<tr class="even">
+<td>Cash Letters</td>
+<td>Yes</td>
+<td>No</td>
+<td>A list of the cash letters that exist within the file.</td>
+</tr>
+<tr class="odd">
+<td>Bundles</td>
+<td>Yes</td>
+<td>No</td>
+<td>A list of x9 bundles that exist within the file. </td>
+</tr>
+<tr class="even">
+<td>Batches</td>
+<td>No</td>
+<td>Yes</td>
+<td>A list of ach batches that exist within the file. </td>
+</tr>
+<tr class="odd">
+<td>Items</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>A list of the items that exist within the file. </td>
+</tr>
+<tr class="even">
+<td>Tiff Tags </td>
+<td>Yes</td>
+<td>No</td>
+<td>A summary of all tiff tags across all images within the file. </td>
+</tr>
+</tbody>
+</table>
+<p>The feedback panel is displayed at the lower portion of the
+Dashboard. It contains Record Data, Errors, and the Images panel. It is
+located at the bottom of the Dashboard and presents additional
+information for the current record or record group that is selected
+within the viewer.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Record Data</td>
+<td>Shows the complete record data exactly as it was received. This can
+be very helpful when there are questions about the positioning of fields
+within the record or how fields are justified or padded. All errors are
+listed after each individual record. </td>
+</tr>
+<tr class="even">
+<td>Thumbnail Images (x9 files only) </td>
+<td>The front and back image thumbnails are shown in the lower right
+corner of the Dashboard. This is helpful to allow you to quickly see
+both the front and back images for each check. The Item Viewer is
+launched when either thumbnail is clicked, providing a larger image
+view. Once the Item Viewer is displayed, you can then click either the
+front side or back side image for an even larger view of these images.
+The size of the thumbnails can be changed using sliders that are
+available on both the left and top of this image area. These sizes are
+recorded in user preferences and will be used for each user session.
+</td>
+</tr>
+</tbody>
+</table>
+<p>The ICL Viewer tree is on the left side of the panel and can be used
+to view the structure of the overall file and to launch the display of
+any given record. The tree includes a tab which contains navigational
+information which describes how the tree is used and speed keys that can
+be used for simplified access. </p>
+<p>The Status Bar is displayed at the bottom of the Dashboard and shows
+attributes of the current file. This includes the file name, file type
+(x9 or ach), rules configuration that was used for validation, record
+count, file size, character set encoding, and finally the number of
+errors that were identified during validation (errors, warnings, infos).
+</p>
+<p>The Progress Bar shows the percentage of work that has been completed
+for a given task. The Progress Bar will go to 100% and will then
+disappear when a task has been completed. </p>
+</body>
+</html>

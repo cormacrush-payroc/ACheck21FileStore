@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Reversals</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>Reversals</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Reversals can be used to create a new reversals file using one or
+items from the currently loaded file, typically from a list of filtered
+items. Input to this process can be either a filter that contains the
+specific items to be included in the new file, or alternatively the
+entire content of the current file. Filters may be created using the
+PickList, Find, Search, and Error Summary functions. </p>
+<p>A common use of this tool is to respond to a file that has been
+previously created in error. In these scenarios, an entire file will
+have to be reversed. This reversal process must be used extremely
+carefully, since you never want the reversal file to be flawed as well.
+This means that you need to fully understand the reversal process, and
+more importantly closely review the resulting output file that is
+created. This review needs to be done by your operations and technical
+teams (it needs multiple reviews and sign-offs). The review needs to
+look at the transactions, transaction codes, addenda records, file
+headers/trailers, and file totals. A careful review must always be
+performed.</p>
+<p>You can create the new file directly from the selected items or you
+can instead route the items through the Generate function. If you create
+the file on a direct basis, then the selected items will be written
+exactly as they appear within the current file (including the attached
+addenda and image records). Items will remain within their current file
+and bundle structure. </p>
+<p>As described above, ACH and CPA005 reversals can be either written
+directly or processed through Generate. The primary reason to go through
+Generate would be to further customize the output file (eg, change the
+header/trailer records). X9 files must go through Generate, since those
+items must have their images redrawn as debit-credit memos. In this
+situation, our standard check templates can be used, or you can
+alternatively design your own template based on your specific
+requirements. </p>
+<p>Reversals files have their debits flipped to credits and
+alternatively credits flipped to debits. These transaction code
+transformations vary a bit by dialect, as follows:</p>
+<ul>
+<li>X9 is the most complicated, and especially when credits are defined
+as type 25 records with some type of transaction code and/or routing
+number. A user defined configuration table can be constructed that
+identifies the transaction code and/or routing number to be assigned to
+POD credits. This swap table can have one or more entries, where the
+first matching entry will be selected and applied. Reversals will be
+always routed through Generate, which will be used to set further output
+file attributes. This must include the credit record type and format,
+and the image templates to be used to when creating the reversal
+transactions. </li>
+<li>ACH and CPA005 reversals are much more straight forward. Most
+typically, an entire file will be reversed. A transaction code swap
+table is provided for ACH, where the default should be appropriate based
+on industry standards. A transaction swap table is not needed for
+CPA005, since reversals are identified as a separate record type. </li>
+</ul>
+<p>Offset Balancing</p>
+<p>Reversal files can consist of debits, credits, or both. In some
+situations, the file may consist of debits offset by a single credit, or
+credits offset by a single debit. In this case, the reversal process
+recognizes that there is a single offset transaction and will ask if the
+amount on that balancing item should be modified. When using a filter,
+if the offsetting item is not included in the filter, then reversals
+will ask if that item should be added. Note that our automated balancing
+process requires at least two items offset by a single item. These items
+can be be located in different batches. If the offset exists in a batch
+by itself, then that batch structure will be retained even when a filter
+is being used to identify the items to be reversed. </p>
+<p>Summary</p>
+<p>Reversals is a powerful tool that can be used to create new files
+from specific items of your selection. Using the interface to Generate,
+you can also customize the file header information and other parameters
+associated with the newly created file. These parameters can be saved in
+a generator that can be referenced and invoked in future user sessions.
+</p>
+</body>
+</html>

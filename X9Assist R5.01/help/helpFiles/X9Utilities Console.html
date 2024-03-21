@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>X9Utilities Console</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>X9Utilities Console</p>
+<div>
+<table>
+<tbody>
+<tr class="odd">
+<td>X9Vision ?</td>
+<td>X9Validator ?</td>
+<td>X9Assist? </td>
+<td></td>
+<td>X9.37 ?</td>
+<td>ACH ?</td>
+<td>CPA005 ?</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td></td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The X9Utilities Console is an interactive tool that is available
+within both X9Utilities and X9Assist. The console is a powerful facility
+that allows command line parameters to be entered, validated, and then
+submitted for execution. It serves as a good demonstration of the
+overall capabilities of X9Utilities, since it allows the command line to
+be constructed visually, with validation of files and command line
+switches as they are entered. The console allow X9Utilities to be run on
+demand. It intercepts and displays the system log as x9utilities is
+executing. It then displays the final exit status that is posted by the
+x9uti.exe. </p>
+<p>The console is an integral part of X9Utilities itself, and launched
+using the “-console” switch on the command line. By using this approach,
+it is not a separate program but instead embedded within the standard
+x9utilities runtime. </p>
+<p>The console allows allows a set of parameters can be save to xml as a
+“run unit” that can be subsequently loaded an executed again. This is a
+provided as a productivity tool, since it allows a given set of
+parameters to be saved and executed again in the future, as needed. </p>
+<p>As previously mentioned, X9Utilities is a command line tool. In your
+production environment, it will be invoked on a batch (command line)
+basis. This might be from a scheduled batch script, or more possibly
+directly by an application program. The console can serve as a workbench
+for your testing. It provides an illustration of x9utilities
+capabilities and operation. </p>
+<p>The console is made available as part of X9Assist since that product
+is a desktop tool, is designed with a UI (User Interface) for human
+interaction, and is our full-function desktop product. X9Assist
+customers can use the console to actually run X9Utilities interactively
+in their environment. An X9Utilities license must be purchased if you
+subsequently decide that you would like to run the tool on batch basis.
+</p>
+<p>This documentation describes how to use the X9Utilities Console.
+However, it does not provide detailed information on each of the
+functions that are available via that batch (command line) utility.
+Please reference the X9Utilities User Guide (which is available in its
+entirety via help) for complete information regarding functions,
+capabilities, and command line options. </p>
+<p>X9Utilities Evaluations</p>
+<p>The console can be used during X9Utilities evaluations, to both
+simplify and expedite the review process. Product evaluations are
+normally performed within a limited time frame and hence productivity
+factors are important. The console helps greatly during this process,
+since you can run any X9Utilites function from start to end within
+minutes, without the need to develop a batch script. You can also repeat
+the same test using a variety of input files, and can save the work unit
+for further repeated testing at a later time. All of these capabilities
+can add a lot of value during an evaluation of our X9Utilities product,
+so it represents a great way to get started. Once you have determined
+that your evaluation is favorable, X9Ware can then provide an evaluation
+copy of X9Utilities, which will allow you to perform the same operations
+on a command line basis. </p>
+<p>X9Utilities Batch File (Windows) </p>
+<p>The console can be invoked using a batch file. A sample of this is
+included as part of the Windows installation, in folder: / samples /
+console / .</p>
+<blockquote>
+<p>@echo off</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>: Run the x9utilities using a start command, which allows it to run
+separately and the consolse window itself to close. </p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>cd "c:/Program Files/X9Ware LLC/X9Utilities R4.11"</p>
+</blockquote>
+<blockquote>
+<p>start "" x9util -console</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>: pause </p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>exit /b</p>
+</blockquote>
+<p>Console Fields </p>
+<p>The X9Utilities Console contains the following fields which allow you
+to identify the function to be performed along with their associated
+parameters:</p>
+<ul>
+<li>“Function” is a drop down box which allows the X9Utilities task to
+be selected.</li>
+<li>“Batch” is a check box that is used to indicate that batch
+processing is activate. This is a more complex runtime mode, where a
+command is executed against all of the files within a folder (instead of
+against a single file). When using batch mode, the input file must be
+defined as as wild-card string, where an asterisk is used for pattern
+matching during the file selection process. Refer to the topic
+“Batch/Script Operations” in the X9Utilities User Guide for more
+information. </li>
+<li>“Threads” applies only when running in batch mode, and identifies
+the number of threads that will be used during work unit processing.
+</li>
+<li>“Wild Card Pattern” applies only when running in batch mode, and
+defines the pattern that will be applied when selecting files within
+folders. An example might be *.x9. </li>
+<li>“Command Switches” is a list of switch values which are to be
+applied to the selected task. The entered switches must begin with a
+dash and must be valid for the selected function to be performed. Refer
+to the X9Utilities User Guide for more information.</li>
+<li>“Rules Specification” is used to select the x9.37 specification to
+be associated with the selected task. For example, the specification is
+critical for the “-write” since it identifies the x9 rules to be
+utilized, which identifies key information such as fields and field
+alignments.</li>
+<li>“Command line as executed” is a display box which summarizes the
+command line that will be executed for the selected task. The command
+line will be updated interactively as changes are made to the above
+fields (function, switches, rules, etc). </li>
+</ul>
+<p>Input and Output Files </p>
+<p>The X9Utilities Console includes a facility which must be used to
+define the input and output files that are processed. There are various
+files that can be specified, with certain files required based on the
+function being performed. These files are selected via a file chooser
+and the fully qualified file name is then displayed in the text box
+immediately to the right of each selection box. The chosen input and
+output files will be passed to X9Utilities via the command line. It is
+also informative to take a look at the command line box to see how input
+and output files are provided to X9Utilties via the constructed command
+line. </p>
+<p>The following input and output files can be specified:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Translate</td>
+<td> Mandatory</td>
+<td>Optional; will default to “_IMAGES” when not specified</td>
+<td></td>
+<td>Optional; is assigned based on the input file name when not
+specified</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Write</td>
+<td>Mandatory</td>
+<td></td>
+<td>Optional; defines the HeaderXml file to be used when not provided as
+the first row within the input csv file</td>
+<td>Optional; is assigned based on the input file name when not
+specified</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Import</td>
+<td>Mandatory</td>
+<td>Optional; defines the image folder base name when image file names
+are relative </td>
+<td></td>
+<td>Optional; is assigned based on the input file name when not
+specified</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Export</td>
+<td>Mandatory</td>
+<td>Optional; defines the image folder when image files are written</td>
+<td></td>
+<td>Optional; is assigned based on the input file name when not
+specified</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>ExportCsv</td>
+<td>Mandatory</td>
+<td>Optional; defines the image folder when image files are written</td>
+<td></td>
+<td>Optional; is assigned based on the input file name when not
+specified</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Validate</td>
+<td>Mandatory</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Optional; csv of errors that were found; assigned based on the input
+file name when not specified</td>
+</tr>
+<tr class="odd">
+<td>Scrub</td>
+<td>Mandatory</td>
+<td></td>
+<td>Mandatory; defines the scrub xml parameters file to be used </td>
+<td>Optional; is assigned based on the input file name when not
+specified</td>
+<td>Optional; csv of fields that were scrubbed; assigned based on the
+input file name when not specified</td>
+</tr>
+<tr class="even">
+<td>Update</td>
+<td>Mandatory</td>
+<td></td>
+<td>Mandatory; defines xml file which is used to identify the field
+level update parameters</td>
+<td>Optional; is assigned based on the input file name when not
+specified</td>
+<td>Optional output csv file name</td>
+</tr>
+<tr class="odd">
+<td>Split</td>
+<td>Mandatory</td>
+<td></td>
+<td>Mandatory; defines xml file which is used to identify the field
+level split parameters</td>
+<td>Not allowed; it is defined within the xml file. </td>
+<td>Optional output csv file name</td>
+</tr>
+<tr class="even">
+<td>Make</td>
+<td>Mandatory; defines the input use case file. Along with the input
+file, you must specify the “-reformatter” and “-generator” switches to
+define those xml files, which are mandatory as well.</td>
+<td></td>
+<td>Optional; defines the routing list file when it is not defined
+within the generator xml file. </td>
+<td>Mandatory; defines the output file to be created. </td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Merge</td>
+<td>Mandatory; defines the input folder that contains the files to be
+merged. </td>
+<td></td>
+<td></td>
+<td>Mandatory; defines the output file to be created. </td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Compare</td>
+<td>Mandatory</td>
+<td></td>
+<td>Mandatory; defines the secondary input file to be compared
+against</td>
+<td></td>
+<td>Optional output text file name </td>
+</tr>
+<tr class="odd">
+<td>ImagePull</td>
+<td>Mandatory</td>
+<td>Optional; defines the image folder when image file names are
+relative </td>
+<td>Mandatory; defines csv file which is used to identify the item
+images to be pulled</td>
+<td></td>
+<td>Optional; defines output csv file which identifies the images that
+have been pulled. </td>
+</tr>
+</tbody>
+</table>
+<p>Work Units </p>
+<p>A work unit is a combination of all entered fields which describe the
+X9Utilities task to be performed. A work unit can be saved to xml and
+then subsequently loaded at a future time, allowing the work unit to be
+performed again. The load and save buttons on the right side panel are
+used for this purpose. Work units are stored in folder / documents /
+x9_assist / xml / x9utilities /. The ability to save and subsequently
+reuse work units allows task to be performed repetitively as needed.
+This might be used to perform a user periodic task and eliminates the
+need to create a batch script for that same purpose. Work units can not
+only be stored, but can also organized into subfolders within /
+documents / x9_assist / xml / x9utilities /. </p>
+<p>X9Utilities Console</p>
+<p>The console is used to display system log information for each new
+task that is executed. The console is initialized at the start of each
+new task and will be updated with log snapshots as the task is run.
+There are limits as to how much information can be shown within the log,
+which requires some truncation when the logging becomes excessive. In
+these situations, logging will be suspended. The console will still
+contain the very last lines from the log, which is important since these
+lines may contain output file names, totals, error messages, etc.
+Console content can be scrolled (using the scroll bar on the right) and
+can be copied to the clipboard (using CTRL A and then CTRL C). Once
+copied to the clipboard, the text can be pasted into other external
+applications as needed for specific purposes. </p>
+<p>JDK Requirements</p>
+<p>The console requires JDK 11 or higher for execution. </p>
+<p>Function Execution</p>
+<p>User input is edited interactively and errors and shown when
+identified. Once a valid work unit has been entered, it can be
+optionally saved and ultimately executed using the run button on the
+action line. Many tasks will run very quickly. Depending on the function
+performed, the number of files involved, and the relative size of those
+files, the run may take an extended period of time. The console has
+several indicators to inform you that a utility task is running:</p>
+<ul>
+<li>The background of the X9Utility console is changed from gray to cyan
+while the task is in a running state, and will be changed back to gray
+on completion.</li>
+<li>Exit status on the action line will be changed to “running” while
+the task is in a running state, and will be changed to the numeric exit
+status on completion.</li>
+<li>The status icon on the action line will be changed to a “runner”
+image while the task is in a running state, and will be changed back to
+a green/red icon on completion. </li>
+</ul>
+<p>A popup message will displayed on completion that provides the exit
+status and the name/size of the output file. The elapsed time (in
+seconds) will also be displayed on the action line. </p>
+<p>Command Line as Executed</p>
+<p>The console includes a display box which shows the command line as
+executed. This is provided for several reasons:</p>
+<ul>
+<li>First is that it provides details on how the command line is
+formulated and thus is very helpful for exposure into the technical
+workings of the utility. You can compare the content of the formulated
+command line against the X9Utilities User Guide to fully review the
+command formats. </li>
+<li>Second is that the command line can be used as the basis for
+developing batch scripts. This would be done by fully testing the
+function to be performed, and then by creating a batch script from the
+command line. The new batch script may have certain parameters or file
+names turned into symbolic parameters, increasing both flexibility and
+usability.</li>
+</ul>
+<p>Demonstrations</p>
+<p>The following are examples of using the utilities console through a
+series of sequential operations:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>(1)</td>
+<td>Export x9.37 data + images into fixed column CSV format.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>(2)</td>
+<td>Export x9.37 data + images into variable column CSV format.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>(3)</td>
+<td>Import x9.37 from an exported file, or a CSV of your creation. </td>
+<td></td>
+</tr>
+<tr class="even">
+<td>(4)</td>
+<td>Compare two x9.37 files. </td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>Reusing a Saved Work Unit </p>
+<p>The console can be used to save a work unit to xml for subsequent
+reuse. This work unit can be used to the batch version of X9Utilities to
+rerun this command in a batch environment. This can be useful when a
+function needs to be performed in a batch environment and can be
+repeated exactly as originally performed via the console. In some
+situations, this may eliminate the need to develop and test a batch
+script to perform the same function. The work unit is provided to
+X9Utilities using the <strong>-workUnit:“-fully qualified file
+name”</strong> command line parameter. No other parameters or switches
+are required. You can review the created xml file for more insight into
+the work unit xml definition and embedded content. </p>
+</body>
+</html>
